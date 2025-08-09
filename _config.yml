@@ -30,11 +30,23 @@ author:
   bio: "个人简介"
   email: "你的邮箱"
 
-# 默认文章设置
+# 让 _pages 集合参与构建并输出到站点
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# 默认文章和页面设置
 defaults:
   - scope:
       path: ""
       type: posts
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: pages
     values:
       layout: single
       author_profile: true
