@@ -7,4 +7,5 @@ entries_layout: list
 taxonomy: categories
 ---
 
+这里是所有的读书笔记。
 
