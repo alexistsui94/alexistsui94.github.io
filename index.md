@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Merci | 
+title: Merci
 author_profile: true
 ---
 
