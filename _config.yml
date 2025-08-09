@@ -1,3 +1,4 @@
+# force rebuild 2025-08-09
 # 基本信息
 title: "Alexistsui"
 description: "读书笔记 · 杂文随想 · 个人介绍"
@@ -22,7 +23,7 @@ paginate: 5
 paginate_path: "/page:num/"
 
 # 搜索
-search: true
+search: false
 
 # 作者
 author:
