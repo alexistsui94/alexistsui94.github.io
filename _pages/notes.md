@@ -1,7 +1,11 @@
 ---
-title: "读书笔记"
+title: 读书笔记
 layout: archive
 permalink: /notes/
-category: 读书笔记
-entries_layout: list
+author_profile: true
 ---
+
+{% assign notes_posts = site.categories["读书笔记"] | sort: "date" | reverse %}
+{% for post in notes_posts %}
+  {% include archive-single.html type="post" %}
+{% endfor %}
