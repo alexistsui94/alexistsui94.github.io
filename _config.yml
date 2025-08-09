@@ -10,6 +10,7 @@ minimal_mistakes_skin: default # 可选: dark, air, contrast
 
 # 插件
 plugins:
+  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-paginate
   - jekyll-sitemap
