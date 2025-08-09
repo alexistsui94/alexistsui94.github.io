@@ -1,9 +1,7 @@
 main:
-  - title: "首页"
+  - title: "Home"
     url: /
-  - title: "读书笔记"
+  - title: "Notes"
     url: /notes/
-  - title: "杂文随想"
-    url: /essays/
-  - title: "个人介绍"
+  - title: "About"
     url: /about/
