@@ -24,17 +24,6 @@ paginate_path: "/page:num/"
 # 搜索
 search: true
 
-# 导航
-navigation:
-  - title: "首页"
-    url: /
-  - title: "读书笔记"
-    url: /notes/
-  - title: "杂文随想"
-    url: /essays/
-  - title: "个人介绍"
-    url: /about/
-
 # 作者
 author:
   name: "你的名字"
