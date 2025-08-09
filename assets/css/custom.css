@@ -1,0 +1,10 @@
+/* 居中主导航菜单 */
+.masthead__menu {
+  justify-content: center !important;
+}
+
+/* 如果在大屏幕下想让搜索图标也保持居中对齐 */
+.masthead__inner-wrap {
+  display: flex;
+  justify-content: center;
+}
