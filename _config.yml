@@ -50,3 +50,11 @@ defaults:
     values:
       layout: single
       author_profile: false
+
+# 自定义 CSS
+sass:
+  style: compressed
+
+# 加载自定义
+include:
+  - assets/css
