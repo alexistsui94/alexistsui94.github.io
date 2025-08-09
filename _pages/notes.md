@@ -1,11 +1,9 @@
 ---
-title: 读书笔记
+title: "读书笔记"
 layout: archive
 permalink: /notes/
-author_profile: true
+category: 读书笔记
 entries_layout: list
-taxonomy: categories
 ---
 
-这里是所有的读书笔记。
 
