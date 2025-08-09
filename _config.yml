@@ -1,0 +1,35 @@
+title: Alexis 的小站
+description: 读书笔记 · 杂文随想 · 个人介绍
+url: https://alexistsui94.github.io
+baseurl: ""
+
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: default
+
+author:
+  name: Alexis Tsui
+  bio: Implementation Consultant | SQL/数据 | 阅读
+  email: alexistsui94@gmail.com
+
+search: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  toc_levels: 2..4   # 自动目录层级
+
+# 定义两个独立栏目（集合）
+collections:
+  notes:            # 读书笔记
+    output: true
+    permalink: /notes/:path/
+  essays:           # 杂文随想
+    output: true
+    permalink: /essays/:path/
+
+# 分页可选
+paginate: 10
+paginate_path: /page:num/
+
+# 让 data 导航生效
+collections_dir: .
