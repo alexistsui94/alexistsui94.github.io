@@ -1,0 +1,9 @@
+main:
+  - title: "首页"
+    url: /
+  - title: "读书笔记"
+    url: /notes/
+  - title: "杂文随想"
+    url: /essays/
+  - title: "个人介绍"
+    url: /about/
