@@ -6,4 +6,3 @@ show_previous: false
 permalink: /about/
 ---
 
-
