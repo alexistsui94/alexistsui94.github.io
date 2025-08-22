@@ -4,12 +4,12 @@ layout: single
 permalink: /about/
 ---
 
-# Profile
-ERP Implementation Consultant with an M.Sc. in Applied Statistics (Shenzhen University). Hands-on experience in machine learning for financial analysis (Python), SQL/Python, and data-driven process optimization. Certified in Alibaba AI Application and Alibaba Cloud Database Engineering. Native in Cantonese & Mandarin; improving English (IELTS target 7.0).
+ERP Implementation Consultant with an M.Sc. in Applied Statistics (Shenzhen University). Hands-on experience in SQL/Python, and data-driven process optimization. Certified in Alibaba AI Application and Alibaba Cloud Database Engineering. Native in Cantonese & Mandarin,English (IELTS 7.0, TOEIC 900).
 
 # Skills
+- **Cloud & Database**: Certified in Alibaba AI Application · Alibaba Cloud Database Engineer
 - **Python**: pandas, scikit-learn, NumPy; Machine Learning (classification, regression, time series)
-- **Cloud & Database**: Alibaba Cloud Certified Database Engineer
+- **AI Applications**: Yonyou BIP AI Agent; 2nd Prize, Yonyou AI Application Competition
 - **ERP / Domain**: Finance, CRM
 - **Languages**: Cantonese & Mandarin (native), English (IELTS 7.0, TOEIC 900)
 
