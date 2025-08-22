@@ -28,12 +28,6 @@ Mar 2024 – Present
 - **Captain & Starting Point Guard**, SZU Graduate Basketball Team (School of Economics)  
   - Organized practices, friendlies, tactical planning, and debriefs.
 
-<div class="print-note">
-👉 <a href="/en/" onclick="window.print();return false;">Print / Save as PDF</a> · <a href="/resume/">中文版本</a>
-</div>
-
-
-
 ---
 
 
