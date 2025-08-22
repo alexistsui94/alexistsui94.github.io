@@ -2,6 +2,7 @@
 title: About
 layout: single
 permalink: /about/
+---
 
 # Profile
 ERP Implementation Consultant with an M.Sc. in Applied Statistics (Shenzhen University). Hands-on experience in machine learning for financial analysis (Python), SQL/Python, and data-driven process optimization. Certified in Alibaba AI Application and Alibaba Cloud Database Engineering. Native in Cantonese & Mandarin; improving English (IELTS target 7.0).
@@ -27,7 +28,3 @@ Mar 2024 – Present
 # Leadership
 - **Captain & Starting Point Guard**, SZU Graduate Basketball Team (School of Economics)  
   - Organized practices, friendlies, tactical planning, and debriefs.
-
----
-
-
