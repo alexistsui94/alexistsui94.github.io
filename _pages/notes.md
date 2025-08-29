@@ -1,6 +1,6 @@
 ---
 title: Notes
 layout: archive
-permalink: /notes/
+permalink: /Notes/
 author_profile: true
 ---
