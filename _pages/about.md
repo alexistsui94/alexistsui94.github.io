@@ -1,7 +1,7 @@
 ---
-title: About
+title: About Me
 layout: single
-permalink: /about/
+permalink: /About Me/
 ---
 
 ERP Consultant with an M.Sc. in Applied Statistics (Shenzhen University). Hands-on experience in SQL/Python, and data-driven process optimization. Certified in Alibaba AI Application and Alibaba Cloud Database Engineering. Native in Cantonese & Mandarin,English (IELTS 7.0, TOEIC 900).
