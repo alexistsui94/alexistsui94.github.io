@@ -26,9 +26,9 @@ search: false
 
 # 作者信息（可选）
 author:
-  name: Alexis Xu
-  bio: "哲学 · 技术 · 生活"
-  email: your-email@example.com
+  name: 
+  bio: 
+  email: 
 
 # 启用分类和标签归档（关键！）
 category_archive:
