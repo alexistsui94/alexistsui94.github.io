@@ -1,8 +1,8 @@
 ---
 title: "A Case Review of Project Delivery"
 date: 2026-03-12
-categories: [projects]
-tags: [ERP, DMS, implementation]
+categories: [tech]
+tags: [ERP, implementation]
 excerpt: "A structured reflection on business requirements, solution design, implementation, and delivery."
 ---
 
