@@ -1,14 +1,20 @@
+# ----------------------------
 # 网站基本信息
+# ----------------------------
 title: "Alexisxu"
 description: "读书笔记 · 杂文随想 · 个人介绍"
 url: "https://alexistsui94.github.io"
 baseurl: ""
 
-# 主题（使用远程主题，兼容 GitHub Pages）
+# ----------------------------
+# 主题设置
+# ----------------------------
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: default
 
-# 插件（GitHub Pages 支持的插件）
+# ----------------------------
+# 插件（GitHub Pages 支持）
+# ----------------------------
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
@@ -17,20 +23,24 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# ----------------------------
 # 分页
+# ----------------------------
 paginate: 5
 paginate_path: "/page:num/"
 
-# 搜索
+# ----------------------------
+# 搜索与作者
+# ----------------------------
 search: false
-
-# 作者信息（可选）
 author:
-  name: 
-  bio: 
-  email: 
+  name: Alexis Xu
+  bio: "哲学 · 技术 · 生活"
+  email: your-email@example.com
 
-# 启用分类和标签归档（关键！）
+# ----------------------------
+# ✅ 启用自动分类/标签归档（关键！）
+# ----------------------------
 category_archive:
   type: liquid
   path: /categories/
@@ -38,12 +48,13 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# 集合（确保 _pages 被处理）
+# ----------------------------
+# 集合与默认布局
+# ----------------------------
 collections:
   pages:
     output: true
 
-# 默认布局
 defaults:
   - scope:
       path: ""
@@ -58,6 +69,8 @@ defaults:
       layout: single
       author_profile: false
 
+# ----------------------------
 # CSS 压缩
+# ----------------------------
 sass:
   style: compressed
