@@ -1,7 +1,7 @@
 ---
-title: Notes
+title: notes
 layout: archive
 permalink: /notes/
 author_profile: true
-category: Notes
+category: notes
 ---
