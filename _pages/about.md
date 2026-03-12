@@ -1,17 +1,20 @@
 ---
-title: 关于
+title: "About"
 permalink: /about/
 layout: single
+classes: wide
 author_profile: true
 ---
 
-我是 Alexis，一个在**哲学、技术与生活**之间穿行的思考者。
+Hello, I’m Alexis.
 
-- 📚 研读维特根斯坦、海德格尔、福柯  
-- 💻 用代码构建思想的容器  
-- 🌱 相信沉默比争论更有力量  
+This website is a personal space for writing and organizing ideas across four areas:
 
-本博客记录那些**值得被写下，但未必能被证明**的想法。
+- **Technology & Systems** — AI, SQL, Python, automation, and data analysis
+- **Projects** — implementation work, solution design, business processes, and delivery
+- **Economics & Finance** — business thinking, market observation, and financial analysis
+- **Essays** — reflections on work, learning, growth, and life
 
-> “哲学的目的是让苍蝇飞出玻璃瓶。”  
-> —— 《哲学研究》
+I want this site to be both practical and personal: a place to document what I build, what I learn, what I observe, and how I think.
+
+If any of these topics interest you, feel free to explore the articles across the site.
