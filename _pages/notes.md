@@ -1,7 +1,7 @@
 ---
 title: Notes
 layout: archive
-permalink: /Notes/
+permalink: /notes/
 author_profile: true
 category: Notes
 ---
