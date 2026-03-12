@@ -1,15 +1,14 @@
-# force rebuild 2025-08-09
-# 基本信息
+# 网站基本信息
 title: "Alexisxu"
 description: "读书笔记 · 杂文随想 · 个人介绍"
 url: "https://alexistsui94.github.io"
-baseurl: "" # 根目录
+baseurl: ""
 
-# 主题
+# 主题（使用远程主题，兼容 GitHub Pages）
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: default # 可选: dark, air, contrast
+minimal_mistakes_skin: default
 
-# 插件
+# 插件（GitHub Pages 支持的插件）
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
@@ -18,14 +17,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# 启用分类和标签归档
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-  
 # 分页
 paginate: 5
 paginate_path: "/page:num/"
@@ -33,19 +24,26 @@ paginate_path: "/page:num/"
 # 搜索
 search: false
 
-# 作者
+# 作者信息（可选）
 author:
-  name:
-  bio:
-  email:
+  name: Alexis Xu
+  bio: "哲学 · 技术 · 生活"
+  email: your-email@example.com
 
-# 让 _pages 集合参与构建并输出到站点
+# 启用分类和标签归档（关键！）
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# 集合（确保 _pages 被处理）
 collections:
   pages:
     output: true
-    permalink: /:path/
 
-# 默认文章和页面设置
+# 默认布局
 defaults:
   - scope:
       path: ""
@@ -53,25 +51,13 @@ defaults:
     values:
       layout: single
       author_profile: false
-      show_next: false
-      show_previous: false
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: false
-      show_next: false
-      show_previous: false
 
-# 自定义 CSS
+# CSS 压缩
 sass:
   style: compressed
-
-# 加载自定义
-include:
-  - assets/css
-
-# 自定义样式覆盖
-custom_css:
-  - /assets/css/custom.css
