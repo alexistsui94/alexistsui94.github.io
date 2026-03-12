@@ -1,13 +1,10 @@
 ---
-title: Logisch-Philosophische Abhandlung
-date: 2024-08-22
+title: "什么是 ERP？"
+date: 2025-03-12
 categories: [projects]
-tags: [philosophy, wittgenstein]
+tags: [ERP, implementation]
+excerpt: "基于 SAP 中国《什么是 ERP？》一文整理。"
 ---
-
-# 什么是 ERP：一篇结构化总结
-
-> 基于 SAP 中国《什么是 ERP？》一文整理。
 
 ## 1. ERP 是什么
 
