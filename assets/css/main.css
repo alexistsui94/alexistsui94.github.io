@@ -1,0 +1,56 @@
+---
+# Only the main Sass file needs front matter
+---
+
+@import "minimal-mistakes";
+
+/* Layout width */
+.page {
+  max-width: 1200px;
+}
+
+/* Cleaner typography */
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.archive__item-title {
+  letter-spacing: -0.02em;
+}
+
+/* Better reading experience */
+.page__content p,
+.page__content li {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Navigation */
+.masthead {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.greedy-nav a {
+  font-weight: 600;
+}
+
+/* Spacing */
+.page__content hr {
+  margin: 2rem 0;
+}
+
+/* Section pages */
+.archive,
+.page__content {
+  margin-top: 1rem;
+}
+
+/* Links */
+.page__content a,
+.archive__item-title a {
+  text-decoration: none;
+}
+
+.page__content a:hover,
+.archive__item-title a:hover {
+  text-decoration: underline;
+}
