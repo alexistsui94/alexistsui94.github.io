@@ -21,14 +21,14 @@ include:
   - _pages
 
 author:
-  name: "Alexis Tsui"
+  name: 
   avatar: "/assets/images/avatar.jpg"
   bio: "Writing about technology, systems, projects, economics, finance, and personal essays."
   location: "Hong Kong / Asia"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/alexistsui94"
+      url: 
 
 defaults:
   - scope:
