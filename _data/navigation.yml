@@ -5,3 +5,5 @@ main:
     url: /Notes/
   - title: "About Me"
     url: /About Me/
+  - title: "Project"
+    url: /Project/
