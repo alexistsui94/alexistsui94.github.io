@@ -1,12 +1,18 @@
-# _data/navigation.yml
 main:
-  - title: "首页"
+  - title: "Home"
     url: /
-  - title: "笔记"
-    url: /categories/notes/
-  - title: "随笔"
-    url: /categories/essays/
-  - title: "书单"
-    url: /categories/books/
-  - title: "关于"
+
+  - title: "Technology & Systems"
+    url: /tech/
+
+  - title: "Projects"
+    url: /projects/
+
+  - title: "Economics & Finance"
+    url: /finance/
+
+  - title: "Essays"
+    url: /essays/
+
+  - title: "About"
     url: /about/
