@@ -1,3 +1,10 @@
+---
+title: Logisch-Philosophische Abhandlung
+date: 2024-08-22
+categories: [projects]
+tags: [philosophy, wittgenstein]
+---
+
 # 什么是 ERP：一篇结构化总结
 
 > 基于 SAP 中国《什么是 ERP？》一文整理，适合放在 GitHub 作为学习笔记或知识归纳。
