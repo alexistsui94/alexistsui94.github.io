@@ -1,7 +1,8 @@
 ---
 title: Logisch-Philosophische Abhandlung
 date: 2024-08-22
-categories: [Notes]
+categories: [essays]
+tags: [philosophy, wittgenstein]
 ---
 # Ludwig Wittgenstein
 
