@@ -1,9 +1,17 @@
 ---
-title: About
+title: 关于
 permalink: /about/
 layout: single
 author_profile: true
 ---
 
-Welcome to my blog!  
-I write about philosophy, technology, and life.
+我是 Alexis，一个在**哲学、技术与生活**之间穿行的思考者。
+
+- 📚 研读维特根斯坦、海德格尔、福柯  
+- 💻 用代码构建思想的容器  
+- 🌱 相信沉默比争论更有力量  
+
+本博客记录那些**值得被写下，但未必能被证明**的想法。
+
+> “哲学的目的是让苍蝇飞出玻璃瓶。”  
+> —— 《哲学研究》
