@@ -12,7 +12,7 @@ Welcome to my personal website.
 
 This site is built around four core areas:
 
-- **Technology & Systems** — AI, SQL, Python, automation, and data analysis
+- **Technology & Systems** — Data Analysis, AI, SQL, Python
 - **Projects** — ERP, implementation, solution design, and delivery
 - **Economics & Finance** — business logic, market observations, and financial thinking
 - **Essays** — reflections on work, learning, growth, and life
