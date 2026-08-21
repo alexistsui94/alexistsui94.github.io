@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'zh-Hans' }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}Alexis Tsui</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}"><meta name="theme-color" content="#111713">
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}"><meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}Alexis Tsui"><meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}"><meta property="og:url" content="{{ page.url | absolute_url }}"><meta property="og:image" content="{{ '/assets/images/og.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{% if page.title %}{{ page.title }} — {% endif %}Alexis Tsui"><meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}"><meta name="twitter:image" content="{{ '/assets/images/og.png' | absolute_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="{{ '/' | relative_url }}" aria-label="Alexis Tsui 首页"><span class="brand-mark">AT</span><span>Alexis Tsui</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="主要导航"><a href="{{ '/tech/' | relative_url }}">技术</a><a href="{{ '/projects/' | relative_url }}">项目</a><a href="{{ '/finance/' | relative_url }}">商业</a><a href="{{ '/essays/' | relative_url }}">随笔</a><a href="{{ '/about/' | relative_url }}">关于</a></nav></header>
+  {{ content }}
+  <footer class="site-footer"><div><span class="brand-mark">AT</span><p>Systems, projects, analysis<br>and considered writing.</p></div><div class="footer-links"><a href="https://github.com/alexistsui94">GitHub ↗</a><a href="{{ '/about/' | relative_url }}">About</a></div><small>© {{ 'now' | date: '%Y' }} Alexis Tsui</small></footer><script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body></html>
