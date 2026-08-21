@@ -1,0 +1,6 @@
+---
+layout: default
+---
+{% if page.date %}
+<main class="article-shell"><header class="article-header wrap"><a class="back-link" href="/{% if page.categories.first %}{{ page.categories.first }}{% else %}essays{% endif %}/">← 返回栏目</a><div class="article-kicker"><span>{{ page.categories.first | default: 'NOTE' | upcase }}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div><h1>{{ page.title }}</h1>{% if page.excerpt %}<p class="article-deck">{{ page.excerpt }}</p>{% endif %}</header><article class="prose wrap">{{ content }}</article><nav class="article-end wrap" aria-label="文章结束"><span>END / {{ page.date | date: '%Y' }}</span><a href="/">返回首页 ↗</a></nav></main>
+{% else %}<main>{{ content }}</main>{% endif %}

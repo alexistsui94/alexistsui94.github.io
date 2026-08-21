@@ -1,6 +1,6 @@
 ---
 title: "什么是 ERP？"
-date: 2023-03-12
+date: 2025-03-12
 categories: [projects]
 tags: [ERP, implementation]
 excerpt: "基于 SAP 中国《什么是 ERP？》一文整理。"
