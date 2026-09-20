@@ -10,6 +10,10 @@ confidentiality: public-approved
 
 [阅读完整项目案例](https://alexistsui94.github.io/projects/hk-food-label-checker/) · [查看技术说明](ARCHITECTURE.md) · [查看验证计划](EVALUATION.md)
 
+![食品标签 AI 工具项目图：配料识别与知识匹配、整图文字与香港繁体校对两条处理路径](../../projects/hk-food-label-checker/flow.svg)
+
+[打开完整项目图](../../projects/hk-food-label-checker/flow.svg)
+
 ## 项目概览
 
 | 项目 | 内容 |
