@@ -662,6 +662,7 @@ body.hide-zh .cell-zh { display: none; }
 
 /* 文章里的双语列表、表格、引文 */
 .seg-list { list-style: none; padding-left: 0; margin: 0 0 28px; }
+.case-content .seg-list { padding-left: 0; }
 .seg-list li { padding: 6px 0 6px 16px; border-left: 1px solid var(--line); margin: 0 0 10px; }
 .seg-list .en { display: block; font-size: 18px; line-height: 1.85; }
 .seg-list .zh { display: block; font-size: 15px; line-height: 1.75; color: var(--text-soft); margin-top: 2px; }
