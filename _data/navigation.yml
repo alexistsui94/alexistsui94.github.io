@@ -1,18 +1,21 @@
 main:
-  - title: "Home"
+  - title: "首页"
     url: /
 
-  - title: "Technology & Systems"
+  - title: "技术"
     url: /tech/
 
-  - title: "Projects"
+  - title: "项目"
     url: /projects/
 
-  - title: "Economics & Finance"
+  - title: "商业"
     url: /finance/
 
-  - title: "Essays"
+  - title: "随笔"
     url: /essays/
 
-  - title: "About"
+  - title: "全部文章"
+    url: /notes/
+
+  - title: "关于"
     url: /about/

@@ -5,13 +5,13 @@ if (toggle && nav) {
   const closeMenu = () => {
     nav.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.textContent = 'Menu';
+    toggle.textContent = '菜单';
   };
 
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.textContent = open ? 'Close' : 'Menu';
+    toggle.textContent = open ? '关闭' : '菜单';
   });
 
   nav.addEventListener('click', (event) => {
@@ -22,6 +22,13 @@ if (toggle && nav) {
     if (event.key === 'Escape' && nav.classList.contains('open')) {
       closeMenu();
       toggle.focus();
+    }
+  });
+
+  // 点击菜单外部时收起，移动端操作更顺畅
+  document.addEventListener('click', (event) => {
+    if (nav.classList.contains('open') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+      closeMenu();
     }
   });
 }

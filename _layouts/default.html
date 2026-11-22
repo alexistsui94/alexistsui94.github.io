@@ -9,7 +9,7 @@
   <title>{% if page.url == '/' %}Alexis Tsui — Systems, Projects & Ideas{% elsif page.title %}{{ page.title }} — Alexis Tsui{% else %}Alexis Tsui{% endif %}</title>
   <meta name="description" content="{{ meta_description }}">
   <meta name="robots" content="{{ page.robots | default: 'index,follow' }}">
-  <meta name="theme-color" content="#111713">
+  <meta name="theme-color" content="#fbfaf7">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="Alexis Tsui — RSS" href="{{ '/feed.xml' | absolute_url }}">
@@ -25,28 +25,32 @@
   <meta name="twitter:title" content="{% if page.url == '/' %}Alexis Tsui — Systems, Projects & Ideas{% elsif page.title %}{{ page.title }} — Alexis Tsui{% else %}Alexis Tsui{% endif %}">
   <meta name="twitter:description" content="{{ meta_description }}">
   <meta name="twitter:image" content="{{ '/assets/images/og.png' | absolute_url }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到正文</a>
   <header class="site-header">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Alexis Tsui 首页"><span class="brand-mark">AT</span><span>Alexis Tsui</span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">菜单</button>
     <nav id="site-nav" class="site-nav" aria-label="主要导航">
       <a href="{{ '/tech/' | relative_url }}" {% if page.url == '/tech/' or page.categories contains 'tech' %}aria-current="page"{% endif %}>技术</a>
       <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' or page.categories contains 'projects' %}aria-current="page"{% endif %}>项目</a>
       <a href="{{ '/finance/' | relative_url }}" {% if page.url == '/finance/' or page.categories contains 'finance' %}aria-current="page"{% endif %}>商业</a>
       <a href="{{ '/essays/' | relative_url }}" {% if page.url == '/essays/' or page.categories contains 'essays' %}aria-current="page"{% endif %}>随笔</a>
+      <a href="{{ '/notes/' | relative_url }}" {% if page.url == '/notes/' %}aria-current="page"{% endif %}>全部文章</a>
       <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
     </nav>
   </header>
   {{ content }}
   <footer class="site-footer">
-    <div><span class="brand-mark">AT</span><p>Systems, projects, analysis<br>and considered writing.</p></div>
-    <div class="footer-links"><a href="mailto:alexistsui94@gmail.com">Email ↗</a><a href="https://github.com/alexistsui94" rel="me">GitHub ↗</a><a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a><a href="{{ '/about/' | relative_url }}">About</a></div>
+    <div><span class="brand-mark">AT</span><p>关于系统、项目与业务分析的持续记录。</p></div>
+    <div class="footer-links">
+      <a href="mailto:alexistsui94@gmail.com">Email</a>
+      <a href="https://github.com/alexistsui94" rel="me">GitHub</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="{{ '/notes/' | relative_url }}">全部文章</a>
+      <a href="{{ '/about/' | relative_url }}">关于</a>
+    </div>
     <small>© {{ 'now' | date: '%Y' }} Alexis Tsui</small>
   </footer>
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
