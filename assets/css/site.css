@@ -852,28 +852,6 @@ details .cell-zh { font-size: 12.5px; line-height: 1.7; color: var(--text-faint)
   color: var(--text-faint);
 }
 
-.reading-guide {
-  margin: 0 0 20px;
-  padding: 18px 20px;
-  background: var(--surface-soft);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-soft);
-}
-.reading-guide p { margin: 0 0 8px; }
-.reading-guide p:last-child { margin: 0; }
-.reading-guide strong { color: var(--text); font-weight: 600; }
-.reading-guide .guide-zh { font-size: 13.5px; color: var(--text-faint); margin: 0; }
-.reading-guide code {
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: .92em;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 1px 5px;
-}
 .reading-tools { display: flex; justify-content: flex-end; margin: 0 0 20px; }
 .zh-toggle {
   min-height: 40px;
@@ -893,7 +871,6 @@ body.hide-zh .zh,
 body.hide-zh .h-zh,
 body.hide-zh .list-zh,
 body.hide-zh .deck-zh,
-body.hide-zh .guide-zh,
 body.hide-zh .kicker-zh,
 body.hide-zh .cell-zh { display: none; }
 
@@ -911,5 +888,4 @@ body.hide-zh .cell-zh { display: none; }
 
 @media (max-width: 800px) {
   .seg > .en { font-size: 16px; }
-  .reading-guide { padding: 16px; }
 }
