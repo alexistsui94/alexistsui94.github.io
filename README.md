@@ -4,6 +4,8 @@ A personal site by Alexis Tsui, with notes on **ERP implementation, project deli
 
 The site is **English-first**. Articles are written in plain English with sense-group pauses marked (`/` for a short pause, `//` for a longer one), and a Chinese reference line beneath each English passage. Readers can hide the Chinese lines for listen → shadow → retell practice.
 
+The pause marks belong to English only. Chinese reference lines are written as ordinary Chinese prose — no sense-group splitting, and no attempt to mirror the English clause boundaries with commas or semicolons. Project pages carry no pause marks in either language; they are meant to be read, not shadowed.
+
 ## Structure
 
 - `/` — home, with selected writing
