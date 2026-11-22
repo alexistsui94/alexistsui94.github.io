@@ -3,6 +3,7 @@ title: Logisch-Philosophische Abhandlung
 date: 2024-08-22
 categories: [essays]
 tags: [philosophy, wittgenstein]
+excerpt: "从维特根斯坦出发，谈语言的边界、清晰思考，以及对价值与人生意义的谦逊。"
 ---
 
 # Ludwig Wittgenstein  

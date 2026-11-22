@@ -2,6 +2,10 @@ title: "Alexis Tsui"
 description: "系统、项目、商业分析与长期写作。Systems, projects, analysis and considered writing."
 url: "https://alexistsui94.github.io"
 baseurl: ""
+author:
+  name: "Alexis Tsui"
+  email: "alexistsui94@gmail.com"
+  github: "alexistsui94"
 
 permalink: /:categories/:title/
 
@@ -36,3 +40,4 @@ paginate_path: /page:num/
 
 timezone: Asia/Hong_Kong
 locale: "zh-Hans"
+future: false

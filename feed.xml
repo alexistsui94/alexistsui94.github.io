@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alexis Tsui</title>
+    <link>https://alexistsui94.github.io/</link>
+    <description>系统、项目、商业分析与长期写作。</description>
+    <language>zh-Hans</language>
+    <atom:link href="https://alexistsui94.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    {% for post in site.posts limit:20 %}<item>
+      <title>{{ post.title | xml_escape }}</title>
+      <link>{{ post.url | absolute_url }}</link>
+      <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <description>{{ post.excerpt | strip_html | xml_escape }}</description>
+    </item>{% endfor %}
+  </channel>
+</rss>
