@@ -7,7 +7,7 @@ permalink: /feed.xml
   <channel>
     <title>Alexis Tsui</title>
     <link>https://alexistsui94.github.io/</link>
-    <description>Notes on systems, projects, business analysis and considered writing. In English with Chinese reference lines.</description>
+    <description>Notes on ERP implementation, project delivery, AI tools and code. In English with Chinese reference lines.</description>
     <language>en</language>
     <atom:link href="https://alexistsui94.github.io/feed.xml" rel="self" type="application/rss+xml" />
     {% for post in site.posts limit:20 %}<item>

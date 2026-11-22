@@ -33,22 +33,19 @@
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Alexis Tsui — Home"><span class="brand-mark">AT</span><span>Alexis Tsui</span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="{{ '/tech/' | relative_url }}" {% if page.url == '/tech/' or page.categories contains 'tech' %}aria-current="page"{% endif %}>Technology</a>
+      <a href="{{ '/notes/' | relative_url }}" {% if page.url == '/notes/' %}aria-current="page"{% endif %}>Writing</a>
       <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' or page.categories contains 'projects' %}aria-current="page"{% endif %}>Projects</a>
-      <a href="{{ '/finance/' | relative_url }}" {% if page.url == '/finance/' or page.categories contains 'finance' %}aria-current="page"{% endif %}>Business</a>
-      <a href="{{ '/essays/' | relative_url }}" {% if page.url == '/essays/' or page.categories contains 'essays' %}aria-current="page"{% endif %}>Essays</a>
-      <a href="{{ '/notes/' | relative_url }}" {% if page.url == '/notes/' %}aria-current="page"{% endif %}>All Notes</a>
       <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
     </nav>
   </header>
   {{ content }}
   <footer class="site-footer">
-    <div><span class="brand-mark">AT</span><p>Notes on systems, projects, business analysis,<br>and considered writing — in English and Chinese.</p></div>
+    <div><span class="brand-mark">AT</span><p>Notes on ERP, AI tools and code — written in English with Chinese reference lines.</p></div>
     <div class="footer-links">
       <a href="mailto:alexistsui94@gmail.com">Email</a>
       <a href="https://github.com/alexistsui94" rel="me">GitHub</a>
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-      <a href="{{ '/notes/' | relative_url }}">All Notes</a>
+      <a href="{{ '/notes/' | relative_url }}">Writing</a>
       <a href="{{ '/about/' | relative_url }}">About</a>
     </div>
     <small>© {{ 'now' | date: '%Y' }} Alexis Tsui</small>

@@ -2,6 +2,7 @@
 title: "Professionalism Is Not About Looking Impressive"
 title_zh: "专业感，不是显得很厉害"
 date: 2026-11-22
+published: false
 categories: [essays]
 tags: [Work, Communication, Practice]
 summary: "Reliable, clear, bounded, and able to move things forward: professionalism is not jargon or posture, but a set of work habits you can practise and others can trust."

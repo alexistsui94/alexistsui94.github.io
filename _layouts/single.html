@@ -3,17 +3,15 @@ layout: default
 ---
 {% if page.date %}
 {% assign cat = page.categories.first %}
-{% assign cat_label = 'Notes' %}
-{% assign cat_zh = '笔记' %}
+{% assign cat_label = 'Writing' %}
+{% assign cat_zh = '文章' %}
 {% case cat %}
-{% when 'tech' %}{% assign cat_label = 'Technology' %}{% assign cat_zh = '技术' %}
-{% when 'projects' %}{% assign cat_label = 'Projects' %}{% assign cat_zh = '项目' %}
-{% when 'finance' %}{% assign cat_label = 'Business' %}{% assign cat_zh = '商业' %}
-{% when 'essays' %}{% assign cat_label = 'Essays' %}{% assign cat_zh = '随笔' %}
+{% when 'tech' %}{% assign cat_label = 'AI & Code' %}{% assign cat_zh = 'AI 与代码' %}
+{% when 'projects' %}{% assign cat_label = 'ERP & Delivery' %}{% assign cat_zh = 'ERP 与交付' %}
 {% endcase %}
 <main id="main-content" class="article-shell">
   <header class="article-header wrap">
-    <a class="back-link" href="/{% if cat %}{{ cat }}{% else %}essays{% endif %}/">← Back to {{ cat_label }}</a>
+    <a class="back-link" href="/notes/">← All writing</a>
     <div class="article-kicker"><span>{{ cat_label }} <span class="kicker-zh" lang="zh-Hans">{{ cat_zh }}</span></span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
     <h1>{{ page.title }}</h1>
     {% if page.title_zh %}<p class="title-zh h-zh" lang="zh-Hans">{{ page.title_zh }}</p>{% endif %}

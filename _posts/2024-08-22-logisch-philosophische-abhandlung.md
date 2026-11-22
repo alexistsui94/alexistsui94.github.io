@@ -2,6 +2,7 @@
 title: "Reading Wittgenstein: Limits of Language, Clarity and Humility"
 title_zh: "读维特根斯坦：语言的边界、清晰思考与谦逊"
 date: 2024-08-22
+published: false
 categories: [essays]
 tags: [Philosophy, Wittgenstein, Reading Notes]
 summary: "Notes on the Tractatus Logico-Philosophicus: the limits of language, clearer thinking, and a humble attitude toward value and the meaning of life."

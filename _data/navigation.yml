@@ -2,20 +2,11 @@ main:
   - title: "Home"
     url: /
 
-  - title: "Technology"
-    url: /tech/
+  - title: "Writing"
+    url: /notes/
 
   - title: "Projects"
     url: /projects/
-
-  - title: "Business"
-    url: /finance/
-
-  - title: "Essays"
-    url: /essays/
-
-  - title: "All Notes"
-    url: /notes/
 
   - title: "About"
     url: /about/
