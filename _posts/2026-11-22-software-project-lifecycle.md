@@ -1,190 +1,150 @@
 ---
-title: "How a Software Project Moves from Opportunity to Delivery"
-title_zh: "一个软件项目，怎样从机会走到交付？"
+title: "How a Software Project Actually Moves, Stage by Stage"
+title_zh: "一个软件项目，实际上是怎么往前走的"
 date: 2026-11-22
 categories: [projects]
 tags: [ERP, Delivery, Requirements]
-summary: "Put opportunity, requirements, solution, build, go-live and operations on one map — and see the question each stage has to answer, who owns it, and what it hands over."
-deck_zh: "把商机、需求、方案、实施、上线和运营放在同一张图里，看清每个阶段要回答的问题、角色分工与交付物。"
+summary: "The same six stages, but with what each one looks like on a real ERP project — the one-sentence requirement, the field that meant two things, and the report nobody printed the same way twice."
+deck_zh: "还是那六个阶段，但换成真实 ERP 项目里的样子：一句需求、一个有两种意思的字段、一份谁也打不出一致格式的报表。"
 ---
 
 <div class="seg">
-<p class="en">An enterprise software project / seems to involve many people — / sales, / pre-sales, / implementation, / a project manager, / developers, / and customer success. // But if you focus / on the question each stage must answer, / the whole chain becomes much clearer. //</p>
-<p class="zh" lang="zh-Hans">企业软件项目看起来涉及很多人：销售、售前、实施、项目经理、研发、客户成功。但只要抓住每个阶段要回答的问题，整条链路就会清楚很多。</p>
+<p class="en">Every article about project delivery / has the same diagram. / Opportunity, / requirements, / solution, / build, / go-live, / operations. // The diagram is correct. // It is also useless / until you know what each box / looks like on a Tuesday. //</p>
+<p class="zh" lang="zh-Hans">讲项目交付的文章都有同一张图：商机、需求、方案、实施、上线、运营。图是对的，但在你知道每个格子在一个普通的星期二长什么样之前，它没什么用。</p>
 </div>
-
-<blockquote><div class="seg">
-<p class="en">Find an opportunity / → clarify needs / → design a solution / → sign the contract / → deliver / → go live and accept / → keep it running. //</p>
-<p class="zh" lang="zh-Hans">找机会 → 谈需求 → 出方案 → 签合同 → 做交付 → 上线验收 → 持续运营</p>
-</div></blockquote>
 
 <div class="seg">
-<p class="en">This is not / just a checklist of steps. // What really matters / is that every step / produces something / the next step can pick up — / not just a verbal understanding. //</p>
-<p class="zh" lang="zh-Hans">这条链不是简单的步骤清单。真正重要的是：每一步都要形成可以交给下一步的产出，而不是只留下口头共识。</p>
+<p class="en">So this is the same six stages, / with one concrete example each, / taken from ERP work. //</p>
+<p class="zh" lang="zh-Hans">所以还是这六个阶段，但每个配一个 ERP 项目里的具体例子。</p>
 </div>
 
-<h2>Three stages, one line<span class="h-zh" lang="zh-Hans">先分成三段看</span></h2>
+<h2>The three-part view<span class="h-zh" lang="zh-Hans">先分三段看</span></h2>
 
 <table class="seg-table">
-<thead><tr><th>Stage<span class="h-zh" lang="zh-Hans">阶段</span></th><th>Core question<span class="h-zh" lang="zh-Hans">核心问题</span></th><th>Main roles<span class="h-zh" lang="zh-Hans">主要角色</span></th><th>Typical output<span class="h-zh" lang="zh-Hans">典型产出</span></th></tr></thead>
+<thead><tr><th>Stage<span class="h-zh" lang="zh-Hans">阶段</span></th><th>The question it answers<span class="h-zh" lang="zh-Hans">要回答的问题</span></th><th>What you should be able to hand over<span class="h-zh" lang="zh-Hans">应该能交出去的东西</span></th></tr></thead>
 <tbody>
-<tr><td><span class="en">Before signing</span><span class="zh" lang="zh-Hans">签约前</span></td><td><span class="en">Is it worth doing, / and can we do it?</span><span class="zh" lang="zh-Hans">值不值得做，能不能做？</span></td><td><span class="en">Sales, / pre-sales, / client business and IT</span><span class="zh" lang="zh-Hans">销售、售前、客户业务与 IT</span></td><td><span class="en">Requirement list, / solution, / scope and quote</span><span class="zh" lang="zh-Hans">需求清单、解决方案、范围与报价</span></td></tr>
-<tr><td><span class="en">Signing to go-live</span><span class="zh" lang="zh-Hans">签约后到上线</span></td><td><span class="en">How exactly, / and how do we prove it works?</span><span class="zh" lang="zh-Hans">具体怎样做，如何证明做成了？</span></td><td><span class="en">Implementation, / PM, / developers, / key users</span><span class="zh" lang="zh-Hans">实施、项目经理、研发、关键用户</span></td><td><span class="en">Blueprint, / configuration, / test results, / training and acceptance</span><span class="zh" lang="zh-Hans">蓝图、配置、测试结果、培训与验收材料</span></td></tr>
-<tr><td><span class="en">After go-live</span><span class="zh" lang="zh-Hans">上线后</span></td><td><span class="en">Is the system / actually being used?</span><span class="zh" lang="zh-Hans">系统有没有真正被用起来？</span></td><td><span class="en">Customer success, / operations, / sales, / product</span><span class="zh" lang="zh-Hans">客户成功、运维、销售、产品团队</span></td><td><span class="en">Usage reports, / closed issues, / renewal and improvement plans</span><span class="zh" lang="zh-Hans">运营报告、问题闭环、续约与改进计划</span></td></tr>
+<tr><td><span class="en">Before signing</span><span class="zh" lang="zh-Hans">签约前</span></td><td><span class="en">Is this worth doing, / and can we actually do it?</span><span class="zh" lang="zh-Hans">值不值得做，我们真的做得了吗？</span></td><td><span class="en">A scope list, / a price, / and the parts / we are not promising</span><span class="zh" lang="zh-Hans">范围清单、价格，以及我们没承诺的部分</span></td></tr>
+<tr><td><span class="en">Signing to go-live</span><span class="zh" lang="zh-Hans">签约到上线</span></td><td><span class="en">How exactly, / and how do we prove it works?</span><span class="zh" lang="zh-Hans">具体怎么做，怎么证明做成了？</span></td><td><span class="en">Confirmed rules, / test results, / and a cutover plan</span><span class="zh" lang="zh-Hans">确认过的规则、测试结果、切换方案</span></td></tr>
+<tr><td><span class="en">After go-live</span><span class="zh" lang="zh-Hans">上线后</span></td><td><span class="en">Is anyone actually using it?</span><span class="zh" lang="zh-Hans">到底有没有人在用？</span></td><td><span class="en">Usage numbers, / a closed issue list, / and the next change</span><span class="zh" lang="zh-Hans">使用数据、已闭环的问题清单、下一步改动</span></td></tr>
 </tbody>
 </table>
 
 <div class="seg">
-<p class="en">The division of work / changes / with company size and project type, // but this main line / stays much the same. //</p>
-<p class="zh" lang="zh-Hans">分工会随公司规模和项目类型变化，但这条主线基本不变。</p>
+<p class="en">That is the whole structure. // What follows is what fills it. //</p>
+<p class="zh" lang="zh-Hans">结构就这些。下面说每个格子里装的是什么。</p>
 </div>
 
-<h2>1. Before signing: from a lead to a deliverable promise<span class="h-zh" lang="zh-Hans">一、签约前：从机会走向可交付的承诺</span></h2>
-
-<h3>1.1 Opportunity and requirement identification<span class="h-zh" lang="zh-Hans">商机与需求识别</span></h3>
+<h2>1. Before signing: from one sentence to a price<span class="h-zh" lang="zh-Hans">一、签约前：从一句话到一份报价</span></h2>
 
 <div class="seg">
-<p class="en">Sales first checks / whether there is a real need, / a budget, / a purchasing plan / and a decision maker. // Pre-sales then goes deeper / into business processes, / pain points and goals, / and judges how much the standard product covers / and where integration or custom work / may be needed. //</p>
-<p class="zh" lang="zh-Hans">销售首先要判断有没有真实需求、预算、采购计划和决策人。售前则进一步理解业务流程、痛点与目标，判断标准产品能覆盖多少，哪些地方可能涉及集成或定制。</p>
-</div>
-
-<div class="seg">
-<p class="en">At this stage / you do not need / to dig out every field / and every exception. // But you must / separate three things clearly. //</p>
-<p class="zh" lang="zh-Hans">这一阶段不需要把所有字段和例外场景都挖到底，但必须分清三件事。</p>
-</div>
-
-<ul class="seg-list">
-<li><span class="en">What problem / the client really wants to solve. //</span><span class="zh" lang="zh-Hans">客户真正想解决的问题是什么。</span></li>
-<li><span class="en">Which needs / are in scope, / and which are not. //</span><span class="zh" lang="zh-Hans">哪些需求属于项目范围，哪些不属于。</span></li>
-<li><span class="en">The main constraints / and the open uncertainties. //</span><span class="zh" lang="zh-Hans">方案的主要约束和不确定性是什么。</span></li>
-</ul>
-
-<h3>1.2 Solution design and validation<span class="h-zh" lang="zh-Hans">方案设计与验证</span></h3>
-
-<div class="seg">
-<p class="en">A pre-sales proposal / answers one question: / “Here is how we plan to solve your problem — / and here is why this route is worth taking.” //</p>
-<p class="zh" lang="zh-Hans">售前方案回答的是：「我们准备怎样帮你解决问题，为什么这条路值得走？」</p>
+<p class="en">The first version of a requirement / is usually one sentence. // On this project it was: / “we need to see stock.” // Six words, / and about four different meanings. //</p>
+<p class="zh" lang="zh-Hans">需求的第一版通常只有一句话。这个项目里是：「我们要能看到库存。」六个字，大约有四种意思。</p>
 </div>
 
 <div class="seg">
-<p class="en">It usually covers / business pain points, / the target process, / product fit, / overall architecture, / the delivery approach / and an initial boundary. // On complex projects, / a demo or a proof of concept / may test the key assumptions. //</p>
-<p class="zh" lang="zh-Hans">常见内容包括业务痛点、目标流程、产品匹配、总体架构、实施思路和初步边界。复杂项目还可能通过演示或 POC 验证关键假设。</p>
+<p class="en">Stock where — / one warehouse, or all of them? // Does it include goods on the way? // Does it include stock already reserved / for someone else? // Can a shop see the main warehouse / or only its own shelf? //</p>
+<p class="zh" lang="zh-Hans">哪个仓的库存——一个仓还是全部？在途的算不算？已经被别人订走的算不算？门店能看到总仓，还是只看到自己货架上的？</p>
 </div>
 
 <div class="seg">
-<p class="en">The biggest risk here / is turning / “in principle we can look at it” / into / “yes, we can definitely build it” / just to win the deal. // A safer habit / is to bring delivery people in early / to assess whether it is actually deliverable. //</p>
-<p class="zh" lang="zh-Hans">这里最容易埋下的风险，是为了推进签约，把「原则上可以评估」说成「肯定可以实现」。更稳妥的做法是让实施或交付角色提前参与可交付性评估。</p>
-</div>
-
-<h3>1.3 Contract and project kick-off<span class="h-zh" lang="zh-Hans">合同与项目启动</span></h3>
-
-<div class="seg">
-<p class="en">A contract / is not only a commercial document. // It also defines / the boundary for everything that follows. // Scope, / milestones, / acceptance criteria, / both sides’ responsibilities / and the change mechanism / should be as explicit as possible. //</p>
-<p class="zh" lang="zh-Hans">合同不仅是商务文件，也定义了后续交付的边界。项目范围、里程碑、验收标准、双方责任和变更机制，都应该尽量明确。</p>
+<p class="en">None of those questions / are technical. // All of them change the price. // “See stock” can be one screen / or three weeks / and an integration. //</p>
+<p class="zh" lang="zh-Hans">这些问题一个都不技术，但每一个都会改变报价。「看库存」可能只是一个页面，也可能是三周工作量加一个接口。</p>
 </div>
 
 <div class="seg">
-<p class="en">After signing, / a real handover has to happen. // What sales and pre-sales said / cannot stay only / in emails and slides — / it must become / a list of requirements, / constraints and commitments / that the implementation team can check. //</p>
-<p class="zh" lang="zh-Hans">签约后还要完成一次真正的交接：销售与售前讲过的内容，不能只留在邮件和演示文稿里，而要转化为实施团队可以核验的需求、约束和承诺清单。</p>
-</div>
-
-<h2>2. Delivery: turning vague needs into system rules<span class="h-zh" lang="zh-Hans">二、交付阶段：把模糊需求变成系统规则</span></h2>
-
-<h3>2.1 Blueprint study and requirement clarification<span class="h-zh" lang="zh-Hans">蓝图调研与需求澄清</span></h3>
-
-<div class="seg">
-<p class="en">Requirement analysis in delivery / is not a repeat of pre-sales. // It deepens / a sales-level understanding / into a delivery-level definition. //</p>
-<p class="zh" lang="zh-Hans">实施阶段的需求分析不是把售前工作重做一遍，而是把「销售级理解」深化成「交付级定义」。</p>
+<p class="en">The other thing that happens here / is the quiet promise. // A demo shows something impressive, / the client remembers it, / and it never appears / in the scope list. // Six months later / someone finds it in a meeting minute / and asks why it is missing. //</p>
+<p class="zh" lang="zh-Hans">这个阶段还会发生另一件事：悄悄许下的承诺。演示里展示了某个很亮眼的功能，客户记住了，但它从来没出现在范围清单里。六个月后有人在会议纪要里翻到，问为什么没做。</p>
 </div>
 
 <div class="seg">
-<p class="en">For example, / “we need approval” / may be enough / before the contract. // In delivery, / you must keep asking: / who starts it, / who approves, / how many levels, / what triggers it, / what happens after a rejection, / and what to do with historical documents. //</p>
-<p class="zh" lang="zh-Hans">例如，「需要审批」在售前阶段可能已经足够；到了实施阶段，则必须继续问：谁发起、谁审批、几级审批、什么条件触发、驳回后怎么走、历史单据怎么办。</p>
+<p class="en">The fix is unglamorous. // Anything shown in a demo / gets written into the scope list, / marked as included, / extra, / or not available. // Three words next to a line / saves an argument later. //</p>
+<p class="zh" lang="zh-Hans">解决办法很朴素：演示里出现过的每一项，都写进范围清单，标成「包含」「额外收费」或「不支持」。在一行后面加三个字，能省掉后面一场争论。</p>
+</div>
+
+<h2>2. Delivery: turning words into rules<span class="h-zh" lang="zh-Hans">二、交付：把说法变成规则</span></h2>
+
+<div class="seg">
+<p class="en">“We need approval” / is enough to sign a contract. // It is not enough to configure anything. // Who starts it, / who approves, / at what amount, / how many levels, / what happens after a rejection, / and what to do with documents / created before the rule existed. //</p>
+<p class="zh" lang="zh-Hans">「需要审批」足够签合同，但不够配置任何东西。谁发起、谁审批、多少钱以上、几级、驳回后怎么走、规则生效之前建的单据怎么办。</p>
 </div>
 
 <div class="seg">
-<p class="en">A blueprint / normally confirms four things. //</p>
-<p class="zh" lang="zh-Hans">蓝图阶段通常要确认四件事。</p>
-</div>
-
-<ul class="seg-list">
-<li><span class="en">The current process / and the target process. //</span><span class="zh" lang="zh-Hans">现状流程与目标流程。</span></li>
-<li><span class="en">Documents, / fields, / permissions, / approvals / and report definitions. //</span><span class="zh" lang="zh-Hans">单据、字段、权限、审批和报表口径。</span></li>
-<li><span class="en">The boundary / between standard features, / configuration, / custom work / and interfaces. //</span><span class="zh" lang="zh-Hans">标准功能、配置、定制与接口的边界。</span></li>
-<li><span class="en">Exception cases, / historical data / and cutover requirements. //</span><span class="zh" lang="zh-Hans">异常场景、历史数据和上线切换要求。</span></li>
-</ul>
-
-<div class="seg">
-<p class="en">Many projects / go back and forth later / not because the technology is impossible, // but because this step / never produced / a set of jointly confirmed rules. //</p>
-<p class="zh" lang="zh-Hans">很多项目后期反复，并不是技术做不出来，而是这一步没有形成共同确认的规则。</p>
-</div>
-
-<h3>2.2 Configuration, development and integration<span class="h-zh" lang="zh-Hans">配置、开发与联调</span></h3>
-
-<div class="seg">
-<p class="en">Once building starts, / implementation owns configuration / and business confirmation, / developers own custom work and interfaces, / and client IT supports / environments, / data / and integration tasks. //</p>
-<p class="zh" lang="zh-Hans">进入搭建阶段后，实施负责配置和业务确认，研发负责定制与接口，客户 IT 配合环境、数据和集成事项。</p>
+<p class="en">The expensive one on this project / was a field. // “Available stock.” // Finance read it as / stock minus what is already sold. // The warehouse read it as / what is physically on the shelf, / including goods already promised. //</p>
+<p class="zh" lang="zh-Hans">这个项目里最贵的是一个字段：「可用库存」。财务理解成「减掉已卖出的」，仓库理解成「货架上实际有的，包括已经答应给别人的」。</p>
 </div>
 
 <div class="seg">
-<p class="en">Do not aim only / at “the features are done”. // Keep a live issue list: / what the problem is, / where it hits, / who owns it, / when it is due, / and how to verify it. // Otherwise, / progress stays / a matter of opinion. //</p>
-<p class="zh" lang="zh-Hans">这一阶段不能只追求「功能做完」，还要维护一张持续更新的问题清单：问题是什么、影响哪里、谁负责、何时完成、如何验证。否则，完成度很容易停留在主观感觉里。</p>
-</div>
-
-<h3>2.3 Testing, training and go-live readiness<span class="h-zh" lang="zh-Hans">测试、培训与上线准备</span></h3>
-
-<div class="seg">
-<p class="en">A system that runs / is not the same / as a system people dare to use. // Testing has to cover / the main flow — / and also exceptions, / permissions, / data / and cross-system links. //</p>
-<p class="zh" lang="zh-Hans">系统能运行，不等于用户敢用。测试需要覆盖主流程，也要覆盖异常、权限、数据和跨系统衔接。</p>
+<p class="en">Both were reasonable. // Both had been true / in the old spreadsheets, / in different columns, / maintained by different people. // We found out in testing, / two weeks before go-live, / when two reports / disagreed by a few hundred units. //</p>
+<p class="zh" lang="zh-Hans">两边都合理。在旧的 Excel 里两种口径都成立，只是在不同列，由不同的人维护。我们是在测试阶段才发现的，离上线两周，两张报表差了几百件。</p>
 </div>
 
 <div class="seg">
-<p class="en">UAT exists / so that real business users / confirm the agreed scenarios. // Training, / manuals, / data import, / access setup, / the cutover plan / and a rollback plan / answer a different question: / on go-live day, / can the business keep running? //</p>
-<p class="zh" lang="zh-Hans">UAT 的意义，是由真实业务用户确认系统是否满足约定场景。培训、操作手册、数据导入、权限开通、切换方案和回退安排，则共同回答另一个问题：上线当天，业务能不能继续运转。</p>
-</div>
-
-<h3>2.4 Go-live and acceptance<span class="h-zh" lang="zh-Hans">上线与验收</span></h3>
-
-<div class="seg">
-<p class="en">Early problems / arrive mixed together. // Configuration, / data, / user habits / and process understanding / may all affect the result / at the same time. // So classify issues quickly / instead of calling everything / a system defect. //</p>
-<p class="zh" lang="zh-Hans">上线初期的问题往往混合出现：配置、数据、操作习惯和流程理解可能同时影响结果。此时需要快速分类问题，而不是把所有现象都当成系统缺陷。</p>
+<p class="en">The lesson was not / “define your fields”. // It was that / a word everyone uses daily / is the most dangerous word in the room, / because nobody thinks / it needs defining. //</p>
+<p class="zh" lang="zh-Hans">教训不是「要把字段定义清楚」。而是：一个大家每天都在用的词，是会议室里最危险的词，因为没人觉得它需要被定义。</p>
 </div>
 
 <div class="seg">
-<p class="en">Acceptance turns / “it feels about right” / into facts you can check. // Was the contracted scope delivered? / Did the key scenarios pass? / Does every open item / have an owner and a date? / Is the acceptance material complete? //</p>
-<p class="zh" lang="zh-Hans">验收则要把「感觉差不多」变成可检查的事实：合同范围是否交付、关键场景是否通过、尾项是否有负责人和期限、验收材料是否完整。</p>
+<p class="en">So now the blueprint has a page / that is only definitions. // Not the technical data dictionary — / a plain list: / this word, / what it means here, / and what it does not include. // It is the least interesting page / and the one that gets quoted / three months later. //</p>
+<p class="zh" lang="zh-Hans">所以现在蓝图里有一页只写定义。不是技术数据字典，就是一张大白话清单：这个词、在这里是什么意思、不包括什么。这是全篇最无聊的一页，也是三个月后唯一会被引用的那一页。</p>
 </div>
 
-<h2>3. After go-live: from one delivery to long-term use<span class="h-zh" lang="zh-Hans">三、上线后：从一次交付走向长期使用</span></h2>
+<h2>3. Testing: the part that decides whether people trust it<span class="h-zh" lang="zh-Hans">三、测试：决定用户信不信的那一段</span></h2>
 
 <div class="seg">
-<p class="en">Go-live / only switches a state. // It does not mean / the value has been realised. //</p>
-<p class="zh" lang="zh-Hans">系统上线只是切换了一个状态，不代表价值已经兑现。</p>
-</div>
-
-<div class="seg">
-<p class="en">Afterwards / you watch activity, / quality of use, / issue patterns / and business results, / and keep collecting / improvement ideas. // Customer success / cares about long-term use and value, / operations about stability, / and sales may join later / when an expansion need appears. //</p>
-<p class="zh" lang="zh-Hans">后续还要观察活跃度、使用质量、问题分布和业务结果，持续收集改进建议。客户成功更关注长期使用与价值，运维关注稳定性，销售可能在合适时机参与扩展需求。</p>
+<p class="en">A system that runs / is not a system people trust. // The difference is usually small: / a total that is off by two decimal places, / a printout that wraps onto a second page, / a search that is one second slower / than the old one. //</p>
+<p class="zh" lang="zh-Hans">系统能跑，不等于用户信它。差别通常很小：合计差两位小数、打印单多出一页、搜索比旧的慢一秒。</p>
 </div>
 
 <div class="seg">
-<p class="en">So the finish line / is not a signed acceptance form. // It is the point / where the client / can run the new process / steadily on their own. //</p>
-<p class="zh" lang="zh-Hans">因此，项目的终点不是「验收单签完」，而是客户能够把新流程稳定地跑下去。</p>
+<p class="en">On this project / the finance team ran three days of real documents / through the system, / then compared totals with the old one. // Two matched. // One was off by 0.02, / every time, / on the same kind of order. //</p>
+<p class="zh" lang="zh-Hans">这个项目里，财务用三天真实单据跑了一遍系统，再和旧系统对总数。两张对上了，第三张每次都差 0.02，而且只出现在同一类订单上。</p>
 </div>
 
-<h2>Two lines to remember<span class="h-zh" lang="zh-Hans">最后记住两句话</span></h2>
-
-<blockquote><div class="seg">
-<p class="en">Pre-sales / makes the direction clear; // implementation / makes the solution real. //</p>
-<p class="zh" lang="zh-Hans">售前负责把方向讲清楚，实施负责把方案做实。</p>
-</div></blockquote>
-
-<blockquote><div class="seg">
-<p class="en">The basic discipline of delivery / is this: / every meeting has a conclusion, / every conclusion has an action, / and every action / has an owner and a date. //</p>
-<p class="zh" lang="zh-Hans">项目推进的基本功，是让会议有结论、结论有行动、行动有负责人和期限。</p>
-</div></blockquote>
+<div class="seg">
+<p class="en">It was a rounding rule. // Nobody would have written it down. // Someone would have found it / in month two, / and by then / every number in the system / would have been slightly suspect. //</p>
+<p class="zh" lang="zh-Hans">是一个舍入规则。没有人会主动把它写下来。等到第二个月才有人发现，到那时候系统里每个数字都会显得有点可疑。</p>
+</div>
 
 <div class="seg">
-<p class="en">Compress the whole chain / one more time / and you get: / see the problem / → define the boundary / → form a solution / → verify the result / → drive adoption / → keep reviewing. //</p>
-<p class="zh" lang="zh-Hans">如果把整条链再压缩一次，就是：看清问题 → 定义边界 → 形成方案 → 验证结果 → 推动落地 → 持续复盘。</p>
+<p class="en">That is what UAT is really for. // Not proving the software works — / we can test that ourselves. // It is letting the people who own the numbers / find the thing / we would never have thought to check. //</p>
+<p class="zh" lang="zh-Hans">这才是 UAT 真正的用处。不是证明软件能跑——那个我们自己能测。而是让对那些数字负责的人，找出我们根本想不到要去检查的地方。</p>
+</div>
+
+<h2>4. After go-live: the quiet failure<span class="h-zh" lang="zh-Hans">四、上线后：安静的失败</span></h2>
+
+<div class="seg">
+<p class="en">Go-live went fine. // Two weeks later / we looked at who was logging in. // Three people. // Out of about twenty / who were supposed to use it daily. //</p>
+<p class="zh" lang="zh-Hans">上线很顺利。两周后我们看了一下登录记录：三个人。而本来应该每天用它的，大约有二十个。</p>
+</div>
+
+<div class="seg">
+<p class="en">The reason was not resistance. // The picking list printed / in a different layout / from the old one, / and the warehouse staff / had a routine built around that layout / for eleven years. // They were not refusing the system. // They were printing from the system, / then retyping it / into an old template. //</p>
+<p class="zh" lang="zh-Hans">原因不是抵触。拣货单打印出来的版式和旧的不一样，而仓库同事围绕那个版式形成了十一年的习惯。他们不是拒绝系统，而是从系统里打印出来，再手抄回旧模板。</p>
+</div>
+
+<div class="seg">
+<p class="en">Nobody complains about that. // They just quietly do the work twice. // Which is why “is it live?” / is a much weaker question / than “who did what they used to do, / and why?” //</p>
+<p class="zh" lang="zh-Hans">这种事没人投诉。他们只是安静地把活干两遍。所以「上线了吗」这个问题，比「谁还在按老办法做，为什么」要弱得多。</p>
+</div>
+
+<div class="seg">
+<p class="en">We changed the layout. // It took half a day. // It would have taken ten minutes / if we had asked / before go-live. //</p>
+<p class="zh" lang="zh-Hans">我们改了版式，花了半天。如果在上线前问过一句，本来只要十分钟。</p>
+</div>
+
+<h2>Two things I would tell someone starting<span class="h-zh" lang="zh-Hans">如果重来，我会先说两句</span></h2>
+
+<div class="seg">
+<p class="en">First: the work is not / writing documents. // It is getting a specific person / to say a specific sentence / in front of other people, / so it cannot quietly change later. //</p>
+<p class="zh" lang="zh-Hans">第一：这份活不是写文档，而是让某个具体的人，在其他人在场的时候，把某句具体的话说出来，这样它后面就没法悄悄改掉。</p>
+</div>
+
+<div class="seg">
+<p class="en">Second: every stage ends / when the next person can move / without asking you anything. // Not when the file is finished. // When you are no longer needed. //</p>
+<p class="zh" lang="zh-Hans">第二：每个阶段的结束点，是下一个人不需要问你任何事就能继续。不是文件写完，而是你不再被需要。</p>
+</div>
+
+<div class="seg">
+<p class="en">That is a low bar / and most projects / do not reach it. // Which is why the same diagram / keeps getting drawn. //</p>
+<p class="zh" lang="zh-Hans">这个标准不高，但多数项目达不到。这也是为什么同一张图一直被重新画一遍。</p>
 </div>

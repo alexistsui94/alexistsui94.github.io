@@ -34,7 +34,7 @@ layout: single
 
   <p class="about-index">AI &amp; code in practice <span class="kicker-zh" lang="zh-Hans">AI 与代码实践</span></p>
   <div class="about-copy">
-    <h2>Small tools, clear boundaries, checkable results.<span class="h-zh" lang="zh-Hans">工具要小，边界要清，结果要可检查。</span></h2>
+    <h2>Where AI and code fit in.<span class="h-zh" lang="zh-Hans">AI 和代码在我的工作里占什么位置。</span></h2>
     <p class="focus-lede">AI and Python are practical tools that extend my main line of work. I use them on concrete tasks — reading API documentation, understanding what an API key or token actually does, cleaning data, and building small prototypes that business staff can try.</p>
     <p class="deck-zh" lang="zh-Hans">AI 与 Python 是我主线的延伸工具：读 API 文档、弄清 API Key 与 Token 的作用、清洗数据，以及做业务人员能实际试用的小原型。</p>
     <p class="focus-note">The food-label checker is one example: a multimodal model handles unstructured images, while structured knowledge fields come from a local table, so every match has a visible basis.</p>
@@ -43,7 +43,7 @@ layout: single
 
   <p class="about-index">Why I write <span class="kicker-zh" lang="zh-Hans">为什么写作</span></p>
   <div class="about-copy">
-    <h2>Writing keeps experience available.<span class="h-zh" lang="zh-Hans">写作，让经验留下来。</span></h2>
+    <h2>Why I write things down.<span class="h-zh" lang="zh-Hans">为什么我要把事情写下来。</span></h2>
     <p class="focus-lede">I write to organise the problems and methods I meet in ERP projects, and to keep a record of the AI tools and code I actually used. Writing turns a moment of experience into a method that can be checked and reused later.</p>
     <p class="focus-note">Public writing keeps only reusable methods and thinking. It does not include client material, internal configuration or unreleased project details.</p>
     <div class="focus-links"><a href="/notes/">Browse all writing →</a></div>
