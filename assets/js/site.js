@@ -64,7 +64,7 @@ document.querySelectorAll('.en').forEach((el) => {
   textNodes.forEach((node) => {
     const text = node.nodeValue;
     if (!text || !text.includes('/')) return;
-    if (node.parentElement && SKIP_TAGS.has(node.parentElement.tagName)) return;
+    if (node.parentElement && node.parentElement !== el && SKIP_TAGS.has(node.parentElement.tagName)) return;
     if (!PAUSE_RE.test(text)) { PAUSE_RE.lastIndex = 0; return; }
     PAUSE_RE.lastIndex = 0;
 
