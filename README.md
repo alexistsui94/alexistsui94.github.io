@@ -1,5 +1,7 @@
 # alexistsui94.github.io
 
-Alexis Tsui 的个人知识站，记录系统、项目、商业分析与长期写作。
+A personal knowledge site by Alexis Tsui, with notes on systems, projects, business analysis and considered writing.
 
-Built as a lightweight Jekyll site for GitHub Pages, with custom layouts and no theme dependency.
+The site is **English-first**. Articles are written in plain English with sense-group pauses marked (`/` for a short pause, `//` for a longer one), and a Chinese reference line beneath each English passage. Readers can hide the Chinese lines for listen → shadow → retell practice.
+
+Built as a lightweight Jekyll site for GitHub Pages, with custom layouts and no theme dependency. All pages share a single stylesheet: `assets/css/site.css`.

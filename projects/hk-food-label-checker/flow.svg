@@ -1,75 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
-  <title id="title">食品标签 AI 工具的两条处理流程</title>
-  <desc id="desc">上方是配料识别与知识匹配：上传配料图、模型提取成分、程序清洗并查询知识表、展示分类结果和导出 Excel。下方是整图文字与香港繁体校对：上传标签图、模型生成文字块、OpenCC 与差异算法检查、展示校对稿供人工复核。两条流程都需要对照原图。</desc>
+  <title id="title">Two workflows of the food label AI tool</title>
+  <desc id="desc">Top lane: ingredient recognition and knowledge matching — upload an ingredient photo, the model extracts ingredients, the program cleans and queries a knowledge table, then shows classified results and exports Excel. Bottom lane: full-label text and Traditional Chinese proofreading — upload the whole label, the model builds text blocks, OpenCC and a diff algorithm mark changes, and a review copy is shown for human checking. Both lanes are checked against the original image.</desc>
   <defs>
     <style>
-      text{font-family:"Noto Sans SC","Noto Sans TC","Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#17211b}
-      .eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;fill:#536459}
+      text{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#30352f}
+      .eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;fill:#60675e}
       .title{font-size:31px;font-weight:700;letter-spacing:.5px}
-      .subtitle{font-size:16px;fill:#536459}
+      .subtitle{font-size:16px;fill:#60675e}
       .lane-title{font-size:20px;font-weight:700}
-      .lane-note{font-size:14px;fill:#536459}
-      .number{font-size:12px;font-weight:700;letter-spacing:1px;fill:#536459}
-      .card-title{font-size:21px;font-weight:700}
-      .card-body{font-size:15px;fill:#536459}
-      .foot{font-size:15px;fill:#536459}
+      .lane-note{font-size:14px;fill:#60675e}
+      .number{font-size:12px;font-weight:700;letter-spacing:1px;fill:#60675e}
+      .card-title{font-size:20px;font-weight:700}
+      .card-body{font-size:14px;fill:#60675e}
+      .foot{font-size:14px;fill:#60675e}
+      .zh{font-size:13px;fill:#8b9188}
       .line{fill:none;stroke:#7a8b7c;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#7a8b7c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
   </defs>
   <rect width="1200" height="640" rx="22" fill="#f8f7f0"/>
   <rect x="1" y="1" width="1198" height="638" rx="21" fill="none" stroke="#d4d9ce" stroke-width="2"/>
-  <text class="eyebrow" x="48" y="53">FOOD LABEL AI · WORKFLOW</text>
-  <text class="title" x="48" y="102">一张标签，两条清晰的处理路径</text>
-  <text class="subtitle" x="48" y="132">模型读图，程序按规则处理；结果保留给业务人员对照原图复核。</text>
+  <text class="eyebrow" x="48" y="50">FOOD LABEL AI · WORKFLOW</text>
+  <text class="title" x="48" y="97">One label, two clear paths</text>
+  <text class="subtitle" x="48" y="127">The model reads the image; the program applies rules; the business user checks the result against the original.</text>
+  <text class="zh" x="48" y="149">一张标签，两条清晰的处理路径 · 结果保留给业务人员对照原图复核</text>
 
-  <rect x="34" y="160" width="1132" height="181" rx="17" fill="#edf2e8"/>
-  <text class="lane-title" x="52" y="191">01  配料识别与知识匹配</text>
-  <text class="lane-note" x="369" y="191">回答“识别到什么，知识表如何分类”</text>
-  <rect x="52" y="211" width="245" height="107" rx="13" fill="#fffdfa" stroke="#cbd7c5" stroke-width="1.5"/>
-  <text class="number" x="70" y="236">INPUT · 输入</text>
-  <text class="card-title" x="70" y="268">上传配料表图片</text>
-  <text class="card-body" x="70" y="293">保留原图供核对</text>
+  <rect x="34" y="166" width="1132" height="178" rx="17" fill="#edf2e8"/>
+  <text class="lane-title" x="52" y="196">01  Ingredient recognition &amp; knowledge matching</text>
+  <text class="lane-note" x="600" y="196">What was recognised, and how the table classifies it</text>
+  <rect x="52" y="212" width="245" height="110" rx="13" fill="#fffdfa" stroke="#cbd7c5" stroke-width="1.5"/>
+  <text class="number" x="70" y="237">INPUT</text>
+  <text class="card-title" x="70" y="268">Upload photo</text>
+  <text class="card-body" x="70" y="294">Keep original for checking</text>
   <path class="line" d="M304 264 H321" marker-end="url(#arrow)"/>
-  <rect x="331" y="211" width="245" height="107" rx="13" fill="#fffdfa" stroke="#b9cdc0" stroke-width="1.5"/>
-  <text class="number" x="349" y="236">MODEL · 多模态模型</text>
-  <text class="card-title" x="349" y="268">提取成分列表</text>
-  <text class="card-body" x="349" y="293">返回结构化 JSON</text>
+  <rect x="331" y="212" width="245" height="110" rx="13" fill="#fffdfa" stroke="#b9cdc0" stroke-width="1.5"/>
+  <text class="number" x="349" y="237">MODEL · MULTIMODAL</text>
+  <text class="card-title" x="349" y="268">Extract ingredients</text>
+  <text class="card-body" x="349" y="294">Return structured JSON</text>
   <path class="line" d="M583 264 H600" marker-end="url(#arrow)"/>
-  <rect x="610" y="211" width="245" height="107" rx="13" fill="#fffdfa" stroke="#cbd7c5" stroke-width="1.5"/>
-  <text class="number" x="628" y="236">RULES · Python + 知识表</text>
-  <text class="card-title" x="628" y="268">清洗并逐项匹配</text>
-  <text class="card-body" x="628" y="293">普通配料 / 名称 / 编号 / 别名</text>
+  <rect x="610" y="212" width="245" height="110" rx="13" fill="#fffdfa" stroke="#cbd7c5" stroke-width="1.5"/>
+  <text class="number" x="628" y="237">RULES · PYTHON + TABLE</text>
+  <text class="card-title" x="628" y="268">Clean and match</text>
+  <text class="card-body" x="628" y="294">Common · name · code · alias</text>
   <path class="line" d="M862 264 H879" marker-end="url(#arrow)"/>
-  <rect x="889" y="211" width="259" height="107" rx="13" fill="#fffdfa" stroke="#cbd7c5" stroke-width="1.5"/>
-  <text class="number" x="907" y="236">OUTPUT · 业务结果</text>
-  <text class="card-title" x="907" y="268">展示分类结果</text>
-  <text class="card-body" x="907" y="293">未匹配提示 · Excel 导出</text>
+  <rect x="889" y="212" width="259" height="110" rx="13" fill="#fffdfa" stroke="#cbd7c5" stroke-width="1.5"/>
+  <text class="number" x="907" y="237">OUTPUT · BUSINESS RESULT</text>
+  <text class="card-title" x="907" y="268">Show classification</text>
+  <text class="card-body" x="907" y="294">Unmatched list · Excel export</text>
 
-  <rect x="34" y="358" width="1132" height="181" rx="17" fill="#f0ebe0"/>
-  <text class="lane-title" x="52" y="389">02  整图文字与香港繁体校对</text>
-  <text class="lane-note" x="431" y="389">回答“图片文字有哪些转换建议”</text>
-  <rect x="52" y="409" width="245" height="107" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
-  <text class="number" x="70" y="434">INPUT · 输入</text>
-  <text class="card-title" x="70" y="466">上传整张标签</text>
-  <text class="card-body" x="70" y="491">可对照原始图片</text>
+  <rect x="34" y="360" width="1132" height="178" rx="17" fill="#f0ebe0"/>
+  <text class="lane-title" x="52" y="390">02  Full-label text &amp; Traditional Chinese proofreading</text>
+  <text class="lane-note" x="640" y="390">Which text changes are suggested</text>
+  <rect x="52" y="406" width="245" height="110" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
+  <text class="number" x="70" y="431">INPUT</text>
+  <text class="card-title" x="70" y="462">Upload whole label</text>
+  <text class="card-body" x="70" y="488">Compare with original</text>
   <path class="line" d="M304 462 H321" marker-end="url(#arrow)"/>
-  <rect x="331" y="409" width="245" height="107" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
-  <text class="number" x="349" y="434">MODEL · 多模态模型</text>
-  <text class="card-title" x="349" y="466">生成版式文字块</text>
-  <text class="card-body" x="349" y="491">识别原文 + 港繁建议</text>
+  <rect x="331" y="406" width="245" height="110" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
+  <text class="number" x="349" y="431">MODEL · MULTIMODAL</text>
+  <text class="card-title" x="349" y="462">Build text blocks</text>
+  <text class="card-body" x="349" y="488">Original + suggested text</text>
   <path class="line" d="M583 462 H600" marker-end="url(#arrow)"/>
-  <rect x="610" y="409" width="245" height="107" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
-  <text class="number" x="628" y="434">RULES · OpenCC + difflib</text>
-  <text class="card-title" x="628" y="466">检查并标记差异</text>
-  <text class="card-body" x="628" y="491">突出显示建议修改处</text>
+  <rect x="610" y="406" width="245" height="110" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
+  <text class="number" x="628" y="431">RULES · OPENCC + DIFFLIB</text>
+  <text class="card-title" x="628" y="462">Check and mark diffs</text>
+  <text class="card-body" x="628" y="488">Highlight suggested edits</text>
   <path class="line" d="M862 462 H879" marker-end="url(#arrow)"/>
-  <rect x="889" y="409" width="259" height="107" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
-  <text class="number" x="907" y="434">OUTPUT · 校对稿</text>
-  <text class="card-title" x="907" y="466">展示香港繁体稿</text>
-  <text class="card-body" x="907" y="491">由业务人员对照原图复核</text>
+  <rect x="889" y="406" width="259" height="110" rx="13" fill="#fffdfa" stroke="#d8cdb9" stroke-width="1.5"/>
+  <text class="number" x="907" y="431">OUTPUT · REVIEW COPY</text>
+  <text class="card-title" x="907" y="462">Show suggested text</text>
+  <text class="card-body" x="907" y="488">User checks the original</text>
 
   <line x1="48" y1="562" x2="1152" y2="562" stroke="#d4d9ce" stroke-width="1.5"/>
-  <text class="foot" x="48" y="593">边界：模型输出的“原文”仍可能漏字；知识匹配结果与校对建议均不等于法规合规结论。</text>
+  <text class="foot" x="48" y="590">Boundary: the model's "original text" can still miss characters; matching results and proofreading suggestions are not regulatory compliance conclusions.</text>
   <text class="eyebrow" x="48" y="619">PUBLIC DEMO · ANONYMIZED PROJECT CASE</text>
 </svg>

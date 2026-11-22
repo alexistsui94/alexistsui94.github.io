@@ -18,6 +18,7 @@
    10. 项目案例页
    11. 响应式适配
    12. 无障碍与动效偏好
+   13. 双语阅读组件（英文意群 + 中文对照）
    ========================================================================== */
 
 /* 1. 设计变量 -------------------------------------------------------------- */
@@ -800,4 +801,115 @@ summary { cursor: pointer; padding: 8px 0; min-height: 44px; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* 13. Bilingual reading components ---------------------------------------- */
+/* English is the main line; Chinese is a quieter reference line beneath it.
+   Pause marks are wrapped by site.js; plain text stays readable without JS. */
+.seg { margin: 0 0 20px; }
+.seg > .en {
+  margin: 0 0 4px;
+  font-size: 16.5px;
+  line-height: 1.95;
+  color: var(--text);
+}
+.seg > .zh {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.pause { color: var(--text-faint); padding: 0 .1em; font-weight: 400; white-space: nowrap; }
+.pause-long { color: var(--accent); }
+
+.h-zh {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-faint);
+  letter-spacing: 0;
+}
+.title-zh { font-size: 16px; margin-top: 6px; margin-bottom: 0; }
+.home-title-zh { font-size: 15px; margin-top: 8px; margin-bottom: 0; }
+.kicker-zh { color: var(--text-faint); font-size: 11px; margin-left: 2px; }
+.deck-zh { margin: 8px 0 0; font-size: 14px; line-height: 1.8; color: var(--text-soft); }
+.notes-hint { margin: 14px 0 0; font-size: 13.5px; color: var(--text-faint); }
+.notes-hint code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .9em; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+.about-hero .h-zh, .about-contact .h-zh { font-size: 15px; margin-top: 8px; margin-bottom: 0; }
+.about-copy .deck-zh { max-width: 680px; margin-top: 6px; }
+.focus-card .cell-zh { font-size: 12.5px; line-height: 1.7; color: var(--text-faint); margin: 6px 0 0; }
+.feedback .cell-zh { display: block; margin-top: 10px; font-size: 12.5px; line-height: 1.7; color: var(--text-faint); }
+details .cell-zh { font-size: 12.5px; line-height: 1.7; color: var(--text-faint); }
+.callout .cell-zh { margin: 8px 0 0; font-size: 12.5px; line-height: 1.7; color: var(--text-soft); }
+.list-zh {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-faint);
+}
+
+.reading-guide {
+  margin: 0 0 20px;
+  padding: 18px 20px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.reading-guide p { margin: 0 0 8px; }
+.reading-guide p:last-child { margin: 0; }
+.reading-guide strong { color: var(--text); font-weight: 600; }
+.reading-guide .guide-zh { font-size: 13.5px; color: var(--text-faint); margin: 0; }
+.reading-guide code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .92em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.reading-tools { display: flex; justify-content: flex-end; margin: 0 0 20px; }
+.zh-toggle {
+  min-height: 40px;
+  padding: 7px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-soft);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.zh-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+body.hide-zh .zh,
+body.hide-zh .h-zh,
+body.hide-zh .list-zh,
+body.hide-zh .deck-zh,
+body.hide-zh .guide-zh,
+body.hide-zh .kicker-zh,
+body.hide-zh .cell-zh { display: none; }
+
+/* Bilingual lists, tables and quotes inside articles */
+.seg-list { list-style: none; padding-left: 0; margin: 0 0 24px; }
+.seg-list li { padding: 6px 0 6px 16px; border-left: 2px solid var(--line); margin: 0 0 8px; }
+.seg-list .en { display: block; font-size: 15.5px; line-height: 1.85; }
+.seg-list .zh { display: block; font-size: 13.5px; line-height: 1.75; color: var(--text-soft); margin-top: 2px; }
+.seg-table th .h-zh { margin-top: 2px; font-size: 12px; }
+.seg-table td { min-width: 150px; }
+.prose table .en, .case-content table .en { display: block; font-size: 14px; line-height: 1.7; }
+.prose table .zh, .case-content table .zh { display: block; font-size: 12.5px; line-height: 1.65; color: var(--text-soft); margin-top: 2px; }
+.prose blockquote .seg:last-child { margin-bottom: 0; }
+.prose blockquote .seg > .en { font-size: 16px; }
+
+@media (max-width: 800px) {
+  .seg > .en { font-size: 16px; }
+  .reading-guide { padding: 16px; }
 }

@@ -3,21 +3,35 @@ layout: default
 ---
 {% if page.date %}
 {% assign cat = page.categories.first %}
-{% assign cat_label = '笔记' %}
+{% assign cat_label = 'Notes' %}
+{% assign cat_zh = '笔记' %}
 {% case cat %}
-{% when 'tech' %}{% assign cat_label = '技术' %}
-{% when 'projects' %}{% assign cat_label = '项目' %}
-{% when 'finance' %}{% assign cat_label = '商业' %}
-{% when 'essays' %}{% assign cat_label = '随笔' %}
+{% when 'tech' %}{% assign cat_label = 'Technology' %}{% assign cat_zh = '技术' %}
+{% when 'projects' %}{% assign cat_label = 'Projects' %}{% assign cat_zh = '项目' %}
+{% when 'finance' %}{% assign cat_label = 'Business' %}{% assign cat_zh = '商业' %}
+{% when 'essays' %}{% assign cat_label = 'Essays' %}{% assign cat_zh = '随笔' %}
 {% endcase %}
 <main id="main-content" class="article-shell">
   <header class="article-header wrap">
-    <a class="back-link" href="/{% if page.categories.first %}{{ page.categories.first }}{% else %}essays{% endif %}/">← 返回{{ cat_label }}栏目</a>
-    <div class="article-kicker"><span>{{ cat_label }}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
+    <a class="back-link" href="/{% if cat %}{{ cat }}{% else %}essays{% endif %}/">← Back to {{ cat_label }}</a>
+    <div class="article-kicker"><span>{{ cat_label }} <span class="kicker-zh" lang="zh-Hans">{{ cat_zh }}</span></span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
     <h1>{{ page.title }}</h1>
-    {% if page.excerpt %}<p class="article-deck">{{ page.excerpt }}</p>{% endif %}
+    {% if page.title_zh %}<p class="title-zh h-zh" lang="zh-Hans">{{ page.title_zh }}</p>{% endif %}
+    {% if page.summary %}<p class="article-deck">{{ page.summary }}</p>{% endif %}
+    {% if page.deck_zh %}<p class="deck-zh" lang="zh-Hans">{{ page.deck_zh }}</p>{% endif %}
   </header>
-  <article class="prose wrap">{{ content }}</article>
-  <nav class="article-end wrap" aria-label="文章结束"><span>写于 {{ page.date | date: '%Y' }}</span><a href="/">返回首页 →</a></nav>
+
+  <article class="prose wrap">
+    <aside class="reading-guide" aria-label="How to read this article">
+      <p><strong>How to read.</strong> English is the main text. A <code>/</code> marks a short pause inside a sense group; a <code>//</code> marks a longer pause. Each English passage is followed by a Chinese reference line.</p>
+      <p class="guide-zh" lang="zh-Hans">读法：以英文为主。<code>/</code> 为意群内短停顿，<code>//</code> 为较长停顿；每段英文下方附中文对照。建议按「听辨 → 跟读 → 不脱稿复述」练习。</p>
+    </aside>
+    <div class="reading-tools">
+      <button class="zh-toggle" type="button" data-zh-toggle aria-pressed="false">Hide Chinese</button>
+    </div>
+    {{ content }}
+  </article>
+
+  <nav class="article-end wrap" aria-label="End of article"><span>Written in {{ page.date | date: '%Y' }}</span><a href="/">← Back to home</a></nav>
 </main>
 {% else %}<main id="main-content">{{ content }}</main>{% endif %}

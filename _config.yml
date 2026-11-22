@@ -1,5 +1,5 @@
 title: "Alexis Tsui"
-description: "系统、项目、商业分析与长期写作。Systems, projects, analysis and considered writing."
+description: "Notes on ERP and project delivery, applied AI, business analysis, and considered writing — in English with Chinese reference lines."
 url: "https://alexistsui94.github.io"
 baseurl: ""
 author:
@@ -39,5 +39,5 @@ paginate: 5
 paginate_path: /page:num/
 
 timezone: Asia/Hong_Kong
-locale: "zh-Hans"
+locale: "en"
 future: false
