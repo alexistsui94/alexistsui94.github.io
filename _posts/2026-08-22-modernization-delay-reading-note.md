@@ -2,6 +2,7 @@
 title: "Why Is Modernization Often Delayed? A Reading Note"
 title_zh: "现代化为什么会被拖延？一篇阅读摘记"
 date: 2026-08-22
+published: false
 categories: [essays]
 tags: [Reading Notes, Institutions, Systems Thinking]
 summary: "A reading note on how large-scale transitions are delayed: modernization is not only a technical upgrade, but a change in ideas, institutions and ways of collaborating."

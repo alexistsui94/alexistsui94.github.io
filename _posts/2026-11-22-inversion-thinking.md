@@ -2,6 +2,7 @@
 title: "Ask First: What Would Make This Fail?"
 title_zh: "先问：什么会让它失败？"
 date: 2026-11-22
+published: false
 categories: [finance]
 tags: [Decision Making, Risk, Mental Models]
 summary: "Inversion is not pessimism. It means naming the fatal errors before you act, and rewriting “how do we succeed” as “which failure paths must be cut off”."
