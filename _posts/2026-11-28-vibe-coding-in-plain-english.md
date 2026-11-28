@@ -12,7 +12,7 @@ summary: "A faithful English rendering of a Chinese Vibe Coding glossary — eig
 </div>
 
 <div class="seg">
-<p class="en">I have kept the original order, / the original analogies, / and the original figures — / including the model names and prices, / which are as the source states them in 2026. // Where a table or a diagram makes the structure easier to hold, / I have added one; / nothing else is mine. //</p>
+<p class="en">I have kept the original order, / the original analogies, / and the original figures — / including the model names and prices, / which are as the source states them in 2026. // Where a table or a diagram makes the structure easier to hold, / I have added one. // The L1 to L3 grades are also mine; / the source does not grade its terms. //</p>
 </div>
 
 <div class="seg">
