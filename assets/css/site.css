@@ -486,6 +486,24 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .prose h3.term { margin: 30px 0 6px; font-size: 18.5px; font-weight: 600; letter-spacing: .01em; }
 .prose h3.term + p { margin-bottom: 0; }
 
+/* 术语分级标记 L1 / L2 / L3 */
+.lv {
+  display: inline-block;
+  padding: 1px 5px;
+  border: 1px solid var(--line);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.6;
+  color: var(--text-faint);
+  vertical-align: 2px;
+}
+.lv2 { color: var(--text-soft); border-color: var(--line-strong); }
+.lv3 { color: var(--accent); border-color: var(--line-strong); }
+.prose h3.term .lv { margin-left: 10px; }
+.prose .level-key { margin: 14px 0 0; font-size: 14.5px; line-height: 2.4; color: var(--text-soft); }
+.prose .level-key .lv { margin: 0 6px; }
+
 /* 9. 关于页 --------------------------------------------------------------- */
 .about-hero { display: block; max-width: 760px; padding-block: 72px 48px; }
 .about-hero h1 { font-size: clamp(36px, 4.4vw, 51px); margin: 12px 0 0; }
