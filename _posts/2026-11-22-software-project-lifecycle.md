@@ -3,6 +3,7 @@ title: "How a Software Project Actually Moves, Stage by Stage"
 title_zh: "一个软件项目，实际上是怎么往前走的"
 date: 2026-11-22
 categories: [projects]
+topic: erp
 tags: [ERP, Delivery, Requirements]
 summary: "The same six stages, but with what each one looks like on a real ERP project — the one-sentence requirement, the field that meant two things, and the report nobody printed the same way twice."
 deck_zh: "还是那六个阶段，但换成真实 ERP 项目里的样子：一句需求、一个有两种意思的字段、一份谁也打不出一致格式的报表。"

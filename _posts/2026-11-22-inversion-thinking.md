@@ -4,6 +4,7 @@ title_zh: "先问：什么会让它失败？"
 date: 2026-11-22
 published: false
 categories: [finance]
+topic: other
 tags: [Decision Making, Risk, Mental Models]
 summary: "Inversion is not pessimism. It means naming the fatal errors before you act, and rewriting “how do we succeed” as “which failure paths must be cut off”."
 deck_zh: "逆向思维不是悲观，而是在行动之前识别致命错误，把「如何成功」改写成「哪些失败路径必须被切断」。"

@@ -4,6 +4,7 @@ title_zh: "现代化为什么会被拖延？一篇阅读摘记"
 date: 2026-08-22
 published: false
 categories: [essays]
+topic: other
 tags: [Reading Notes, Institutions, Systems Thinking]
 summary: "A reading note on how large-scale transitions are delayed: modernization is not only a technical upgrade, but a change in ideas, institutions and ways of collaborating."
 deck_zh: "读《中国的现代化「拖延」与启示》：现代化不仅是技术升级，也是观念、制度与社会协作方式的转变。本文为阅读摘记与个人思考。"

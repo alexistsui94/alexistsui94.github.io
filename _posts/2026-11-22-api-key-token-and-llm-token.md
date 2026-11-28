@@ -3,6 +3,7 @@ title: "API Keys, Access Tokens, and Model Tokens: Three Different Things"
 title_zh: "API Key、Access Token、模型 Token：三件不同的事"
 date: 2026-11-22
 categories: [tech]
+topic: ai
 tags: [API, LLM, Learning Notes]
 summary: "Same word, three meanings. Two are about who is calling; one is about how text gets chopped up and billed. With a worked tokenisation example and one story about a leaked key."
 deck_zh: "同一个词，三种意思。前两个讲「谁在调用」，第三个讲「文字怎么被切开、怎么计费」。附一个分词实例，和一个泄露 Key 的真实后果。"

@@ -3,6 +3,7 @@ title: "A Delivery Project, Reviewed Honestly"
 title_zh: "一次交付复盘：三个当时没问清的问题"
 date: 2026-03-12
 categories: [projects]
+topic: erp
 tags: [ERP, Implementation]
 summary: "Not a framework — three specific things that went wrong on one ERP delivery, what they cost, and the four checks I now run before calling a stage finished."
 deck_zh: "不讲框架，讲一个 ERP 项目里真实出错的三个地方、各自付出了什么代价，以及我现在会在「算做完」之前先做的四项检查。"

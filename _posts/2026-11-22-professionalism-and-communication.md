@@ -4,6 +4,7 @@ title_zh: "专业感，不是显得很厉害"
 date: 2026-11-22
 published: false
 categories: [essays]
+topic: other
 tags: [Work, Communication, Practice]
 summary: "Reliable, clear, bounded, and able to move things forward: professionalism is not jargon or posture, but a set of work habits you can practise and others can trust."
 deck_zh: "可靠、清楚、有边界、能推进：专业感不是术语和姿态，而是一组可以反复练习、让别人放心的工作动作。"

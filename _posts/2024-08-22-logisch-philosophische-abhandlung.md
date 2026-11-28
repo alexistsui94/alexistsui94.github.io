@@ -4,6 +4,7 @@ title_zh: "读维特根斯坦：语言的边界、清晰思考与谦逊"
 date: 2024-08-22
 published: false
 categories: [essays]
+topic: other
 tags: [Philosophy, Wittgenstein, Reading Notes]
 summary: "Notes on the Tractatus Logico-Philosophicus: the limits of language, clearer thinking, and a humble attitude toward value and the meaning of life."
 deck_zh: "从维特根斯坦《逻辑哲学论》出发，谈语言的边界、清晰思考，以及对价值与人生意义的谦逊。"

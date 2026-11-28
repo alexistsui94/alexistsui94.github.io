@@ -87,7 +87,7 @@ h1, h2, h3, h4 {
 .article-shell, .hero-copy { min-width: 0; }
 
 /* 内容里的文字链接：1px 细下划线，hover 变苔绿 */
-.prose a, .case-content a, .archive-list h2 a, .featured-card h3 a,
+.prose a, .case-content a, .archive-list h2 a, .archive-list h3 a, .featured-card h3 a,
 .hero-aside a, .about-copy a, .about-intro a, .text-link, .card-more,
 .card-arrow, .back-link, .article-end a, .footer-links a, .section-heading a,
 .focus-links a:not(.button), .discipline-list a, .case-toc a, .case-nav a,
@@ -95,7 +95,7 @@ h1, h2, h3, h4 {
 .case-diagram figcaption a {
   box-shadow: var(--link-rule);
 }
-.prose a:hover, .case-content a:hover, .archive-list h2 a:hover,
+.prose a:hover, .case-content a:hover, .archive-list h2 a:hover, .archive-list h3 a:hover,
 .featured-card h3 a:hover, .hero-aside a:hover, .about-copy a:hover,
 .about-intro a:hover, .text-link:hover, .card-more:hover, .card-arrow:hover,
 .back-link:hover, .article-end a:hover, .footer-links a:hover,
@@ -355,9 +355,41 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   color: var(--text-faint);
   margin-bottom: 10px;
 }
-.archive-list h2 { font-size: 26px; line-height: 1.35; margin: 0 0 10px; }
+.archive-list h2, .archive-list h3 { font-size: 26px; line-height: 1.35; margin: 0 0 10px; font-weight: 600; }
 .archive-list p { max-width: 680px; margin: 0 0 10px; font-size: 16px; line-height: 1.75; color: var(--text-soft); }
 .archive-list .card-arrow { position: static; font-size: 14px; }
+
+/* 主题分组：Writing 页按 ERP / AI / Other 三组排列 */
+.topic-jump { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 28px; margin-top: 24px; }
+.topic-jump a { display: inline-flex; align-items: baseline; gap: 6px; font-size: 15px; font-weight: 600; color: var(--text); }
+.topic-jump .topic-count { font-size: 13px; font-weight: 400; color: var(--text-faint); }
+
+.archive-group { padding: 0; }
+.archive-group .archive-list { padding: 4px 0 16px; }
+.group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 44px 0 12px;
+  border-bottom: 1px solid var(--line-strong);
+}
+.group-head h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.group-head .group-zh { font-size: 13px; font-weight: 400; letter-spacing: .04em; text-transform: none; color: var(--text-faint); }
+.group-head .group-count { font-size: 13px; color: var(--text-faint); }
 
 .empty-state { margin: 56px 0 88px; padding: 0; background: none; border: 0; }
 .empty-state > span { font-size: 14px; color: var(--text-faint); }
@@ -451,6 +483,27 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .about-copy { max-width: 760px; margin-bottom: 48px; }
 .about-copy h2 { font-size: 29px; margin: 0 0 16px; }
 .about-copy p { max-width: 720px; }
+
+/* 关于页：事实清单（学历 / 所在地 / 写作 / 项目） */
+.fact-list { max-width: 760px; margin: 28px 0 0; }
+.fact-list > div {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 6px 24px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+.fact-list dt {
+  padding-top: 3px;
+  font-size: 13px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.fact-list dd { margin: 0; font-size: 17.5px; line-height: 1.65; color: var(--text); }
+.fact-list dd a { color: var(--text); }
+.fact-zh { display: block; margin-top: 3px; font-size: 14px; line-height: 1.6; color: var(--text-soft); }
+.about-note { max-width: 680px; margin: 26px 0 40px; font-size: 15px; line-height: 1.8; color: var(--text-soft); }
 .focus-lede { max-width: 720px; font-size: 18.5px; line-height: 1.85; color: var(--text-soft); }
 .focus-note {
   padding-top: 18px;
@@ -723,6 +776,8 @@ body.hide-zh .cell-zh { display: none; }
   .about-hero { padding-block: 48px; }
   .about-hero h1 { font-size: 36px; }
   .about-intro { padding-left: 16px; }
+  .fact-list > div { grid-template-columns: 1fr; gap: 4px; }
+  .fact-list dt { padding-top: 0; }
   .about-contact { padding-top: 32px; }
   .site-footer { padding: 32px 16px; }
 

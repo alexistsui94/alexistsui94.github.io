@@ -4,6 +4,7 @@ title_zh: "好的演讲，是设计一条理解的路径"
 date: 2026-11-22
 published: false
 categories: [essays]
+topic: other
 tags: [Reading Notes, Speaking, Patrick Winston]
 summary: "Reading Patrick Winston’s How to Speak: a talk is not a display of how much you know, but a way to manage attention so people understand, remember and trust the main idea."
 deck_zh: "读 Patrick Winston《How to Speak》：演讲不是展示自己知道多少，而是管理注意力，让听众理解、记住并相信核心观点。"

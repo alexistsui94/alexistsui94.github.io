@@ -2,12 +2,12 @@
 layout: default
 ---
 {% if page.date %}
-{% assign cat = page.categories.first %}
-{% assign cat_label = 'Writing' %}
-{% assign cat_zh = '文章' %}
-{% case cat %}
-{% when 'tech' %}{% assign cat_label = 'AI & Code' %}{% assign cat_zh = 'AI 与代码' %}
-{% when 'projects' %}{% assign cat_label = 'ERP & Delivery' %}{% assign cat_zh = 'ERP 与交付' %}
+{% assign topic = page.topic | default: 'other' %}
+{% assign cat_label = 'Other' %}
+{% assign cat_zh = '其他' %}
+{% case topic %}
+{% when 'erp' %}{% assign cat_label = 'ERP' %}{% assign cat_zh = 'ERP 与交付' %}
+{% when 'ai' %}{% assign cat_label = 'AI' %}{% assign cat_zh = 'AI 与代码' %}
 {% endcase %}
 <main id="main-content" class="article-shell">
   <header class="article-header wrap">

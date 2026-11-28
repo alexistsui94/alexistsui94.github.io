@@ -3,6 +3,7 @@ title: "What ERP Really Is, Explained with One Order"
 title_zh: "用一张订单讲清楚：ERP 到底是什么"
 date: 2025-03-12
 categories: [projects]
+topic: erp
 tags: [ERP, Implementation, Systems]
 summary: "Forget the acronym. Follow one order from a shop to the bank account, and ERP becomes easy to explain — plus four common misunderstandings and what deployment choices actually mean."
 deck_zh: "先放下缩写。跟着一张订单从门店走到银行账户，ERP 就变得好解释了。另外还有四个常见误解，以及几种部署方式到底在选什么。"

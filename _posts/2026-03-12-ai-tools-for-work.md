@@ -3,6 +3,7 @@ title: "How I Actually Use AI Tools at Work"
 title_zh: "我实际上怎么用 AI 工具"
 date: 2026-03-12
 categories: [tech]
+topic: ai
 tags: [AI, Python, Automation]
 summary: "Four tasks I really hand to AI — meeting notes, spreadsheet formulas, emails, error messages — with what it got wrong each time and the one habit that keeps it useful."
 deck_zh: "四个我真的会交给 AI 的任务：会议记录、表格公式、邮件、报错信息。每次都写清它错在哪里，以及我一直保留的那个习惯。"
