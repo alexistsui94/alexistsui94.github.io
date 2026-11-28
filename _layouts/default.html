@@ -36,6 +36,7 @@
       <a href="{{ '/notes/' | relative_url }}" {% if page.url == '/notes/' %}aria-current="page"{% endif %}>Writing</a>
       <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' or page.categories contains 'projects' %}aria-current="page"{% endif %}>Projects</a>
       <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+      <a class="nav-ext" href="https://github.com/alexistsui94" rel="me">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
     </nav>
   </header>
   {{ content }}

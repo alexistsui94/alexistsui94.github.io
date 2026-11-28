@@ -201,6 +201,10 @@ h1, h2, h3, h4 {
   font-weight: 600;
   box-shadow: var(--link-rule-hover);
 }
+/* 外链（GitHub）：箭头略小，与站内导航区分 */
+.site-nav a.nav-ext { gap: 5px; }
+.site-nav a.nav-ext .arrow { font-size: 12px; line-height: 1; color: var(--text-faint); }
+.site-nav a.nav-ext:hover .arrow { color: var(--accent); }
 .menu-toggle {
   display: none;
   align-items: center;
