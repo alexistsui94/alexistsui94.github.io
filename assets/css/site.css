@@ -651,79 +651,23 @@ summary { cursor: pointer; padding: 8px 0; min-height: 44px; font-weight: 600; }
 .code-note, .case-content p.code-note { margin: 0 0 30px; font-size: 14px; line-height: 1.7; color: var(--text-soft); }
 .code-note code { font-size: .92em; }
 
-/* 11. 双语阅读组件 -------------------------------------------------------- */
-/* English 是主行，中文是下方较安静的对照行；停顿标记由 site.js 包装，
-   关闭 JS 时纯文本依然可读。 */
+/* 11. 文章排版组件 -------------------------------------------------------- */
+/* 英文正文为主行；停顿标记由 site.js 包装，关闭 JS 时纯文本依然可读。 */
 .seg { margin: 0 0 28px; }
-.seg > .en { margin: 0 0 5px; font-size: 19px; line-height: 1.9; color: var(--text); }
-.seg > .zh { margin: 0; font-size: 15.5px; line-height: 1.75; color: var(--text-soft); }
+.seg > .en { margin: 0; font-size: 19px; line-height: 1.9; color: var(--text); }
 .pause { color: var(--text-faint); padding: 0 .1em; font-weight: 400; white-space: nowrap; }
 .pause-long { color: var(--accent); }
 
-.h-zh {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--text-faint);
-  letter-spacing: 0;
-}
-.title-zh { font-size: 17px; margin-top: 8px; margin-bottom: 0; }
-.kicker-zh { color: var(--text-faint); font-size: 12px; margin-left: 2px; }
-.deck-zh { margin: 10px 0 0; font-size: 15px; line-height: 1.8; color: var(--text-soft); }
 .notes-hint { margin: 18px 0 0; font-size: 14.5px; color: var(--text-faint); }
 .notes-hint code { font-family: var(--font-mono); font-size: .9em; background: var(--surface-soft); padding: 1px 4px; }
-.about-hero .h-zh, .about-contact .h-zh { font-size: 16px; margin-top: 10px; margin-bottom: 0; }
-.about-copy .deck-zh { max-width: 680px; margin-top: 8px; }
-.focus-card .cell-zh { font-size: 13.5px; line-height: 1.7; color: var(--text-faint); margin: 6px 0 0; }
-.feedback .cell-zh { display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.7; color: var(--text-faint); }
-details .cell-zh { font-size: 13.5px; line-height: 1.7; color: var(--text-faint); }
-.callout .cell-zh { margin: 8px 0 0; font-size: 13.5px; line-height: 1.7; color: var(--text-soft); }
-.list-zh {
-  display: block;
-  margin-top: 4px;
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--text-faint);
-}
 
-/* Hide Chinese：降级为文字按钮，不再有边框和圆角 */
-.reading-tools { display: flex; justify-content: flex-end; margin: 0 0 28px; }
-.zh-toggle {
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--text-faint);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: var(--link-rule);
-}
-.zh-toggle:hover { color: var(--accent); box-shadow: var(--link-rule-hover); }
-
-body.hide-zh .zh,
-body.hide-zh .h-zh,
-body.hide-zh .list-zh,
-body.hide-zh .deck-zh,
-body.hide-zh .kicker-zh,
-body.hide-zh .cell-zh { display: none; }
-
-/* 文章里的双语列表、表格、引文 */
+/* 文章里的列表、表格、引文 */
 .seg-list { list-style: none; padding-left: 0; margin: 0 0 28px; }
 .case-content .seg-list { padding-left: 0; }
 .seg-list li { padding: 6px 0 6px 16px; border-left: 1px solid var(--line); margin: 0 0 10px; }
 .seg-list .en { display: block; font-size: 18px; line-height: 1.85; }
-.seg-list .zh { display: block; font-size: 15px; line-height: 1.75; color: var(--text-soft); margin-top: 2px; }
-.seg-table th .h-zh { margin-top: 2px; font-size: 13px; }
 .seg-table td { min-width: 150px; }
 .prose table .en, .case-content table .en { display: block; font-size: 16px; line-height: 1.7; }
-.prose table .zh, .case-content table .zh { display: block; font-size: 14px; line-height: 1.65; color: var(--text-soft); margin-top: 2px; }
 .prose blockquote .seg:last-child { margin-bottom: 0; }
 .prose blockquote .seg > .en { font-size: 18px; }
 

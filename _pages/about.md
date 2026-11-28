@@ -23,7 +23,7 @@ layout: single
     <div><dt>Projects</dt><dd><a href="/projects/">Working tools and case studies</a></dd></div>
   </dl>
 
-  <p class="about-note">Articles are in English, with a Chinese reference line under each passage. The “Hide Chinese” button on any article removes those lines.</p>
+  <p class="about-note">Articles are written in plain English, with sense-group pauses marked so a piece can be read aloud and retold.</p>
 
   <p class="about-index">Contact</p>
   <div class="focus-links"><a class="button" href="mailto:alexistsui94@gmail.com">Email me</a><a href="https://github.com/alexistsui94" rel="me">GitHub →</a></div>

@@ -1,6 +1,6 @@
 ---
 title: "Writing"
-description: "Every published note by Alexis Tsui, grouped into ERP, AI and everything else. Written in English with Chinese reference lines."
+description: "Every published note by Alexis Tsui, grouped into ERP, AI and everything else."
 layout: single
 permalink: /notes/
 ---
