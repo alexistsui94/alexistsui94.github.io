@@ -1,307 +1,212 @@
 ---
-title: "Vibe Coding, Term by Term: The Whole Vocabulary, Explained"
+title: "Vibe Coding, Term by Term: The Whole Vocabulary, Translated"
 date: 2026-11-28
 categories: [tech]
 topic: ai
 tags: [AI, Vibe Coding, Agents, Glossary]
-summary: "Eighty-two terms in the order they are usually taught. Each one gets a definition, why it matters in practice, the mechanism underneath, and the terms it connects to — so the vocabulary reads as a system rather than a list."
+summary: "A faithful English rendering of a Chinese Vibe Coding glossary — eighty-two terms kept in the original order, with the source's analogies and figures intact, plus tables and diagrams for structure."
 ---
 
 <div class="seg">
-<p class="en">Every field grows a vocabulary / faster than it grows a practice. // AI coding is two years old / and already carries eighty words for itself, / most of them borrowed, / several of them meaning something else by now. //</p>
+<p class="en">This is a translation, not an essay. // The source is Yu Pi's <a href="https://github.com/liyupi/ai-guide">Vibe Coding concept guide</a>, / a Chinese glossary of eighty-two terms / that has become the standard reference for people learning AI coding there. //</p>
 </div>
 
 <div class="seg">
-<p class="en">This page keeps all of them, in the order they are usually taught, / and gives each one four things: / what it means, / why it matters when you are actually working, / the mechanism underneath, / and which other terms it leans on. // A word you cannot connect to anything else / is a word you will forget by Friday. //</p>
+<p class="en">I have kept the original order, / the original analogies, / and the original figures — / including the model names and prices, / which are as the source states them in 2026. // Where a table or a diagram makes the structure easier to hold, / I have added one; / nothing else is mine. //</p>
 </div>
 
 <div class="seg">
-<p class="en">Definitions are short on purpose. // The connections are the point. //</p>
+<p class="en">Read it as a dictionary, / or read it in order as a course. // The eight chapters build: / the model, / the prompt, / the modes, / the context, / the output, / the tools, / the project words, / and the stack underneath. //</p>
 </div>
 
 <p class="term-toc"><a href="#model">1 · The model</a> · <a href="#prompt">2 · The prompt</a> · <a href="#modes">3 · The modes</a> · <a href="#context">4 · The context</a> · <a href="#output">5 · The output</a> · <a href="#tools">6 · The tools</a> · <a href="#project">7 · The project words</a> · <a href="#stack">8 · Front end, back end</a></p>
 
-<p class="level-key"><span class="lv lv1">L1</span>daily use<span class="lv lv2">L2</span>once you start building<span class="lv lv3">L3</span>specialist, still moving. Grades are mine, not the dictionary's.</p>
+<p class="level-key"><span class="lv lv1">L1</span>daily use<span class="lv lv2">L2</span>once you start building<span class="lv lv3">L3</span>specialist, still moving. The grades are a reading aid added here; the source does not grade its terms.</p>
 
 <h2 id="model">1. The model</h2>
 
-<p class="term-lead">Everything else in this page sits on top of one mechanism: a network that predicts the next token. This layer explains the constraints that never go away — why text is counted, why knowledge is frozen, why the window matters.</p>
-
 <h3 class="term">Artificial intelligence<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The umbrella term for systems doing tasks we associate with human judgement.</dd></div>
-  <div><dt>Why</dt><dd>It describes an ambition, not a mechanism — so it explains nothing about behaviour, cost or failure.</dd></div>
-  <div><dt>Logic</dt><dd>A label applied after the fact. Every system under it still has a concrete architecture you can inspect.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Large language model · Agentic coding · Vibe coding</dd></div>
-</dl>
+<p>The technology that lets computers imitate human intelligence — in plain words, a machine that thinks, learns and solves problems the way a person does.</p>
+<p>In vibe coding, AI is your programming assistant: you say what you want, and it drafts the approach, writes the code and fixes the bugs. The source's image is a programmer friend who is online twenty-four hours a day.</p>
 
 <h3 class="term">Large language model<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A model trained to predict the next token across a very large body of text.</dd></div>
-  <div><dt>Why</dt><dd>Everything it does — answering, translating, writing code — is that prediction repeated. It has patterns, not knowledge of your system.</dd></div>
-  <div><dt>Logic</dt><dd>Prompt tokens → probability distribution → sample one → append → repeat, until a stop condition.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Token · Context window · Temperature · Hallucination</dd></div>
-</dl>
+<p>An AI system that understands and generates human language. ChatGPT, Claude, Gemini and DeepSeek are all large language models.</p>
+<p>Why “large”? Because the number of parameters is enormous — tens of billions, sometimes trillions. More parameters usually mean a smarter model, and a more expensive one to run. The source's analogy: a top student who has read an ocean of books and code, which is why it can write, explain and repair code for you.</p>
+<p>Text models are not the only kind: there are vision models (Stable Diffusion), audio models (Whisper), and multimodal models that handle text, images and sound together (GPT-4o, Gemini). For AI coding, you mostly deal with the text ones.</p>
 
 <h3 class="term">Token<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The unit a model reads and writes; about four characters of English on average.</dd></div>
-  <div><dt>Why</dt><dd>Cost, limits and speed are all counted in tokens, so length is a budget rather than a style choice.</dd></div>
-  <div><dt>Logic</dt><dd>A tokeniser splits text into numbered pieces, ignoring meaning. <code>RetailToSaleOrder</code> arrives in fragments.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Input and output tokens · Token caching · Context window · Embeddings</dd></div>
-</dl>
+<p>The basic unit of text a model processes — a “word piece”, the smallest thing the text is broken into.</p>
+<p>It is the concept you cannot skip, because AI services bill by token: what you send and what comes back both consume them, and more tokens means more money. In English a token is roughly a word or part of one. Different models use different tokenisers, so the same passage can cost different amounts in different models.</p>
+<table class="seg-table">
+<thead><tr><th>What you send</th><th>Roughly</th></tr></thead>
+<tbody>
+<tr><td><span class="en"><code>Hello World</code></span></td><td><span class="en">about 2 tokens</span></td></tr>
+<tr><td><span class="en">the same greeting in Chinese</span></td><td><span class="en">about 4 to 6 tokens</span></td></tr>
+</tbody>
+</table>
+<p>Chinese-first models such as Qwen and DeepSeek optimise for the language, so one token covers about 1.5 to 1.8 Chinese characters — noticeably more efficient than the early English-first models. Most coding tools now show a running token count, so you can watch the cost while you work.</p>
 
 <h3 class="term">Input and output tokens<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>What you send is input; what comes back is output. They are priced and limited separately.</dd></div>
-  <div><dt>Why</dt><dd>Output usually costs several times more than input, so a long answer is expensive in a way a long paste is not.</dd></div>
-  <div><dt>Logic</dt><dd>Input is charged once per call; output is charged per token generated, which also sets how long you wait.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Token · Token caching · Streaming · Temperature</dd></div>
-</dl>
+<p>Billing separates what goes in from what comes out. Input tokens are your prompt, code and files; output tokens are the answer, the generated code and the tool calls.</p>
+<p>Output is generally the more expensive half, because generating costs more compute than reading. In the source's example, Claude Sonnet 4 charges $3 per million input tokens and $15 per million output tokens — five times more for output.</p>
+<p>The cheapest saving is still the simplest: write prompts that are clear enough to be understood in one pass, so you do not pay for the same explanation three times.</p>
 
 <h3 class="term">Token caching<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The provider keeps a prefix of your prompt in memory, so the next call does not pay full price to re-read it.</dd></div>
-  <div><dt>Why</dt><dd>It rewards stable material at the top of the prompt — rules, schemas, documentation — and punishes reshuffling it.</dd></div>
-  <div><dt>Logic</dt><dd>Prefix is hashed and stored; a matching prefix bills at a fraction of fresh input; the entry expires after minutes.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Token · Context window · Rules file · AGENTS.md</dd></div>
-</dl>
+<p>A mechanism that saves real money. When you keep talking to the same model, much of the prompt repeats — the system instruction, the files you attached — and recomputing it every time is waste. Caching stores the intermediate result and reuses it when the same prefix appears again.</p>
+<p>Cached tokens come in two kinds: writing the cache costs slightly more than normal input the first time, and reading it later can cost as little as one tenth of normal input.</p>
+<p>The practical advice: keep the top of your context stable. If your rules file and reference files do not change between turns, you keep getting the discount — which is why one long conversation can be cheaper than three short ones.</p>
 
 <h3 class="term">Model parameters<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The weights learned during training, counted in billions.</dd></div>
-  <div><dt>Why</dt><dd>More parameters usually mean more capability and more cost, but the number says nothing about fit for your task.</dd></div>
-  <div><dt>Logic</dt><dd>Set once by the provider, frozen afterwards. Nothing you type changes them.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Training and inference · Fine-tuning · Distillation</dd></div>
-</dl>
+<p>The “knowledge points” a model learned during training, stored as numbers. If it read countless statements that the sky is blue, the association between sky and blue lives in the parameters. More parameters, more associations retained.</p>
+<p>Parameter count drives both capability and running cost: a larger model is usually smarter and usually needs more GPU compute per request.</p>
+<table class="seg-table">
+<thead><tr><th>Model (as the source lists it)</th><th>Parameters</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td><span class="en">DeepSeek V4.1 Flash</span></td><td><span class="en">552B</span></td><td><span class="en">MoE, natively multimodal</span></td></tr>
+<tr><td><span class="en">GLM-5.4</span></td><td><span class="en">~750B</span></td><td><span class="en">Loop Transformer architecture</span></td></tr>
+<tr><td><span class="en">Qwen4-Max</span></td><td><span class="en">2.4T</span></td><td><span class="en">MoE, 71–95B active per call</span></td></tr>
+<tr><td><span class="en">Kimi K3.1 Pro</span></td><td><span class="en">2.8T</span></td><td><span class="en">MoE, 104B active</span></td></tr>
+</tbody>
+</table>
+<p>The trend worth noticing: size and capability are no longer a straight line. The source points out that a 552B model can beat a 1.6T model of the same family, and that architectural changes such as looping a middle layer twice raise the ceiling without adding parameters. Vendors also ship several sizes of the same family, so you can trade cost against capability.</p>
 
 <h3 class="term">Training and inference<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Training produces the weights; inference uses them.</dd></div>
-  <div><dt>Why</dt><dd>It explains the central fact of working with models: the knowledge is frozen, so everything live has to arrive through the context.</dd></div>
-  <div><dt>Logic</dt><dd>Training is gradient updates over a huge corpus, done once. Inference is one forward pass per request, done every time.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Model parameters · Fine-tuning · Context · Distillation</dd></div>
-</dl>
+<p>Training is how a model learns from large amounts of data. It takes enormous compute and time, and it is done by the AI companies — you almost never train a model yourself; you use a finished one.</p>
+<p>Inference is using the trained model to answer and generate. Every chat with ChatGPT and every request to Cursor is inference.</p>
+<p>The source's analogy: training is a student going to school and studying; inference is that student sitting an exam.</p>
 
 <h3 class="term">Fine-tuning<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Further training of a finished model on your own examples.</dd></div>
-  <div><dt>Why</dt><dd>It reliably shapes format, tone and narrow behaviour. It does not reliably add facts — for facts, put them in the context.</dd></div>
-  <div><dt>Logic</dt><dd>Supervised pairs → weight updates → a new checkpoint you host or rent.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Training and inference · Few-shot · Distillation · Context</dd></div>
-</dl>
+<p>Continuing to train an existing model on domain-specific data so it performs better in one area — medical records to make a medical specialist, or your company's codebase to make it familiar with your style.</p>
+<p>For ordinary users the cost is high and it is usually unnecessary; a ready-made model is enough. Platforms such as Alibaba Cloud Bailian and Volcano Engine offer fine-tuning as a service, which lowers the barrier.</p>
 
 <h3 class="term">Distillation<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Training a small model on the outputs of a large one.</dd></div>
-  <div><dt>Why</dt><dd>It explains why cheap models feel like expensive ones on narrow, well-worn tasks — and why they fall apart on the unfamiliar ones.</dd></div>
-  <div><dt>Logic</dt><dd>Teacher generates answers at scale; student learns to imitate the distribution, not the reasoning.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Model parameters · Fine-tuning · System-1 models</dd></div>
-</dl>
+<p>Compressing a large model's knowledge into a small one — knowledge distillation.</p>
+<p>The source's image is a senior developer mentoring a junior: the senior does not just give the answer, but shares the reasoning. The junior learns the way of thinking and reaches similar decisions at a fraction of the cost.</p>
+<p>The mechanism is the “soft label”. Shown a photo, a large model does not say only “dog”; it returns a distribution — dog 92%, cat 5%, wolf 3% — and the 5% carries real information about resemblance. A small model trained on those distributions learns the subtle relations between categories, which works far better than learning from right-or-wrong labels alone.</p>
+<p>The payoff in the source: five to thirty times cheaper, about four times faster, and over 95% of the performance retained. DeepSeek-R1's distilled versions are the example — a 671B teacher, a 32B student, still strong. Distillation differs from fine-tuning in aim: fine-tuning makes a model more specialised; distillation makes it lighter and cheaper.</p>
 
 <h3 class="term">Context window<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Everything the model can see in one call: instructions, files, documents, the conversation so far.</dd></div>
-  <div><dt>Why</dt><dd>It is the hard boundary of what the model can know right now. Nothing outside it exists for this answer.</dd></div>
-  <div><dt>Logic</dt><dd>Tokens are packed up to a limit; beyond it, material is dropped or summarised, and attention is never spread evenly.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context · Context engineering · Compaction · RAG · Token</dd></div>
-</dl>
+<p>The maximum amount of content a model can “remember” at once, measured in tokens.</p>
+<table class="seg-table">
+<thead><tr><th>Model family (per the source)</th><th>Window</th></tr></thead>
+<tbody>
+<tr><td><span class="en">GPT-4o</span></td><td><span class="en">128K — an early model</span></td></tr>
+<tr><td><span class="en">Claude 5.5 series</span></td><td><span class="en">1M</span></td></tr>
+<tr><td><span class="en">GPT-6.2 series</span></td><td><span class="en">~1.05M</span></td></tr>
+<tr><td><span class="en">Gemini 4 series</span></td><td><span class="en">1M, text, image, audio and video together</span></td></tr>
+<tr><td><span class="en">DeepSeek V4.1 Flash / Qwen4-Max / Kimi K3.1</span></td><td><span class="en">1M; Qwen4-Max has no long-context surcharge</span></td></tr>
+</tbody>
+</table>
+<p>A larger window means more code and more history in one conversation, which helps when the project is big or the task may not finish in a single pass.</p>
+<p>The cost side matters too: everything you stuff in is billed on every request. Some models also price long requests higher — Claude once charged double beyond 200K tokens — so read the pricing page before assuming the window is free.</p>
 
 <h2 id="prompt">2. The prompt</h2>
 
-<p class="term-lead">The prompt is not a sentence you write; it is the whole input the model receives. These seven terms describe the layers of that input, from the standing instruction down to the example that fixes a format.</p>
-
 <h3 class="term">Prompt<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The instruction you give — in practice, everything sent with it: examples, files, tools, history.</dd></div>
-  <div><dt>Why</dt><dd>People blame the model for a bad answer when the prompt only contained half the situation.</dd></div>
-  <div><dt>Logic</dt><dd>Text in, continuation out. Whatever is absent from the prompt cannot influence the result.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">System prompt · Context · Few-shot · Prompt engineering</dd></div>
-</dl>
+<p>The instruction or question you give the AI — in coding, your requirement written in natural language.</p>
+<p>Prompt quality decides output quality. A good one is specific, carries the necessary background, and states the output format you expect. The source's contrast: “make a website” is vague; “build an expense tracker in React with add, list and total, in blue” is a prompt.</p>
+<p>Messages in a conversation have three roles: system (sets the AI's role and rules, invisible to the user), user (what you send), and assistant (what the AI replies).</p>
 
 <h3 class="term">System prompt<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The standing instruction above the conversation that sets role, rules and boundaries.</dd></div>
-  <div><dt>Why</dt><dd>It is the cheapest place to put a rule you want applied every single turn, rather than repeating it.</dd></div>
-  <div><dt>Logic</dt><dd>Sent first, before user turns, so it colours everything after it. Most products let you edit it; few people do.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Prompt · Rules file · Hooks · Context engineering</dd></div>
-</dl>
+<p>The instruction set before the conversation begins, defining the AI's role, behaviour and limits — for example, “you are a senior Java backend expert; answer with concise, clear code”.</p>
+<p>It stays in force for the whole conversation, which makes it the main lever for customising behaviour. The source recalls the wave of “AI assistant” sites a few years ago: many were the same model underneath, differentiated only by their system prompts — translator, legal adviser, and so on.</p>
 
 <h3 class="term">Prompt engineering<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The craft of wording instructions so the model does what you meant.</dd></div>
-  <div><dt>Why</dt><dd>It mattered enormously in 2023 and matters less now: the bottleneck moved from how you ask to what you supply.</dd></div>
-  <div><dt>Logic</dt><dd>Iterate on phrasing against examples. Gains are real but local, and they do not transfer between tasks.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context engineering · Few-shot · Chain of thought · Prompt</dd></div>
-</dl>
+<p>The craft of designing and refining prompts so the AI understands your intent and produces what you expected.</p>
+<p>It is one of the core skills of vibe coding: a good prompt engineer gets better code with fewer turns and fewer tokens.</p>
 
 <h3 class="term">Zero-shot<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Asking with no examples.</dd></div>
-  <div><dt>Why</dt><dd>Fine for common tasks, unreliable for anything with a house style or an unusual output shape.</dd></div>
-  <div><dt>Logic</dt><dd>The model falls back on the most common pattern in its training, which may not be yours.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Few-shot · Prompt · Fine-tuning</dd></div>
-</dl>
+<p>Giving the task with no examples at all — just a description, such as “translate this paragraph”. The model relies on what it already learned.</p>
+<p>For simple tasks it is enough, and it saves tokens. For anything with a house style, it is a gamble.</p>
 
 <h3 class="term">Few-shot<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Two or three worked examples placed inside the prompt.</dd></div>
-  <div><dt>Why</dt><dd>The cheapest quality upgrade available: one good input-output pair often beats a paragraph of adjectives.</dd></div>
-  <div><dt>Logic</dt><dd>The model continues the pattern it sees. Examples teach format and judgement faster than instructions describe them.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Zero-shot · Prompt · Chain of thought · Fine-tuning</dd></div>
-</dl>
+<p>Adding a few input-output examples so the model learns the format or style you want before it produces its own.</p>
+<p>The source's example is a translation template: two filled pairs, then a third with only the left side, and the model completes it in the same shape. Examples make the requirement concrete, and the output more consistent.</p>
 
 <h3 class="term">Chain of thought<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Asking the model to reason step by step before giving the answer.</dd></div>
-  <div><dt>Why</dt><dd>It helps with arithmetic, logic and multi-step edits — and mostly adds words when the model already reasons internally.</dd></div>
-  <div><dt>Logic</dt><dd>Intermediate tokens become part of the context, so later steps can build on earlier ones.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Deep thinking · Few-shot · Prompt engineering</dd></div>
-</dl>
+<p>A prompting technique that asks the model to show its reasoning step by step instead of jumping to an answer. It is especially effective on multi-step arithmetic, code logic and system design.</p>
+<p>Many reasoning models and coding tools now do this by themselves; you can also add “think step by step” to the prompt. For projects with complex business rules, several interacting modules, or a choice between technical approaches, it pays to let the model reason before it writes.</p>
 
 <h3 class="term">Markdown<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The plain-text formatting both you and the model read constantly — headings, lists, tables, code fences.</dd></div>
-  <div><dt>Why</dt><dd>Structured input produces structured output. A pasted table stays a table; a wall of text stays a wall.</dd></div>
-  <div><dt>Logic</dt><dd>Cheap markers that survive copy-paste and render as structure, which is why every agent writes in it.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Prompt · Rules file · Few-shot</dd></div>
-</dl>
+<p>A lightweight markup language: <code>#</code> for headings, <code>**bold**</code>, <code>-</code> for lists.</p>
+<p>It matters in AI coding for three reasons: most answers come back in Markdown, project documents such as the README are written in it, and the rules files that define an agent's behaviour are Markdown too.</p>
+<p>The deeper reason from the source: structure — heading levels, lists, code blocks — helps the model understand your intent more precisely, and trains your own structured thinking, which in turn makes your prompts better.</p>
 
 <h2 id="modes">3. The modes</h2>
 
-<p class="term-lead">This is where the vocabulary grew fastest and where most confusion lives. The words here are not alternatives to each other — they sit on four levels, and most bad arguments come from treating a lower-level choice as if it were a higher-level one.</p>
-
-<table class="seg-table">
-<thead><tr><th>Level</th><th>The question it answers</th><th>Words that belong to it</th></tr></thead>
-<tbody>
-<tr><td><span class="en">1 · Model</span></td><td><span class="en">Can it do the job at all?</span></td><td><span class="en">ReAct · deep thinking · adaptive thinking · tool calling</span></td></tr>
-<tr><td><span class="en">2 · Harness</span></td><td><span class="en">What surrounds the model?</span></td><td><span class="en">Harness engineering · MCP · skills · hooks · slash commands</span></td></tr>
-<tr><td><span class="en">3 · Loop</span></td><td><span class="en">How does the work repeat?</span></td><td><span class="en">Agent loop · loop engineering · Ralph Wiggum loop · background agents</span></td></tr>
-<tr><td><span class="en">4 · Team</span></td><td><span class="en">Who does the work?</span></td><td><span class="en">Subagents · agent teams · orchestration · A2A · ACP · BMAD</span></td></tr>
-</tbody>
-</table>
+<p class="term-lead">The source's largest chapter, and the one where names are most easily confused. Its own framing is useful here: prompt engineering asks how to instruct, context engineering asks what to supply, and harness engineering asks how to keep the whole job reliable — each one containing the last.</p>
 
 <h3 class="term">Vibe coding<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Karpathy's phrase from February 2025: describe what you want, accept the code, judge it by whether it runs.</dd></div>
-  <div><dt>Why</dt><dd>It is a prototyping stance, not a delivery method. The name got stretched to cover production work it was never meant for.</dd></div>
-  <div><dt>Logic</dt><dd>Prompt → code → run → look at it → adjust. The feedback loop is visual, so it only catches what you can see.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agentic engineering · Prompt · Hallucination · Technical debt</dd></div>
-</dl>
+<p>A concept Andrej Karpathy proposed in February 2025: you talk to the AI in natural language, describe what you want, test the result and steer the direction. You do not need to know syntax — only to say clearly what you mean.</p>
+<p>So the point is not writing code but specifying a requirement. The clearer the description, the more reliable the result. The source's analogy is ordering takeaway: you say what you want, the kitchen cooks it; you do not need to cook, but you do need to know what you feel like eating.</p>
 
 <h3 class="term">Agentic engineering<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The 2026 correction, from Karpathy himself: same tools, but a spec, tests and evaluations decide whether the output is right.</dd></div>
-  <div><dt>Why</dt><dd>It moves the standard from "looks right" to "passes the checks", which is the only difference that matters in production.</dd></div>
-  <div><dt>Logic</dt><dd>Spec → agent work → deterministic tests → evals for the fuzzy parts → merge only on evidence.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Vibe coding · Harness engineering · Spec-driven development · Hooks</dd></div>
-</dl>
+<p>Karpathy's follow-up concept, from February 2026 — effectively the disciplined version of vibe coding. Instead of one sentence and whatever comes back, you think the work through, write the plan, split the tasks, hand them over, then review the delivery and send it back if the quality is not there.</p>
+<p>The source's image: in vibe coding you are a DJ, playing whatever feels right; in agentic engineering you are the site foreman, and process, quality and sign-off are yours. One follows feeling, the other follows procedure.</p>
+<p>Neither replaces the other. Vibe coding shows you what is possible; agentic engineering turns that possibility into something usable. Small tools can stay on the first; company projects need the second.</p>
 
 <table class="seg-table">
 <thead><tr><th></th><th>Vibe coding</th><th>Agentic engineering</th></tr></thead>
 <tbody>
-<tr><td><span class="en">You judge by</span></td><td><span class="en">Does it look right?</span></td><td><span class="en">Does it pass the checks?</span></td></tr>
-<tr><td><span class="en">Context</span></td><td><span class="en">Whatever happens to be in the chat</span></td><td><span class="en">Rules file, chosen files, defined tools</span></td></tr>
-<tr><td><span class="en">When it breaks</span></td><td><span class="en">You notice later</span></td><td><span class="en">A test or an eval fails</span></td></tr>
-<tr><td><span class="en">Good for</span></td><td><span class="en">A prototype, a one-off script</span></td><td><span class="en">Anything someone depends on</span></td></tr>
+<tr><td><span class="en">Stance</span></td><td><span class="en">Follow the feeling</span></td><td><span class="en">Follow the process</span></td></tr>
+<tr><td><span class="en">Your role</span></td><td><span class="en">DJ</span></td><td><span class="en">Foreman</span></td></tr>
+<tr><td><span class="en">Fails when</span></td><td><span class="en">The project gets big</span></td><td><span class="en">The process is skipped</span></td></tr>
 </tbody>
 </table>
 
 <h3 class="term">Agentic coding<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Letting an agent read the repository, run commands, edit files and iterate — instead of pasting code into a chat.</dd></div>
-  <div><dt>Why</dt><dd>The unit of work changes from a snippet to a task with a definition of done, which is why verification becomes unavoidable.</dd></div>
-  <div><dt>Logic</dt><dd>Read → plan → edit → run → read output → repeat. The repository, not the chat, is the state.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agent loop · Tool calling · Agentic engineering · Version control</dd></div>
-</dl>
+<p>Letting the AI work as an autonomous agent: plan the task, execute the operations, verify the result — rather than answering questions passively.</p>
+<p>The distinction from agentic engineering is one of subject: agentic coding is about what the AI can do on its own; agentic engineering is the human method for managing it. In Cursor's agent mode, for instance, the AI reads several files, plans an approach, edits code, runs tests and fixes what fails.</p>
 
 <h3 class="term">Harness engineering<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The 2026 name for the layer around the model: rules, skills, sub-agents, hooks, tools, memory.</dd></div>
-  <div><dt>Why</dt><dd>Its claim is that the model is now a commodity and the harness is the product — the same model in a tighter harness produces visibly better work.</dd></div>
-  <div><dt>Logic</dt><dd>Constrain at four points: instruction, context, tool permission, runtime. Each layer narrows what the model may do.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Rules file · Agent skills · Hooks · MCP · Subagents · Agentic engineering</dd></div>
-</dl>
+<p>A 2026 paradigm whose core idea is <strong>human steers, agent executes</strong>. It does not optimise the model; it builds the constraints, feedback loops and workflow management around the agent so an unpredictable model runs steadily in a high-reliability environment.</p>
+<p>The word is a horse harness — reins and saddle for a strong animal that does not always go where you point. The argument for it: the model is now a commodity, and the competitive part is the engineering system around it. The same model in different harnesses produces very different code, and the programmer's job shifts from writing code to designing the system that makes the AI write it reliably.</p>
+<p>The source places it as the third step: prompt engineering asks how to instruct, context engineering asks what to supply, harness engineering asks how to get a whole job finished reliably. Its modules: context architecture, execution capability (tools and MCP), task orchestration (plan mode, parallel subagents), feedback (linters, tests, browser use), and architectural guardrails against entropy.</p>
 
 <h3 class="term">Loop engineering<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Designing the cycle rather than the step: what starts it, what it may touch, how it verifies itself, when it must stop.</dd></div>
-  <div><dt>Why</dt><dd>Closer to operations than prompting. The failure mode is not a bad answer but an agent looping confidently in the wrong direction.</dd></div>
-  <div><dt>Logic</dt><dd>Trigger → attempt → check → decide: continue, escalate or stop. Every loop needs a budget and an exit.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agent loop · Ralph Wiggum loop · Hooks · Background agents</dd></div>
-</dl>
+<p>A mid-2026 paradigm: design an automatic loop so the AI executes, verifies and repairs itself until the goal is met. Manual driving versus automatic — you set the destination and the safety rules, then it drives.</p>
+<p>A workable loop needs three things: a clear goal with a stopping condition (“all tests pass” is a good one), a feedback closure that checks each round, and state kept outside the conversation — a <code>PROGRESS.md</code> — so a crash does not restart from zero. It sits on top of the previous three: the environment makes work reliable, the loop makes it repeat without you.</p>
 
 <h3 class="term">Multi-agent collaboration<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Several agents working on one problem, each with a role or a slice.</dd></div>
-  <div><dt>Why</dt><dd>It buys parallelism and cleaner context, and it costs coordination — plus new surfaces where the agents can disagree.</dd></div>
-  <div><dt>Logic</dt><dd>Split the task, hand out slices, merge results. Merge quality decides whether the parallelism was worth it.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agent orchestration · Subagents · Agent teams · A2A</dd></div>
-</dl>
+<p>Several agents dividing the work — one designs the architecture, one writes the front end, one the back end, one reviews — the way a software team would.</p>
+<p>Its advantages are not only handling bigger projects but speed: work that took hours can finish in minutes when the parts run in parallel.</p>
 
 <h3 class="term">Agent orchestration<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The layer that decides who does what: splitting, dispatching, collecting, resolving conflicts.</dd></div>
-  <div><dt>Why</dt><dd>It is where multi-agent systems actually fail — not in the models, but in the handoffs.</dd></div>
-  <div><dt>Logic</dt><dd>Planner → queue → workers → aggregator. Usually a script plus a queue; the impressive name is optional.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Multi-agent collaboration · Subagents · Agent teams · BMAD</dd></div>
-</dl>
+<p>Coordinating several agents or tasks so they run in the right order and hand results over correctly.</p>
+<p>If multi-agent collaboration asks which roles exist, orchestration asks who goes first, who follows, and how results are merged. The source's image is a conductor: the orchestrator decides who does what, when, what they tell each other, and how it all comes together.</p>
 
 <h3 class="term">Subagents<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A helper agent with its own fresh context, spawned for one bounded job, returning only a conclusion.</dd></div>
-  <div><dt>Why</dt><dd>Its real value is isolation: the mess of searching and reading stays out of the main thread.</dd></div>
-  <div><dt>Logic</dt><dd>Main agent delegates with a narrow brief → subagent works in its own window → returns a short result.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context engineering · Agent teams · Orchestration · Compaction</dd></div>
-</dl>
+<p>The main agent hands part of the work to independent sub-agents that run in parallel — a manager giving jobs to several staff at once.</p>
+<p>The benefits: parallelism, a clean main context unpolluted by sub-task detail, and tighter focus per agent. In Claude Code the built-in Task tool spawns them automatically; you can also define custom ones as Markdown files under <code>.claude/agents/</code> with their own role, tool permissions and rules.</p>
+<p>The limits: sub-agents have separate contexts and cannot share information directly, so tightly coupled work does not suit them, and running several at once costs more tokens — hiring more people is faster, but the payroll and the coordination cost go up too.</p>
 
 <h3 class="term">Agent teams<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Three to five agents working in parallel on one project, with a lead splitting work and teammates messaging each other.</dd></div>
-  <div><dt>Why</dt><dd>Good for broad mechanical change across modules; poor for anything that needs one coherent design decision.</dd></div>
-  <div><dt>Logic</dt><dd>Lead decomposes → teammates claim tasks → messages coordinate → lead integrates and verifies.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Subagents · Orchestration · Multi-agent collaboration · Version control</dd></div>
-</dl>
+<p>A 2026 pattern introduced by Claude Code: three to five independent agents form a team on one project, with a team lead splitting the work and teammates claiming tasks and messaging each other.</p>
+<p>The source's image: you used to manage one intern; now you manage a small team, with front end, back end and testing running at once. Anthropic's own engineers ran sixteen agents together and produced a hundred thousand lines of Rust, compressing days into hours — at the cost of more tokens, so it is not the default choice.</p>
+<p>In practice the agents need physical isolation to avoid conflicts: Git worktrees give each one its own directory and branch. Cursor's parallel agents mode does this automatically and merges with one click.</p>
 
-<h3 class="term">Self-improving agents<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Agents that distil a finished task into a reusable skill document and retrieve it next time — the pattern behind Hermes and similar 2026 projects.</dd></div>
-  <div><dt>Why</dt><dd>Useful when you repeat the same kind of job; a way to accumulate your own mistakes when you do not.</dd></div>
-  <div><dt>Logic</dt><dd>Task → reflection → written skill → retrieval on the next similar task → revision.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agent skills · Rules file · Context engineering</dd></div>
-</dl>
+<h3 class="term">Hermes Agent<span class="lv lv3">L3</span></h3>
+<p>An open-source, self-improving agent released by Nous Research in February 2026. Its distinguishing feature is that it learns from the tasks it completes.</p>
+<p>Ordinary agents start from zero each time. Hermes runs a closed learning loop: when a task finishes, it distils the solution into a reusable skill document; next time it retrieves similar documents first; and it keeps refining them with new practice. The source cites a 40% speed-up on similar tasks once skills accumulate.</p>
+<p>It keeps three layers of memory — session, skill documents, and a persistent user profile — connects through Telegram, Slack, Discord and WeChat, supports over two hundred models, and is free and open source.</p>
 
 <h3 class="term">Background agents<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Work that runs without you watching: on a schedule, on a queue, or on a pull request.</dd></div>
-  <div><dt>Why</dt><dd>Nobody was present when it happened, so the output has to be checkable after the fact.</dd></div>
-  <div><dt>Logic</dt><dd>Trigger → run → produce a diff, report or comment → human or automated review.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Loop engineering · Hooks · Code review · Agentic engineering</dd></div>
-</dl>
+<p>Hand a task over and walk away: the agent runs in the cloud and notifies you when it is done, so you can close the laptop.</p>
+<p>Typical jobs are fixing a batch of bugs, running a review pass, or finishing a whole feature module. The source's prediction is that this becomes like sending a message: you describe the work from your phone, go do something else, and come back to review.</p>
 
 <h3 class="term">Personal agents<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>An agent with standing access to your own files, mail and calendar, rather than a blank chat.</dd></div>
-  <div><dt>Why</dt><dd>Convenience purchased with permissions — the more it can reach, the more a wrong step costs.</dd></div>
-  <div><dt>Logic</dt><dd>Persistent identity → scoped credentials → tools over personal data → audit trail.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Super-agents · Desktop agents · Hooks · MCP</dd></div>
-</dl>
+<p>A step beyond the background agent: not one task, but an assistant that stays with you long term.</p>
+<p>The source lists four traits: a name and long-term memory that accumulates your preferences; its own cloud computer, so it does not occupy yours; authorised access to your mail, calendar and social accounts; and scheduled work that runs while you are offline and reports back.</p>
+<p>In late 2026 the large vendors shipped these — Grok Bot, Meta's Muse, OpenAI's Dots. OpenClaw and Hermes are the same idea self-hosted: a bare shell you furnish yourself, versus a furnished flat whose rent is your data and memory sitting on someone else's cloud.</p>
 
 <h3 class="term">Super-agents<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The marketing word for an agent given many tools and long-running autonomy.</dd></div>
-  <div><dt>Why</dt><dd>Treat it as a claim, not a specification. The useful questions are always which tools, and what stops it.</dd></div>
-  <div><dt>Logic</dt><dd>More tools → more capability and more risk; the limit has to come from the harness, not the model's goodwill.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Personal agents · Harness engineering · Hooks · MCP</dd></div>
-</dl>
+<p>An architecture proposed and open-sourced by the DeepSeek Harness team in October 2026. The goal is to detach the agent from a single session, so that handling several tasks at once does not turn the human into a messenger between them.</p>
+<p>If an ordinary agent is a contractor who can only do one job at a time, a super-agent is a working project team: a resident <strong>router</strong> receives messages from Feishu, GitHub and elsewhere, remembers the whole picture and assigns work; <strong>workers</strong> each keep their own context, run tasks concurrently and subscribe to follow-ups on their own tickets. Two-level event filtering, asynchronous full-duplex exchange, separated storage and compute (bring your own model), and a watchdog keep it running around the clock.</p>
 
 <h3 class="term">Agent loop<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The core mechanism: the model calls a tool, reads the result, decides again.</dd></div>
-  <div><dt>Why</dt><dd>Everything else in this section is built on this one cycle. It ends when no tool is called or a step limit is reached.</dd></div>
-  <div><dt>Logic</dt><dd>Think → call → observe → think. The observation re-enters the context, which is why long loops drift.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Tool calling · Loop engineering · ReAct · Context window</dd></div>
-</dl>
+<p>The core mechanism of any agent: perceive, think, act, observe, and repeat until the task is done or a termination condition is met.</p>
+<p>Perception reads the environment — files, errors; thinking decides the next move; action executes it; observation checks what happened; the loop decides whether to continue.</p>
+<p>The practical warning from the source: do not let the loop run too long. Most tools cap the number of iterations, and long loops both degrade and burn tokens — people have woken up to an exhausted quota because the agent was stuck circling. Claude Code's own implementation is a plain <code>while(true)</code>: compress the context, call the model, execute any requested tool, append the result, repeat.</p>
 
 <figure class="article-figure">
   <img src="/assets/images/agent-loop.svg" alt="A loop from task to model to tool call to result, returning to the model, with a note that writes need a confirmation." width="900" height="374">
@@ -309,128 +214,78 @@ summary: "Eighty-two terms in the order they are usually taught. Each one gets a
 </figure>
 
 <h3 class="term">Ralph Wiggum loop<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A deliberately dumb pattern: write the checklist first, then let a fresh agent take one unfinished item per round, commit, and start again with clean context.</dd></div>
-  <div><dt>Why</dt><dd>Progress lives in git rather than in a long conversation, which is exactly why it survives context limits.</dd></div>
-  <div><dt>Logic</dt><dd>Checklist → pick one item → implement → test → commit → new window → repeat until empty.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Loop engineering · Agent loop · Version control · Spec-driven development</dd></div>
-</dl>
+<p>A 2026 pattern named after the Simpsons character who never gives up: put the AI in a loop and let it run until every checklist item in the requirements document is done.</p>
+<p>The workflow: write a PRD that breaks the feature into checkable items; the agent picks an unfinished one; when it finishes, it commits and records progress; the next round starts with a completely fresh context; repeat until the list is empty.</p>
+<p>Its cleverness is the clean context each round, with progress persisted in Git rather than a long conversation — which avoids the agent losing the plot, and lets it run unattended. The source's caution: set an iteration limit and a token budget, or it will loop and burn money.</p>
 
 <h3 class="term">ReAct<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Reason and act, interleaved: think about the next step, take it, observe, think again.</dd></div>
-  <div><dt>Why</dt><dd>It is the pattern underneath most tool-using agents — named in 2022 and never renamed.</dd></div>
-  <div><dt>Logic</dt><dd>Thought → action → observation, repeated. The trace is the audit log of why the agent did what it did.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agent loop · Tool calling · Chain of thought</dd></div>
-</dl>
+<p>Reasoning and acting, alternating: think about the situation, act, look at the effect, then think again about the next step.</p>
+<p>Traditional AI either thought without acting or acted without thinking. ReAct interleaves them — reason, act, observe, adjust — which is why it is one of the core techniques under modern coding agents.</p>
 
 <h3 class="term">Deep thinking<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Built-in reasoning before answering: the model works through steps internally, then replies.</dd></div>
-  <div><dt>Why</dt><dd>Better on architecture, hard bugs and multi-step maths; slower and more expensive per answer.</dd></div>
-  <div><dt>Logic</dt><dd>A budget of reasoning tokens is spent before the visible answer, and billed either way.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Adaptive thinking · Chain of thought · Temperature</dd></div>
-</dl>
+<p>The model's built-in ability to reason internally before answering — also called extended thinking or thinking mode.</p>
+<p>It differs from chain-of-thought prompting: CoT is a prompt technique that asks for visible reasoning, while deep thinking is a model capability that happens without being asked. In normal mode the answer comes straight out; with it on, the model analyses, weighs options and evaluates trade-offs first — the “thinking…” you sometimes see.</p>
+<p>It suits architecture design, stubborn bugs and algorithm work. The cost is slower responses and more tokens, and most models and tools now let you switch it on or off.</p>
 
 <h3 class="term">Adaptive thinking<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The model decides how much reasoning a question deserves, instead of a manual on-off switch.</dd></div>
-  <div><dt>Why</dt><dd>Simple questions answer at once; hard ones take the long path. Introduced across major models during 2026 and now mostly default.</dd></div>
-  <div><dt>Logic</dt><dd>A difficulty estimate routes the request to a short or long reasoning path, with configurable effort levels.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Deep thinking · Temperature · Token</dd></div>
-</dl>
+<p>The smarter version of the above: the model judges for itself how much reasoning the question deserves.</p>
+<p>The old manual switch had a problem — turn it on and simple questions crawl; turn it off and hard ones fail. Adaptive thinking answers easy questions instantly and routes hard ones into deep reasoning, keeping both quality and cost. Anthropic introduced it in Claude Opus 4.6 and refined it in 4.8, with effort levels developers can set.</p>
 
-<h3 class="term">Tool calling<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The model emitting a structured request — tool name plus arguments — for the runtime to execute.</dd></div>
-  <div><dt>Why</dt><dd>This is how an agent touches files, tests, databases and APIs. The model never runs anything; it only asks.</dd></div>
-  <div><dt>Logic</dt><dd>Model returns JSON → runtime validates and executes → result returns as an observation.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agent loop · MCP · Hooks · ReAct</dd></div>
-</dl>
+<h3 class="term">Tool use<span class="lv lv2">L2</span></h3>
+<p>The technology that lets the AI use external tools. On its own a model only produces text; with tool use it can read and write files, search the web, run commands and scripts, call APIs, and query databases.</p>
+<p>Four steps: recognise that a tool is needed, choose which one, call it with the right arguments, and fold the result back into the answer.</p>
+<p>The model never executes anything itself — it emits “I want to call this tool with these arguments”, the runtime executes, and the result returns to the model. That is the difference between an assistant that tells you what to change and one that changes it.</p>
 
 <h3 class="term">MCP<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The Model Context Protocol: a standard way to expose tools and data to any compatible client.</dd></div>
-  <div><dt>Why</dt><dd>One integration serves many agents, instead of every tool being rebuilt for every product.</dd></div>
-  <div><dt>Logic</dt><dd>In 2026 the protocol moved to a stateless core and added a skills extension that loads instructions in stages — metadata first, full procedure on demand.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Tool calling · Agent skills · A2A · Super-agents</dd></div>
-</dl>
+<p>The Model Context Protocol, an open standard released by Anthropic at the end of 2024 for connecting models safely to external data sources and tools.</p>
+<p>The source's image is the USB port of the AI world: one shape that everything plugs into, instead of a custom cable per device. Developers write a connector once to the standard and every MCP-capable tool can use it — Claude Code, Cursor, Windsurf and most web agents support it.</p>
+<p>What it buys in practice: a Figma MCP lets the model read a design and generate the page; a GitHub MCP lets it work with repositories and open pull requests; a database MCP lets it query real business data.</p>
 
 <h3 class="term">Agent skills<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A folder with a <code>SKILL.md</code> file: a procedure the agent loads only when a task matches.</dd></div>
-  <div><dt>Why</dt><dd>Progressive disclosure — the instruction costs almost nothing until needed, unlike a rules file paid for on every call.</dd></div>
-  <div><dt>Logic</dt><dd>Metadata is always visible → matching skill is loaded on demand → its scripts and references load last.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Harness engineering · Rules file · MCP · Self-improving agents</dd></div>
-</dl>
+<p>An open standard from Anthropic, released in October 2025, that lets an agent learn professional procedures and extend its capability in a specific domain.</p>
+<p>A skill is a <strong>skill pack</strong>: carefully written instructions, scripts and resource files. The source's image is a new hire — install the document-processing skill and it knows how to make slides and handle spreadsheets; install the coding-standards skill and it writes to your company's conventions.</p>
+<p>Concretely it is a folder containing a <code>SKILL.md</code> file, with instructions, code and references beside it. The key design is <strong>progressive disclosure</strong>: content loads only when a matching task appears, so it saves tokens and stays flexible.</p>
 
 <h3 class="term">Hooks<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Deterministic code that runs at fixed points — before a tool call, after an edit, before a commit.</dd></div>
-  <div><dt>Why</dt><dd>Where a rule says "do not touch production", a hook makes it impossible. The cheapest reliability in the stack.</dd></div>
-  <div><dt>Logic</dt><dd>Event → your script → allow, block or modify. Never asks the model for permission; it removes the option.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Harness engineering · Tool calling · Linter · Agentic engineering</dd></div>
-</dl>
+<p>Automated triggers inside AI coding tools: when the AI finishes an action — generating code, committing, running a command — the hook runs a script or check you defined.</p>
+<p>In Claude Code they can format code after generation, run tests after a file changes, judge whether a permission request is safe, or check conventions before a commit.</p>
+<p>The source's caution: a badly configured hook can block the agent's normal workflow, so test it on a small scope before applying it to the whole project.</p>
 
 <h3 class="term">Slash commands<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Named shortcuts typed into the agent's prompt — <code>/review</code>, <code>/test</code>, <code>/commit</code> — that expand into a longer instruction.</dd></div>
-  <div><dt>Why</dt><dd>A way to standardise the twenty prompts you actually reuse, instead of retyping them from memory.</dd></div>
-  <div><dt>Logic</dt><dd>Name → stored template → inserted with arguments. Cheap, and it keeps team instructions identical.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Rules file · Agent skills · Hooks</dd></div>
-</dl>
+<p>Shortcuts typed with <code>/</code> in the chat box to trigger common operations — the keyboard shortcuts for operating an AI.</p>
+<p>Claude Code ships several: <code>/help</code> for available commands, <code>/compact</code> to compress the current context, <code>/config</code> for settings, <code>/skills</code> to list installed skills.</p>
+<p>You can define your own to package a workflow — a <code>/commit-push-pr</code> that commits, pushes and opens a PR in one go, or a <code>/techdebt</code> that clears duplicated code at the end of a session. A custom command is just a Markdown file in <code>.cursor/commands/</code>; the filename becomes the command, and the files can live in Git for reuse across projects.</p>
 
 <h3 class="term">A2A<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Agent-to-Agent: a protocol for agents built by different vendors to discover each other and exchange tasks.</dd></div>
-  <div><dt>Why</dt><dd>Enterprise plumbing rather than something you use directly — it matters when you buy agents from several suppliers.</dd></div>
-  <div><dt>Logic</dt><dd>Agent card describes capabilities → task handoff → status and artefacts returned over HTTP.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">ACP · MCP · Multi-agent collaboration · Orchestration</dd></div>
-</dl>
+<p>Agent-to-Agent: the protocol by which agents communicate and collaborate — the foundation of any multi-agent system.</p>
+<p>Just as people need a shared language, agents need a standard way to exchange information, assign tasks and report results. Google launched it in 2025 and more than 150 companies have joined.</p>
+<p>Do not confuse it with MCP: they are complementary. MCP connects an agent to tools; A2A connects agents to each other.</p>
 
 <h3 class="term">ACP<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Two things share the acronym: IBM's Agent Communication Protocol, and the Agent Client Protocol used by editors.</dd></div>
-  <div><dt>Why</dt><dd>Both address the same gap as A2A from different directions, and neither is settled — expect the names to move.</dd></div>
-  <div><dt>Logic</dt><dd>Communication protocol: REST-style messages between frameworks. Client protocol: an editor talking to any agent.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">A2A · MCP · Multi-agent collaboration</dd></div>
-</dl>
+<p>Two different things share this acronym. <strong>Agent Communication Protocol</strong>, from IBM Research, lets agents built on different frameworks and by different companies work together — like phones from different brands calling each other. It is built on lightweight HTTP REST, handles text, code, files and images, and does not care which language you write in.</p>
+<p><strong>Agent Client Protocol</strong>, from JetBrains and Zed, solves something else entirely: letting any coding agent run inside any IDE. Before it, every agent needed a separate plugin per editor; now an agent implements ACP once and IDEA can host it — Claude Code in IDEA, Gemini CLI in Zed, no longer locked to one editor. JetBrains also runs an ACP agent registry for one-click installs.</p>
+<p>ACP and A2A are independent: both address cross-framework collaboration, with different formats and different discovery mechanisms.</p>
 
 <h3 class="term">BMAD<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A role-based method — analyst, product manager, architect, developer, tester — where each role is an agent with its own instructions and artefacts.</dd></div>
-  <div><dt>Why</dt><dd>It works because it forces the specification to exist before the code, which is the same insight as SDD with more ceremony.</dd></div>
-  <div><dt>Logic</dt><dd>Role → artefact → handoff. Each document is the next agent's context, so quality is bounded by the documents.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Spec-driven development · Orchestration · Agent teams · Agentic engineering</dd></div>
-</dl>
+<p>The Breakthrough Method of Agile AI-Driven Development: a systematic framework for AI-agent development whose aim is to make a messy AI coding process structured and reusable.</p>
+<p>It organises work through <strong>role-playing agents</strong> — an analyst who writes the project brief with market analysis and user profiles, a product manager who turns it into a PRD, an architect who designs the technical approach. Agents come in two kinds: simple, single-file and self-contained for focused jobs such as review or documentation; and expert, with cross-session memory and a resource folder for complex multi-step workflows.</p>
+<p>Each agent has standard parts: persona (role, identity, communication style, principles), capability list, interaction menu, and optional key actions.</p>
 
 <h3 class="term">Browser use<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>An agent driving a real browser: clicking, typing, reading the page.</dd></div>
-  <div><dt>Why</dt><dd>Good for sites with no API; fragile in the way all UI automation is fragile — one redesign breaks the script.</dd></div>
-  <div><dt>Logic</dt><dd>Screenshot or DOM → locate element → act → verify the page changed as expected.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Computer use · Tool calling · Desktop agents</dd></div>
-</dl>
+<p>The ability of an agent to drive a web browser on its own: browse, click, fill forms, extract data.</p>
+<p>Typical uses are research across several sites, structured data collection, tedious form filling, and multi-step tasks that cross platforms. The best-known open-source project is Browser-Use, which drives browsers from Python with various models; Cursor and Claude Code also build the capability in for previewing and testing during development.</p>
+<p>Its key advantage: the agent can use your existing session and logins, so it reaches sites with no public API — which widens automation considerably.</p>
 
 <h3 class="term">Computer use<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The same idea one level up: the agent sees the screen, moves the mouse and types.</dd></div>
-  <div><dt>Why</dt><dd>It reaches any desktop application, which is also why it belongs in a sandbox rather than on your working machine.</dd></div>
-  <div><dt>Logic</dt><dd>Screenshot → plan → input event → screenshot again. Slow by nature, because every step is a round trip.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Browser use · Desktop agents · Personal agents</dd></div>
-</dl>
+<p>Anthropic's capability, released in 2024, that lets Claude operate a whole desktop the way a person does — reading screenshots, moving the cursor, clicking, typing, running commands.</p>
+<p>Unlike browser use, it reaches any desktop application. The mechanism is a continuous loop: capture the screen, decide the next step, send input, observe the result and adjust.</p>
+<p>For safety it is normally run in a virtual machine or container rather than on your real computer. The source notes the direction of travel: on top of it, Anthropic shipped Claude Cowork in 2026, a desktop assistant that works directly with your files — tidying the downloads folder, pulling figures out of screenshots into a spreadsheet, preparing a brand report.</p>
 
 <h2 id="context">4. The context</h2>
 
-<p class="term-lead">If the model is fixed and the harness is yours, the only variable left is what you put in front of it. This layer is the practical core of the whole vocabulary: it decides quality more than any prompt trick.</p>
-
 <h3 class="term">Context<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Everything inside the window for this call. Not memory, not training.</dd></div>
-  <div><dt>Why</dt><dd>If it is not here, it does not exist for this answer — the single most useful sentence in this glossary.</dd></div>
-  <div><dt>Logic</dt><dd>Instructions, files, retrieved documents and history compete for the same budget and the same attention.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context window · Context engineering · RAG · Rules file</dd></div>
-</dl>
+<p>Everything the AI can refer to when answering: the history of the current conversation, the files you have open, the project's structure and configuration, and any reference material you supplied.</p>
+<p>The richer and more relevant the context, the better the code fits your need. The source's analogy is handing work over to a new colleague — the more background you give, the faster they become useful. Cursor shows a token meter near the chat box; in Claude Code, <code>/context</code> reports what is currently occupying the window.</p>
 
 <figure class="article-figure">
   <img src="/assets/images/context-window.svg" alt="A context window containing rules, chosen files, retrieved documents and the conversation, with an unpasted conversion table sitting outside it." width="900" height="330">
@@ -438,319 +293,188 @@ summary: "Eighty-two terms in the order they are usually taught. Each one gets a
 </figure>
 
 <h3 class="term">Context engineering<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Filling the window with exactly the right information for the next step — Karpathy's definition, and the skill that replaced prompt engineering.</dd></div>
-  <div><dt>Why</dt><dd>Quality tracks context quality more than wording. This is where the hours are actually spent.</dd></div>
-  <div><dt>Logic</dt><dd>Four moves: write it down, select what matters, compress at boundaries, isolate the mess in a sub-agent.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context · Compaction · Rules file · Subagents · Prompt engineering</dd></div>
-</dl>
+<p>Managing and optimising what goes into the context, with one goal: the AI should have exactly the right amount of information — not so little that it misunderstands, not so much that it drowns and the bill rises.</p>
+<p>The practices: choose the most relevant files, supply the necessary background, define project conventions in a rules file, and clear irrelevant history at the right moment. It is an active research area, and the 2026 direction is from simple management toward a <strong>memory architecture</strong>: short-term (this conversation), long-term (accumulated across sessions), and external (vector databases, knowledge graphs).</p>
+<p>The source's example is Claude Code's own three tiers: a <code>MEMORY.md</code> of hot data, loaded every time but capped at 200 lines and 25KB; topic files of warm data — coding preferences, project conventions — of which only the five most relevant load at the start of a conversation; and past conversations as cold data, searched with grep when needed. One detail worth copying: the memory stores people's preferences and judgements, never code facts, because code changes and a stale memory about where a function lives becomes a trap.</p>
 
 <h3 class="term">Compaction<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Summarising a long session so early decisions survive in short form.</dd></div>
-  <div><dt>Why</dt><dd>Done at task boundaries, not when the window is full — by then the details you needed are already gone.</dd></div>
-  <div><dt>Logic</dt><dd>History → summary → summary replaces history → work continues on the smaller base.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context window · Context engineering · Subagents</dd></div>
-</dl>
+<p>Automatic summarising of earlier conversation when the context is about to overflow, so a long task can continue without the AI losing the thread.</p>
+<p>The source's analogy is meeting minutes: after three hours you cannot record every sentence, but the decisions, the action items and the conclusions are kept. Compaction does the same to a conversation.</p>
+<p>Claude Code implements it as a five-stage funnel: snip old tool results down to their structure, offload large outputs to cache, collapse the middle of the conversation into a summary, autocompact when a threshold is crossed, and finally react when the API returns a “prompt too long” error. Light cuts first, heavy ones only when needed.</p>
 
 <h3 class="term">Rules file<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A file of standing instructions read every session: build commands, boundaries, forbidden modules, what "done" means.</dd></div>
-  <div><dt>Why</dt><dd>Keep it to what cannot be inferred from the code — every line is paid for on every call and competes for attention.</dd></div>
-  <div><dt>Logic</dt><dd>Loaded automatically → shapes every response → costs tokens even when irrelevant.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">AGENTS.md · Token caching · Agent skills · Harness engineering</dd></div>
-</dl>
+<p>A configuration file in the project that tells the AI your conventions, stack and code style, so every generation already fits — no repeating yourself each session.</p>
+<p>Formats differ by tool: Cursor moved from a single <code>.cursorrules</code> to <code>.cursor/rules/*.mdc</code>, Claude Code uses <code>CLAUDE.md</code>, GitHub Copilot uses <code>.github/copilot-instructions.md</code>. Cursor's <code>.mdc</code> files carry YAML frontmatter — description, globs, alwaysApply — and can be activated always, by file pattern, by explicit reference with <code>@</code>, or by the AI's own judgement of relevance.</p>
+<p>The source's note: these file names and standards change with tool versions, so the official documentation wins.</p>
 
 <h3 class="term">AGENTS.md<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The 2026 convention for that file: plain Markdown at the repository root, read by most coding agents.</dd></div>
-  <div><dt>Why</dt><dd>No format to learn. The discipline is entirely in what you leave out.</dd></div>
-  <div><dt>Logic</dt><dd>Repository layout and commands → boundaries → definition of done. Written for a new colleague, not for a machine.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Rules file · Context engineering · Spec-driven development</dd></div>
-</dl>
+<p>An open file format for giving coding agents project instructions — a rules file, but cross-tool rather than tied to one product.</p>
+<p>The distinction from a README: the README is written for people and explains what the project is; <code>AGENTS.md</code> is written for the AI and carries the technical detail it needs — build and start commands, how to run tests, style rules, project structure. Tens of thousands of open-source projects have adopted it, and tools such as Claude Code, Codex, Cursor and Copilot pick it up from the repository root automatically.</p>
 
 <h3 class="term">Spec-driven development<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Writing the specification first and treating it as the source of truth the code must satisfy.</dd></div>
-  <div><dt>Why</dt><dd>With agents it stops being bureaucracy: a vague plan produces vague code, and the spec is the only artefact you and the model can both be held to.</dd></div>
-  <div><dt>Logic</dt><dd>Spec → tasks → implementation → tests that quote the spec. Change the spec first, then the code.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Agentic engineering · BMAD · Rules file · Ralph Wiggum loop</dd></div>
-</dl>
+<p>A methodology for the AI era: write an explicit specification first, treat it as the single source of truth, and make the code conform to it. The spec is a “project constitution” — requirements, design, interfaces — and the AI must follow its articles.</p>
+<p>The argument for it: the quality of generated code depends on how clear the context is, far more than on prompt tricks. A clear spec beats any prompt wizardry.</p>
+<p>The six steps in the source: constitution (principles, standards), specify (what and why), clarify (the AI asks structured questions about edge cases and error handling), plan (stack, architecture, data model, APIs), tasks (a dependency-ordered list), implement (the AI writes, the human verifies). It is the standard corporate process with the executor changed from a person to a model. GitHub's open-source Spec Kit, released in September 2025, walks you through it with slash commands.</p>
 
 <h3 class="term">RAG<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Retrieval-augmented generation: fetch relevant documents at question time and put them in the window.</dd></div>
-  <div><dt>Why</dt><dd>Strong on prose and policy; weak on exact identifiers, where plain search still wins.</dd></div>
-  <div><dt>Logic</dt><dd>Question → search → top passages → context → answer. Quality is bounded by retrieval, not by the model.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Embeddings · Vector database · Agentic RAG · Context</dd></div>
-</dl>
+<p>Retrieval-augmented generation: retrieve from an external knowledge base first, then answer from what was retrieved, so the answer is grounded rather than remembered.</p>
+<p>An ordinary model relies on what it learned in training, which may already be out of date. RAG lets it look at your documents, your codebase, your knowledge base at question time — particularly useful in company settings, where it can follow the style of code you already have.</p>
+<p>In production the pattern has grown variants: multi-query retrieval, HyDE (generate a draft answer, then search with its vector), hybrid search (vectors plus keywords), reranking to filter noise, GraphRAG for multi-hop reasoning across documents, and agentic RAG. Different problems need different combinations.</p>
 
 <h3 class="term">Agentic RAG<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>RAG where the agent decides what to search, reformulates, and searches again if the first result is thin.</dd></div>
-  <div><dt>Why</dt><dd>Better on multi-hop questions; harder to bound, because the loop can keep looking forever.</dd></div>
-  <div><dt>Logic</dt><dd>Plan a query → search → judge sufficiency → refine or stop. Needs an explicit stopping rule.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">RAG · Agent loop · Loop engineering · Embeddings</dd></div>
-</dl>
+<p>The evolved form: the fixed retrieve-then-generate pipeline becomes a closed loop controlled by an agent.</p>
+<p>The source's contrast is a librarian versus a researcher. A traditional RAG librarian fetches once from the shelf and hands back whatever was found, right or wrong. An agentic researcher thinks about where to look, judges whether what came back is relevant, searches again from another angle if it is not, checks several sources, and repeats until satisfied.</p>
+<p>Its capabilities: multiple retrieval rounds, query rewriting, several data sources at once (vector store, API, web, SQL), and self-correction. Named patterns include CRAG (corrective, with a retrieval evaluator), Self-RAG (reflection during generation) and Adaptive RAG (choosing a strategy by question type). The cost is latency and several times the tokens, so it suits high-stakes, high-accuracy work — legal, medical, compliance. A simple single-source lookup does not need it.</p>
 
 <h3 class="term">Vector database<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A store that indexes embeddings and returns nearest neighbours.</dd></div>
-  <div><dt>Why</dt><dd>Useful once you have thousands of chunks; before that, a folder and a search command are honest enough.</dd></div>
-  <div><dt>Logic</dt><dd>Text → embedding → index → query vector → top-k results by distance.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Embeddings · RAG · Agentic RAG</dd></div>
-</dl>
+<p>A database built to store and query vectors — arrays of numbers such as <code>[0.1, 0.5, 0.3, 0.8]</code> — where each number is a feature dimension. Text, images and code can all be turned into such arrays, and semantically similar content ends up with similar vectors.</p>
+<p>Once your code or documents are stored this way, the AI finds semantically close material even when the words differ: search “user login” and it can return a function named <code>handleAuth</code>. The AI boom produced a large field of databases that support vector storage.</p>
 
 <h3 class="term">Embeddings<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Text turned into vectors so that similar meaning lands nearby.</dd></div>
-  <div><dt>Why</dt><dd>This is why semantic search finds "returns policy" when you typed "refund rules" — and why it confidently returns something adjacent when you needed the exact one.</dd></div>
-  <div><dt>Logic</dt><dd>Text → fixed-length vector → cosine distance. Meaning becomes geometry, and geometry has no notion of exact.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Vector database · RAG · Token</dd></div>
-</dl>
+<p>The process of turning text, code or other content into a numeric vector that captures its meaning. In vector space, similar meanings sit closer together — which is exactly why semantic search works.</p>
+<p>You do not need the mathematics. It is enough to know that embeddings are the foundation under RAG and under semantic code search.</p>
 
 <h2 id="output">5. The output</h2>
 
-<p class="term-lead">Four words about what comes back, and what you can do about it. Three of them are often mistaken for controls over correctness; only one actually is, and it is not the one people reach for.</p>
-
 <h3 class="term">Hallucination<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Fluent output with no basis in the input.</dd></div>
-  <div><dt>Why</dt><dd>Not an intermittent bug: it is the same prediction mechanism working without enough to work from. The remedy is a better source or a check.</dd></div>
-  <div><dt>Logic</dt><dd>Insufficient context + pressure to continue → the most plausible continuation wins, and plausible is not true.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Context · Temperature · Linter · Agentic engineering</dd></div>
-</dl>
+<p>Output that does not match reality: an API that does not exist, a function used the wrong way, a library invented outright, or a confident paragraph that is simply false.</p>
+<p>It is inherent to models that generate by probability — sometimes they fill the gap with something made up. The source's mitigations are practical: ask the AI for documentation links and check them, verify against official docs yourself, try another model, start a new conversation and restate the problem, or use a documentation MCP such as Context7 to pull current technical references.</p>
+<p>For people building AI applications, reducing hallucination is a central problem, and RAG is the most common answer: retrieve real data first, generate afterwards.</p>
 
 <h3 class="term">Temperature<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The randomness dial on sampling.</dd></div>
-  <div><dt>Why</dt><dd>Lower makes output repeatable; it does not make it correct. People keep turning it down hoping for truth.</dd></div>
-  <div><dt>Logic</dt><dd>Reshapes the probability distribution before sampling: flat for variety, sharp for consistency.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Hallucination · Token · Deep thinking</dd></div>
-</dl>
+<p>The parameter controlling randomness, usually between 0 and 2, though ranges differ by model and tool.</p>
+<p>Low (around 0.1) gives determined, conservative output — what you want for code. High (around 1.0) gives variety and invention — what you want for brainstorming names, copy, or product ideas.</p>
+<p>In coding, keep it low for predictable, stable output; raise it deliberately when the task is to generate options rather than a correct answer.</p>
 
 <h3 class="term">Streaming<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Sending the answer token by token as it is produced.</dd></div>
-  <div><dt>Why</dt><dd>A latency trick, not a quality one — though the first line tells you quickly whether the direction is wrong.</dd></div>
-  <div><dt>Logic</dt><dd>Generation and delivery interleave, so perceived wait drops even when total time does not.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Input and output tokens · Token · Hallucination</dd></div>
-</dl>
+<p>Showing the answer as it is generated, instead of waiting for the whole thing.</p>
+<p>The source's image is live broadcast versus recorded video: you watch the output arrive, and if the direction is wrong you can stop it early and save the tokens. Most coding tools stream by default, and the underlying mechanism is usually Server-Sent Events, with the server pushing fragments to the client.</p>
 
 <h3 class="term">System-1 models<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Small models that return a decision instead of prose: a probability, a category, a score.</dd></div>
-  <div><dt>Why</dt><dd>Milliseconds and near-zero cost, which makes them the right tool for routing, triage and filtering before a larger model is called.</dd></div>
-  <div><dt>Logic</dt><dd>Input → single forward pass → fixed-shape output. No generation, so no parsing failures and no long wait.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Distillation · Temperature · Agent orchestration</dd></div>
-</dl>
+<p>A class of models that do not generate text — they only decide. The name comes from <em>Thinking, Fast and Slow</em>: system one is fast intuition, system two is slow reasoning, and while a conventional model behaves like system two, a decision model is system one. The source's example is Jev, opened in September 2026.</p>
+<p>Ask whether an email is urgent and it does not write an analysis; it returns JSON — yes, 95%. It handles three question shapes: yes or no with a probability, choose one of several with probabilities, or a score on your own scale. Because nothing is written word by word, it answers in milliseconds, costs far less, and the output format is fixed by construction, so it never fails to parse.</p>
+<p>Its natural role is the intelligent <code>if</code> statement inside a program: ticket classification, content moderation, the quick decision at each step of an agent. Anything that needs prose or arithmetic still belongs to a conventional model.</p>
 
 <h2 id="tools">6. The tools</h2>
 
-<p class="term-lead">The oldest words in the list, and the ones people skip. They matter again because agents work through these surfaces: a clean command line and a real editor are now part of the AI toolchain, not the backdrop to it.</p>
-
 <h3 class="term">IDE<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>An integrated development environment: editor, debugger, terminal and project model in one window.</dd></div>
-  <div><dt>Why</dt><dd>VS Code and its forks dominate, and the AI features now matter more than the editor itself.</dd></div>
-  <div><dt>Logic</dt><dd>One process holds the project model, so completion, navigation and agents all read the same index.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Code editor · Code completion · Linter · CLI</dd></div>
-</dl>
+<p>An integrated development environment: the all-in-one program for writing code, usually bundling an editor, a debugger, a terminal and a plugin marketplace.</p>
+<p>VS Code is the most popular lightweight IDE — built by Microsoft and open source. Cursor and Windsurf are built on top of it, inheriting the interface and extending the AI side considerably.</p>
 
 <h3 class="term">Code editor<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The lighter half of an IDE: a window for editing text with syntax highlighting.</dd></div>
-  <div><dt>Why</dt><dd>Many people now work inside an agent's chat pane and open the editor only to read a diff.</dd></div>
-  <div><dt>Logic</dt><dd>Text buffer plus language awareness; everything else is a plugin. That is why agents can substitute for parts of it.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">IDE · Code completion · Code review</dd></div>
-</dl>
+<p>The tool for writing and changing code, with syntax highlighting, completion and error hints. Sublime Text and Vim are the familiar examples.</p>
+<p>The difference from an IDE is weight: an editor is lighter and starts faster, good for quick edits to a single file; an IDE carries the debugger, terminal and version control, which suits professional work and large projects.</p>
+<p>In the vibe coding era the editor absorbed AI: generate from a prompt, explain code, fix errors. Early Cursor was powerful, but at heart still an editor with AI added.</p>
 
 <h3 class="term">CLI<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The command line.</dd></div>
-  <div><dt>Why</dt><dd>It matters again in 2026 because agents are good at it: reading output, running tests, chaining commands.</dd></div>
-  <div><dt>Logic</dt><dd>Text in, text out, exit codes. A tool with a clean CLI is easier for an agent than one with a pretty UI.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Tool calling · Linter · Agentic coding</dd></div>
-</dl>
+<p>The command line interface — typing text commands in a small black window, as opposed to the GUI of icons, buttons and windows.</p>
+<p>It is having a revival, and not because programmers like terminals. Models have read enormous amounts of code and shell commands, so reading a command and executing it is natural for them; driving a graphical interface is not — screenshots, element hunting, simulated clicks, slow and error-prone. The source cites a test where an AI finished tasks through a browser only 35.8% of the time, and close to 100% through a CLI.</p>
+<p>That is why vendors have been open-sourcing CLIs for their own products — Google, Feishu, DingTalk, WeCom. Products used to be designed for human users only; now they need an interface for agents too. The prediction: two front ends per product, a GUI for people and a CLI for AI.</p>
 
 <h3 class="term">No-code platforms<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Tools that build software from forms and blocks rather than code.</dd></div>
-  <div><dt>Why</dt><dd>Still the fastest path for a fixed, well-understood shape; still a wall when you need something the platform did not anticipate.</dd></div>
-  <div><dt>Logic</dt><dd>Configuration compiles to a fixed runtime. Flexibility is traded for speed, and the trade is hard to reverse.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">BaaS · Vibe coding · MVP</dd></div>
-</dl>
+<p>Platforms that build applications without writing code. Low-code is the neighbour: a little code plus visual dragging, with more freedom.</p>
+<p>In the AI era these platforms merged with models — Bolt.new, Lovable, v0.dev, Baidu Miaoda — and you describe the requirement in natural language while the platform generates a complete, online application.</p>
+<p>They suit people with no programming background and anyone who needs a quick prototype. The weaknesses are equally clear: problems are hard to debug, deep customisation is difficult, and a project that grows hits a ceiling.</p>
 
 <h3 class="term">Code completion<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Suggesting the next line as you type.</dd></div>
-  <div><dt>Why</dt><dd>The oldest AI coding feature and the least discussed, because it quietly became normal.</dd></div>
-  <div><dt>Logic</dt><dd>Local context → model → ranked suggestions. Fast enough to feel like typing, shallow enough to stay uncritical.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">IDE · Code editor · Token</dd></div>
-</dl>
+<p>The AI predicting what you are about to write from the surrounding code and offering it inline; you press Tab to accept.</p>
+<p>GitHub Copilot started this in 2021. Within a few years the same technology moved from completing a few lines to developing a whole project, and many developers now skip line-by-line completion and let an agent write an entire feature in one pass.</p>
 
 <h3 class="term">Code review<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Reading a change before it lands, for correctness and for intent.</dd></div>
-  <div><dt>Why</dt><dd>With generated code the practice matters more, not less: the reviewer is often the only thing between a plausible diff and production.</dd></div>
-  <div><dt>Logic</dt><dd>Diff → intent check → risk check → approve or send back. Agents can pre-review, but they share the blind spots of the code they wrote.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Version control · Linter · Agentic engineering · Hooks</dd></div>
-</dl>
+<p>Checking code for quality, finding problems and suggesting improvements — before merge rather than after launch, when fixes are far more expensive.</p>
+<p>Traditionally a colleague or a senior did it. In vibe coding you can ask the AI: it points out potential bugs, security issues and performance problems, with suggested changes.</p>
+<p>The source's warning is worth keeping: AI review does not fully replace a human review, especially for important production code.</p>
 
 <h3 class="term">Linter<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A tool that flags suspicious code by rule: unused variables, missing types, unreachable branches.</dd></div>
-  <div><dt>Why</dt><dd>Deterministic, cheap, and the easiest quality gate to hand an agent, because the output is a list it can work through.</dd></div>
-  <div><dt>Logic</dt><dd>Parse → rules → line-level findings. No model, no variance: the same code always produces the same complaints.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Hooks · Code review · Agentic engineering · CLI</dd></div>
-</dl>
+<p>A tool that automatically checks code for syntax errors, style problems and potential bugs. ESLint for the front end, Pylint for Python, golint for Go — a strict grammar teacher that keeps the code consistent.</p>
+<p>In vibe coding it catches problems in generated code quickly, and most front-end scaffolds now wire ESLint in for you, so there is nothing to configure.</p>
 
 <h3 class="term">Debugging<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Finding why behaviour differs from expectation.</dd></div>
-  <div><dt>Why</dt><dd>Agents are good at the mechanical half — stack traces, logs, bisecting — and weak at the half that needs to know what the system was supposed to do.</dd></div>
-  <div><dt>Logic</dt><dd>Reproduce → narrow → inspect state → fix → prove with a test. The first step is the one agents skip.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Linter · Code review · Agentic coding</dd></div>
-</dl>
+<p>The process of finding and fixing errors when behaviour does not match expectation: breakpoints and stepping, watching variables, reading error messages and stack traces, adding log output.</p>
+<p>With an AI in the loop you can paste the error straight in and let it analyse the cause, propose a fix, or repair it on its own.</p>
 
-<h3 class="term">Desktop agents<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Open-source agents that run on your own machine and act on it — files, browser, terminal, sometimes your chat apps.</dd></div>
-  <div><dt>Why</dt><dd>OpenClaw is the best-known 2026 example. Powerful, and the reason "what permissions did I grant?" became a real question.</dd></div>
-  <div><dt>Logic</dt><dd>Local runtime → tools over OS → messaging front end. The trust boundary is your own account.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Computer use · Personal agents · Hooks · MCP</dd></div>
-</dl>
+<h3 class="term">OpenClaw<span class="lv lv3">L3</span></h3>
+<p>The most conspicuous open-source AI project of 2026: it reached the top of GitHub's star history in a little over a hundred days, with more than 300,000 stars.</p>
+<p>Think of it as a digital employee that can operate your computer — not a chat bot, but something that opens software, drives the browser, handles files and runs code. You can send it work from a chat app on your phone, and it completes the task on your machine.</p>
+<p>Its features: real execution rather than advice, connections to WeChat, QQ, Feishu, Telegram and Discord, a skill ecosystem you extend by installing packs, support for Anthropic, OpenAI and Chinese models, and a fully open MIT licence with local deployment so the data stays yours.</p>
+<p>The source's caution is proportionate to the power: OpenClaw's permissions are large, and it needs care in use.</p>
 
 <h2 id="project">7. The project words</h2>
 
-<p class="term-lead">None of these changed because of AI, and all of them changed meaning. Each was a safeguard against human shortcuts; with generated code the safeguards matter more and are easier to skip.</p>
-
 <h3 class="term">MVP<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The smallest version that tests whether anyone wants this.</dd></div>
-  <div><dt>Why</dt><dd>With agents the temptation is to build the whole thing in an afternoon, which is exactly how MVPs stop being minimal.</dd></div>
-  <div><dt>Logic</dt><dd>One hypothesis → the least software that tests it → a decision. Scope is a question, not a schedule.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Iteration · Vibe coding · No-code platforms</dd></div>
-</dl>
+<p>The minimum viable product: the version with the fewest features that still meets the core need — something that runs and does the essential job.</p>
+<p>Beginners tend to plan every feature at once, spend their time on the unnecessary ones, and abandon the project when it becomes too complex. The MVP reverses that: prove the core value with the least software, get feedback, then iterate. The source's example is an expense app whose first version records expenses and lists them, with everything else later.</p>
 
 <h3 class="term">Iteration<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>One pass of build, check, adjust.</dd></div>
-  <div><dt>Why</dt><dd>Small iterations keep the context small and the failures visible — the unit that makes agent work manageable.</dd></div>
-  <div><dt>Logic</dt><dd>Scope → change → verify → commit. Each pass should end in something you could ship or throw away.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">MVP · Agent loop · Version control · Refactoring</dd></div>
-</dl>
+<p>Splitting a large project into small cycles, each one finishing a part of the functionality.</p>
+<p>A cycle runs plan → develop → test → release → feedback → improve. It suits vibe coding particularly well: let the AI implement the core, check it, then add the next piece. It is also one of the core practices of agile development — small steps, fast feedback, embrace change — which matches the rhythm of AI-assisted work.</p>
 
 <h3 class="term">Refactoring<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Changing structure without changing behaviour.</dd></div>
-  <div><dt>Why</dt><dd>Agents are genuinely good at this, because the behaviour is defined by tests — which is also the condition for letting them near it.</dd></div>
-  <div><dt>Logic</dt><dd>Tests first → mechanical change → tests still green → commit. No tests, no refactor.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Technical debt · Iteration · Code review</dd></div>
-</dl>
+<p>Improving the structure and quality of code without changing what it does: extracting repeated code into a function, improving names, simplifying logic, splitting an over-long file.</p>
+<p>An AI can do this for you, but in small steps, with tests after each one. The source's qualification is fair: for a quick throwaway tool, working code is enough; for a long-lived project, code quality decides how fast you can iterate later, so regular refactoring earns its time.</p>
 
 <h3 class="term">Technical debt<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>The future cost of a shortcut taken now.</dd></div>
-  <div><dt>Why</dt><dd>Generated code accrues it faster, because nobody remembers choosing the shortcut.</dd></div>
-  <div><dt>Logic</dt><dd>Speed now → interest later: slower changes, more bugs, fewer people willing to touch the file.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Refactoring · Code review · Vibe coding</dd></div>
-</dl>
+<p>The temporary solutions taken to ship quickly, which will need time later to put right. The source's image is a credit card: convenient now, repaid with interest.</p>
+<p>AI-generated code is not always the best solution, and accumulated debt makes a project progressively harder to maintain. Regular refactoring is the repayment plan.</p>
 
 <h3 class="term">Version control<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Git, in practice: every state recoverable, every change attributable.</dd></div>
-  <div><dt>Why</dt><dd>For agent work it is not bookkeeping but the safety net — commit before the agent starts, and a bad afternoon costs one command.</dd></div>
-  <div><dt>Logic</dt><dd>Snapshot → branch → diff → merge. Diffs are also how you review what an agent actually did.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Git worktree · Code review · Ralph Wiggum loop</dd></div>
-</dl>
+<p>The system that records the history of code changes, so you can trace each change, compare versions, and roll back.</p>
+<p>Git is the standard, and it is worth keeping distinct from GitHub: Git runs on your computer, GitHub is the online platform that hosts and shares repositories.</p>
+<p>In vibe coding this matters more than usual — the AI may generate broken code, and with version control the previous working state is always one step away.</p>
 
 <h3 class="term">Git worktree<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A second working directory attached to the same repository, on its own branch.</dd></div>
-  <div><dt>Why</dt><dd>The cheap way to let an agent work in parallel without stepping on your uncommitted files.</dd></div>
-  <div><dt>Logic</dt><dd>Same object store → separate checkout → no stashing, no copying the folder.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Version control · Agent teams · Iteration</dd></div>
-</dl>
+<p>A hidden Git feature that lets one repository have several independent working directories, each on a different branch.</p>
+<p>Normally a repository has one working directory, so you can only work on one branch at a time and must stash changes to switch. A worktree is a clone of yourself: several branches in progress without interference.</p>
+<p>It is not the same as copying the folder. A copy duplicates the whole <code>.git</code> directory and history, takes space and makes merging awkward; a worktree links to the same <code>.git</code> and shares the history.</p>
+<p>Its best use in AI coding is parallel agents: three features become three worktrees, one agent each, merged at the end. Cursor's parallel agents mode creates and manages them for you. The practical warning: give different agents different files, or the merge produces conflicts you have to resolve by hand.</p>
 
 <h3 class="term">Deployment<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Moving code from your machine to where it runs.</dd></div>
-  <div><dt>Why</dt><dd>The step where "it worked locally" stops being an argument.</dd></div>
-  <div><dt>Logic</dt><dd>Build → environment → release → observe. Each stage adds a way for the code to be wrong that tests did not cover.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Version control · Background agents · Hooks</dd></div>
-</dl>
+<p>Publishing a finished application to a server so people can reach it.</p>
+<p>The original method — log into the server, upload an archive, run it yourself — is error-prone; platform deployment is a few clicks. Vercel suits front-end and full-stack apps, Netlify suits static and front-end sites, Railway and Render suit back-end services, and no-code platforms such as Bolt.new deploy in one button.</p>
+<p>There is also an MCP route: with EdgeOne Pages MCP, you describe what you want and the AI packages and deploys the site without you logging into anything.</p>
 
 <h3 class="term">GEO<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Generative engine optimisation: writing so that an AI search engine cites you, rather than so that a results page ranks you.</dd></div>
-  <div><dt>Why</dt><dd>Same instinct as SEO, different surface — structure, specificity and named facts instead of keywords.</dd></div>
-  <div><dt>Logic</dt><dd>Clear claims → citable statements → machine-readable structure → inclusion in generated answers.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Markdown · RAG · Hallucination</dd></div>
-</dl>
+<p>Generative engine optimisation — SEO for the AI era. SEO asks how to rank high in search results; GEO asks how to be quoted and recommended by ChatGPT, DeepSeek and similar assistants.</p>
+<p>The source's image: SEO is grabbing the golden shelf in a supermarket; GEO is getting the shop assistant to recommend your product when a customer asks.</p>
+<p>Its strategies: state the conclusion first, because extracts come from the opening; write in structure — heading levels, question-and-answer form, comparison tables; build authority with specific data and citable sources; publish on high-weight platforms; and keep the technical side open, with robots.txt allowing AI crawlers and server-side rendering so pages can be read. GEO does not replace SEO — good SEO helps GEO — and both are content work, not tricks.</p>
 
 <h2 id="stack">8. Front end, back end</h2>
 
-<p class="term-lead">The words that never changed, kept here because every AI coding conversation lands on them eventually — and because "full stack" now means something slightly different than it did.</p>
-
 <h3 class="term">Frontend<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>What runs in the browser: layout, interaction, state.</dd></div>
-  <div><dt>Why</dt><dd>The part users judge, and the part agents are most confident about and most often wrong on details.</dd></div>
-  <div><dt>Logic</dt><dd>Data → render → events → state change → render again. Errors are visible immediately, which helps.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Backend · API · Full stack</dd></div>
-</dl>
+<p>Everything the user sees and touches: the interface, buttons, forms, animation. Bluntly, whatever appears in the browser is the front end.</p>
+<p>The stack: HTML for structure, CSS for layout and style, JavaScript for interaction, and frameworks such as React, Vue or Next.js.</p>
+<p>It is the part AI generates best, because the result is visible and therefore easy to check and adjust. The source also offers a practical goal — use skills and carefully written prompts to remove the tell-tale “AI flavour” from a generated page.</p>
 
 <h3 class="term">Backend<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>What runs on the server: data, rules, authentication, integrations.</dd></div>
-  <div><dt>Why</dt><dd>Where the business logic lives, and where a plausible-looking mistake costs the most.</dd></div>
-  <div><dt>Logic</dt><dd>Request → validation → rule → data change → response. Failures here are quiet and expensive.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Frontend · API · Database · BaaS</dd></div>
-</dl>
+<p>The part users never see: business logic, data storage, authentication.</p>
+<p>When you press “place order” on a shop, the front end sends the order to the back end, which checks stock, calculates the price, takes payment, creates the order, and returns the result to be displayed. The stack: Node.js, Python or Java; Express, FastAPI or Spring; MySQL, PostgreSQL or MongoDB.</p>
+<p>It is harder than the front end — security, performance, data consistency — and the source's conclusion follows: AI-generated back-end code needs closer review.</p>
 
 <h3 class="term">Full stack<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Both ends, plus the seam between them.</dd></div>
-  <div><dt>Why</dt><dd>With agents it increasingly means being able to specify and verify both ends rather than typing either.</dd></div>
-  <div><dt>Logic</dt><dd>One person owns the contract across the seam, so mismatches get caught before deployment.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Frontend · Backend · API</dd></div>
-</dl>
+<p>An application that includes both front end and back end, and a developer who can handle both.</p>
+<p>In vibe coding, tools such as Cursor and Bolt.new can generate a full-stack application in one pass, writing both halves for you.</p>
 
 <h3 class="term">API<span class="lv lv2">L2</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>A defined way for one program to call another: endpoints, inputs, outputs, errors.</dd></div>
-  <div><dt>Why</dt><dd>It is the contract an agent reads when integrating, and the thing to paste into the window before asking for code.</dd></div>
-  <div><dt>Logic</dt><dd>Request shape → auth → handler → response shape. Ambiguity in the shape is where generated code goes wrong.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Frontend · Backend · MCP · Tool calling</dd></div>
-</dl>
+<p>The interface through which programs talk to each other.</p>
+<p>The source's analogy is a restaurant menu: it tells you what can be ordered, how to order, and what will arrive. You do not need to know the kitchen; you order from the menu. In web development the front end talks to the back end through an API to fetch data or submit actions.</p>
 
 <h3 class="term">Database<span class="lv lv1">L1</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Where state persists: tables, keys, constraints.</dd></div>
-  <div><dt>Why</dt><dd>Most agent mistakes that matter are data mistakes — a wrong join, a duplicated row, a unit never converted.</dd></div>
-  <div><dt>Logic</dt><dd>Schema → writes constrained by rules → reads shaped by joins. Constraints are the part agents cannot talk around.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Backend · API · BaaS · Version control</dd></div>
-</dl>
+<p>The system that stores and manages data: user records, content, settings.</p>
+<p>Three common shapes: relational (MySQL, PostgreSQL) as tables; document (MongoDB) as JSON documents; key-value (Redis) for caching and fast lookup.</p>
+<p>In vibe coding you can use hosted services such as Supabase or Firebase rather than running your own database.</p>
 
 <h3 class="term">BaaS<span class="lv lv3">L3</span></h3>
-<dl class="term-grid">
-  <div><dt>Definition</dt><dd>Backend as a service: hosted database, auth and storage behind an SDK.</dd></div>
-  <div><dt>Why</dt><dd>A small project needs no server of its own — fast to start, and a dependency to plan for when you outgrow it.</dd></div>
-  <div><dt>Logic</dt><dd>Client SDK → managed backend → row-level rules. Security moves from your code to the platform's policy language.</dd></div>
-  <div><dt>Links</dt><dd class="linklist">Database · Backend · No-code platforms</dd></div>
-</dl>
+<p>Backend as a service: cloud services that hand you the back end ready-made — database, authentication, file storage.</p>
+<p>Before, you bought a server, installed a database, wrote the API and handled operations; setting up the environment alone took days. With BaaS you register an account and start, which speeds up development considerably and suits vibe coding well. The common choices are Supabase (an open-source Firebase alternative), Firebase itself, and PlanetScale for hosted MySQL.</p>
 
-<h2>How to use a page like this</h2>
+<h2>One last word</h2>
 
 <div class="seg">
-<p class="en">Eighty-two terms, / and the working set is smaller than it looks. // In my own week I use a rules file, / a few skills, / two or three tools per task, / and a check that fails loudly. // Everything else I look up when a page like this is open beside me. //</p>
+<p class="en">This covers the vocabulary that comes up most often in vibe coding. // New concepts keep arriving, / and a dictionary like this keeps growing. //</p>
 </div>
 
 <div class="seg">
-<p class="en">The test of whether a term is yours / is not whether you can define it. // It is whether you can say what it connects to / and what changes when it is missing. // Token connects to cost and to the window. // Context connects to everything. // Hallucination connects to the check you did not build. //</p>
+<p class="en">You are not meant to memorise all of it. // Look a word up when you meet it, / or ask an AI to explain it. // After enough practice, / the terms stop being terms / and become the things you do. //</p>
 </div>
 
-<div class="seg">
-<p class="en">The vocabulary will be different next year. // The structure will hold: / a model you do not control, / a harness you do, / a loop that needs an exit, / and a check that can fail. //</p>
-</div>
+<p class="term-note">Translated from Yu Pi's <a href="https://github.com/liyupi/ai-guide">Vibe Coding concept guide</a>, kept in the original order. Model names, prices and dates are as the source states them; the tables and two diagrams were added here for structure, and the L1–L3 grades are a reading aid, not the source's.</p>

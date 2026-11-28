@@ -484,30 +484,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .prose .term-toc { margin: 26px 0 4px; font-size: 15px; line-height: 2; color: var(--text-soft); }
 .prose .term-lead { margin: 0 0 10px; font-size: 17px; color: var(--text-soft); }
 .prose h3.term { margin: 30px 0 6px; font-size: 18.5px; font-weight: 600; letter-spacing: .01em; }
-.prose h3.term + p { margin-bottom: 0; }
-
-/* 术语正文：定义 / 为什么 / 逻辑 / 关联 四行结构 */
-.prose .term-grid {
-  margin: 4px 0 0;
-  padding: 0 0 16px;
-  border-bottom: 1px solid var(--line);
-}
-.prose .term-grid > div {
-  display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
-  gap: 4px 18px;
-  padding: 4px 0;
-}
-.prose .term-grid dt {
-  padding-top: 4px;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+.prose h3.term + p { margin-bottom: .9rem; }
+.prose .term-note {
+  margin: 44px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.75;
   color: var(--text-faint);
 }
-.prose .term-grid dd { margin: 0; font-size: 16.5px; line-height: 1.75; color: var(--text); }
-.prose .term-grid dd.linklist { font-size: 15px; color: var(--text-soft); }
+
 
 /* 术语分级标记 L1 / L2 / L3 */
 .lv {
@@ -778,8 +764,6 @@ summary { cursor: pointer; padding: 8px 0; min-height: 44px; font-weight: 600; }
   .about-intro { padding-left: 16px; }
   .fact-list > div { grid-template-columns: 1fr; gap: 4px; }
   .fact-list dt { padding-top: 0; }
-  .prose .term-grid > div { grid-template-columns: 1fr; gap: 2px; }
-  .prose .term-grid dt { padding-top: 8px; }
   .about-contact { padding-top: 32px; }
   .site-footer { padding: 32px 16px; }
 
