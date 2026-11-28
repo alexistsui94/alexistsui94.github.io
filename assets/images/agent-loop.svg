@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 364" role="img" aria-labelledby="alTitle alDesc">
+  <title id="alTitle">The agent loop</title>
+  <desc id="alDesc">A task goes to the model. The model calls a tool with a name and arguments. The tool returns a result or an error, which goes back into the model. The loop repeats until the model calls no more tools or a step limit is reached. Any tool with a side effect needs a confirmation.</desc>
+  <defs>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#30352f}
+      .eyebrow{font-size:10.5px;font-weight:700;letter-spacing:2px;fill:#8b9188}
+      .title{font-size:24px;font-weight:600;letter-spacing:.2px}
+      .sub{font-size:14px;fill:#60675e}
+      .node{font-size:16px;font-weight:600}
+      .sub2{font-size:11.5px;fill:#8b9188}
+      .note{font-size:13px;fill:#60675e}
+      .flow{fill:none;stroke:#7a8b7c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 L7 4.5 L1 8" fill="none" stroke="#7a8b7c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="900" height="364" fill="#fbfaf7"/>
+
+  <text class="eyebrow" x="40" y="46">AGENT LOOP</text>
+  <text class="title" x="40" y="82">Model, tool, result, repeat</text>
+  <text class="sub" x="40" y="110">An agent is a loop with tools. The model decides when it has enough.</text>
+
+  <rect x="30" y="150" width="120" height="64" fill="#fffdfa" stroke="#d3cfc2" stroke-width="1.2"/>
+  <text class="node" x="90" y="182" text-anchor="middle">Your task</text>
+  <text class="sub2" x="90" y="200" text-anchor="middle">one sentence</text>
+
+  <rect x="240" y="150" width="120" height="64" fill="#fffdfa" stroke="#4b6b52" stroke-width="1.4"/>
+  <text class="node" x="300" y="182" text-anchor="middle">Model</text>
+  <text class="sub2" x="300" y="200" text-anchor="middle">reads the window</text>
+
+  <rect x="450" y="150" width="120" height="64" fill="#fffdfa" stroke="#d3cfc2" stroke-width="1.2"/>
+  <text class="node" x="510" y="182" text-anchor="middle">Tool call</text>
+  <text class="sub2" x="510" y="200" text-anchor="middle">name + arguments</text>
+
+  <rect x="660" y="150" width="120" height="64" fill="#fffdfa" stroke="#d3cfc2" stroke-width="1.2"/>
+  <text class="node" x="720" y="182" text-anchor="middle">Result</text>
+  <text class="sub2" x="720" y="200" text-anchor="middle">file, test, error</text>
+
+  <path class="flow" d="M150 182 H232" marker-end="url(#ar)"/>
+  <path class="flow" d="M360 182 H442" marker-end="url(#ar)"/>
+  <path class="flow" d="M570 182 H652" marker-end="url(#ar)"/>
+
+  <path class="flow" d="M720 214 V300 H300 V222" marker-end="url(#ar)"/>
+  <text class="note" x="332" y="290">the result goes back in</text>
+
+  <path d="M510 214 V238" stroke="#8b9188" stroke-width="1.2" fill="none"/>
+  <text class="note" x="510" y="256" text-anchor="middle">confirm before writes</text>
+
+  <text class="note" x="40" y="338">The loop ends when the model calls no tool, or when a step limit is reached.</text>
+</svg>
