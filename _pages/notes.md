@@ -1,6 +1,5 @@
 ---
 title: "Writing"
-title_zh: "文章"
 description: "Every published note by Alexis Tsui, grouped into ERP, AI and everything else. Written in English with Chinese reference lines."
 layout: single
 permalink: /notes/
@@ -10,9 +9,8 @@ permalink: /notes/
 {% assign other_posts = site.posts | where: "topic", "other" %}
 <section class="archive-hero wrap">
   <p class="eyebrow">Writing · {{ site.posts.size }} articles</p>
-  <h1>Notes on ERP,<br><em>AI and everything else.</em><span class="h-zh" lang="zh-Hans">关于 ERP、AI 与其他。</span></h1>
+  <h1>Notes on ERP,<br><em>AI and everything else.</em></h1>
   <p>Everything published here, in three groups. ERP and delivery first, then AI and code, then the rest — the things I read, noticed or had to work out.</p>
-  <p class="deck-zh" lang="zh-Hans">全部文章分三组：ERP 与交付、AI 与代码，以及其他读到的、想到的、必须想清楚的事。</p>
   <nav class="topic-jump" aria-label="Jump to a topic">
     <a href="#erp">ERP<span class="topic-count">{{ erp_posts.size }}</span></a>
     <a href="#ai">AI<span class="topic-count">{{ ai_posts.size }}</span></a>
@@ -22,32 +20,32 @@ permalink: /notes/
 
 <section class="archive-group wrap" id="erp" aria-labelledby="group-erp">
   <div class="group-head">
-    <h2 id="group-erp">ERP <span class="group-zh" lang="zh-Hans">ERP 与交付</span></h2>
+    <h2 id="group-erp">ERP</h2>
     <span class="group-count">{{ erp_posts.size }} articles</span>
   </div>
   <div class="archive-list">
-  {% for post in erp_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.title_zh %}<span class="list-zh" lang="zh-Hans">{{ post.title_zh }}</span>{% endif %}</h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
+  {% for post in erp_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
   </div>
 </section>
 
 <section class="archive-group wrap" id="ai" aria-labelledby="group-ai">
   <div class="group-head">
-    <h2 id="group-ai">AI <span class="group-zh" lang="zh-Hans">AI 与代码</span></h2>
+    <h2 id="group-ai">AI</h2>
     <span class="group-count">{{ ai_posts.size }} articles</span>
   </div>
   <div class="archive-list">
-  {% for post in ai_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.title_zh %}<span class="list-zh" lang="zh-Hans">{{ post.title_zh }}</span>{% endif %}</h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
+  {% for post in ai_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
   </div>
 </section>
 
 {% if other_posts.size > 0 %}
 <section class="archive-group wrap" id="other" aria-labelledby="group-other">
   <div class="group-head">
-    <h2 id="group-other">Other <span class="group-zh" lang="zh-Hans">其他</span></h2>
+    <h2 id="group-other">Other</h2>
     <span class="group-count">{{ other_posts.size }} articles</span>
   </div>
   <div class="archive-list">
-  {% for post in other_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.title_zh %}<span class="list-zh" lang="zh-Hans">{{ post.title_zh }}</span>{% endif %}</h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
+  {% for post in other_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
   </div>
 </section>
 {% endif %}

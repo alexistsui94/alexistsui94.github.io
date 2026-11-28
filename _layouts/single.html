@@ -4,19 +4,16 @@ layout: default
 {% if page.date %}
 {% assign topic = page.topic | default: 'other' %}
 {% assign cat_label = 'Other' %}
-{% assign cat_zh = '其他' %}
 {% case topic %}
-{% when 'erp' %}{% assign cat_label = 'ERP' %}{% assign cat_zh = 'ERP 与交付' %}
-{% when 'ai' %}{% assign cat_label = 'AI' %}{% assign cat_zh = 'AI 与代码' %}
+{% when 'erp' %}{% assign cat_label = 'ERP' %}
+{% when 'ai' %}{% assign cat_label = 'AI' %}
 {% endcase %}
 <main id="main-content" class="article-shell">
   <header class="article-header wrap">
     <a class="back-link" href="/notes/">← All writing</a>
-    <div class="article-kicker"><span>{{ cat_label }} <span class="kicker-zh" lang="zh-Hans">{{ cat_zh }}</span></span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
+    <div class="article-kicker"><span>{{ cat_label }}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
     <h1>{{ page.title }}</h1>
-    {% if page.title_zh %}<p class="title-zh h-zh" lang="zh-Hans">{{ page.title_zh }}</p>{% endif %}
     {% if page.summary %}<p class="article-deck">{{ page.summary }}</p>{% endif %}
-    {% if page.deck_zh %}<p class="deck-zh" lang="zh-Hans">{{ page.deck_zh }}</p>{% endif %}
   </header>
 
   <article class="prose wrap">

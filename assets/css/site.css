@@ -388,7 +388,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   text-transform: uppercase;
   color: var(--text);
 }
-.group-head .group-zh { font-size: 13px; font-weight: 400; letter-spacing: .04em; text-transform: none; color: var(--text-faint); }
 .group-head .group-count { font-size: 13px; color: var(--text-faint); }
 
 .empty-state { margin: 56px 0 88px; padding: 0; background: none; border: 0; }
@@ -502,7 +501,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .fact-list dd { margin: 0; font-size: 17.5px; line-height: 1.65; color: var(--text); }
 .fact-list dd a { color: var(--text); }
-.fact-zh { display: block; margin-top: 3px; font-size: 14px; line-height: 1.6; color: var(--text-soft); }
 .about-note { max-width: 680px; margin: 26px 0 40px; font-size: 15px; line-height: 1.8; color: var(--text-soft); }
 .focus-lede { max-width: 720px; font-size: 18.5px; line-height: 1.85; color: var(--text-soft); }
 .focus-note {
@@ -673,7 +671,6 @@ summary { cursor: pointer; padding: 8px 0; min-height: 44px; font-weight: 600; }
   letter-spacing: 0;
 }
 .title-zh { font-size: 17px; margin-top: 8px; margin-bottom: 0; }
-.home-title-zh { font-size: 16px; margin-top: 10px; margin-bottom: 0; }
 .kicker-zh { color: var(--text-faint); font-size: 12px; margin-left: 2px; }
 .deck-zh { margin: 10px 0 0; font-size: 15px; line-height: 1.8; color: var(--text-soft); }
 .notes-hint { margin: 18px 0 0; font-size: 14.5px; color: var(--text-faint); }
