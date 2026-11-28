@@ -1,49 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 316" role="img" aria-labelledby="cwTitle cwDesc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="cwTitle cwDesc">
   <title id="cwTitle">What fits inside a context window</title>
   <desc id="cwDesc">A fixed-width window holds standing rules, chosen files, retrieved documents, the conversation so far, and a little free room. Something that was never pasted, such as a conversion table, sits outside the window and cannot be used.</desc>
   <defs>
     <style>
       text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#30352f}
-      .eyebrow{font-size:10.5px;font-weight:700;letter-spacing:2px;fill:#8b9188}
-      .title{font-size:24px;font-weight:600;letter-spacing:.2px}
-      .sub{font-size:14px;fill:#60675e}
-      .seg{font-size:13px}
-      .tok{font-size:11.5px;fill:#8b9188}
-      .note{font-size:13.5px;fill:#60675e}
+      .eyebrow{font-size:12px;font-weight:700;letter-spacing:1.8px;fill:#8b9188}
+      .title{font-size:26px;font-weight:600;letter-spacing:.2px}
+      .sub{font-size:15.5px;fill:#60675e}
+      .seg{font-size:15px}
+      .tok{font-size:13px;fill:#8b9188}
+      .note{font-size:15px;fill:#60675e}
     </style>
   </defs>
-  <rect width="900" height="316" fill="#fbfaf7"/>
+  <rect width="900" height="330" fill="#fbfaf7"/>
 
-  <text class="eyebrow" x="40" y="46">CONTEXT WINDOW</text>
+  <text class="eyebrow" x="40" y="44">CONTEXT WINDOW</text>
   <text class="title" x="40" y="82">What the model can see in one call</text>
-  <text class="sub" x="40" y="110">One fixed budget, shared by everything below. Nothing outside it exists.</text>
+  <text class="sub" x="40" y="112">One fixed budget, shared by everything below. Nothing outside it exists.</text>
 
-  <rect x="40" y="146" width="170" height="78" fill="none" stroke="#c9c5b8" stroke-width="1.2" stroke-dasharray="5 4"/>
-  <text class="eyebrow" x="54" y="170">NOT IN THE WINDOW</text>
-  <text class="seg" x="54" y="192">Your conversion table</text>
-  <path d="M212 185 H234" stroke="#c9c5b8" stroke-width="1.2" stroke-dasharray="5 4" fill="none"/>
-  <path d="M240 179 L248 191 M248 179 L240 191" stroke="#8b9188" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <rect x="40" y="148" width="184" height="84" fill="none" stroke="#c9c5b8" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text class="eyebrow" x="54" y="174">NOT IN THE WINDOW</text>
+  <text class="seg" x="54" y="200">Your conversion table</text>
+  <path d="M226 190 H240" stroke="#c9c5b8" stroke-width="1.2" stroke-dasharray="5 4" fill="none"/>
+  <path d="M246 183 L254 197 M254 183 L246 197" stroke="#8b9188" stroke-width="1.3" fill="none" stroke-linecap="round"/>
 
-  <rect x="256" y="146" width="604" height="78" fill="#fffdfa" stroke="#d3cfc2" stroke-width="1.2"/>
-  <rect x="790" y="146" width="70" height="78" fill="#f4f2ea"/>
+  <rect x="260" y="148" width="600" height="84" fill="#fffdfa" stroke="#d3cfc2" stroke-width="1.2"/>
+  <rect x="800" y="148" width="60" height="84" fill="#f4f2ea"/>
 
-  <path d="M386 146 V224 M530 146 V224 M656 146 V224 M790 146 V224" stroke="#e4e1d7" stroke-width="1"/>
+  <path d="M390 148 V232 M550 148 V232 M670 148 V232 M800 148 V232" stroke="#e4e1d7" stroke-width="1"/>
 
-  <text class="seg" x="270" y="176">Rules</text>
-  <text class="tok" x="270" y="196">3,000 tok</text>
+  <text class="seg" x="274" y="180">Rules</text>
+  <text class="tok" x="274" y="204">3,000 tok</text>
 
-  <text class="seg" x="400" y="176">Files you chose</text>
-  <text class="tok" x="400" y="196">12,000</text>
+  <text class="seg" x="404" y="180">Files you chose</text>
+  <text class="tok" x="404" y="204">12,000</text>
 
-  <text class="seg" x="544" y="176">Retrieved</text>
-  <text class="tok" x="544" y="196">4,000</text>
+  <text class="seg" x="564" y="180">Retrieved</text>
+  <text class="tok" x="564" y="204">4,000</text>
 
-  <text class="seg" x="670" y="176">Conversation</text>
-  <text class="tok" x="670" y="196">9,000</text>
+  <text class="seg" x="684" y="180">Conversation</text>
+  <text class="tok" x="684" y="204">9,000</text>
 
-  <text class="seg" x="804" y="176">Free</text>
-  <text class="tok" x="804" y="196">—</text>
+  <text class="seg" x="812" y="180">Free</text>
+  <text class="tok" x="812" y="204">—</text>
 
   <text class="note" x="40" y="268">Every call re-sends the whole window: three thousand tokens of rules cost three thousand tokens each time.</text>
-  <text class="note" x="40" y="294">Caching lowers the price of that repeat. It does not lower the competition for attention.</text>
+  <text class="note" x="40" y="296">Caching lowers the price of that repeat. It does not lower the competition for attention.</text>
 </svg>

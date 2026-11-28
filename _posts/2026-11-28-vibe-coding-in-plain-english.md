@@ -50,7 +50,7 @@ summary: "The vocabulary of AI coding, cut down to the terms that change what co
 </div>
 
 <figure class="article-figure">
-  <img src="/assets/images/context-window.svg" alt="A context window containing rules, chosen files, retrieved documents and the conversation, with an unpasted conversion table sitting outside it." width="900" height="316">
+  <img src="/assets/images/context-window.svg" alt="A context window containing rules, chosen files, retrieved documents and the conversation, with an unpasted conversion table sitting outside it." width="900" height="330">
   <figcaption>The window is the whole world for one call. A table you never pasted is not “forgotten” — it does not exist yet.</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ summary: "The vocabulary of AI coding, cut down to the terms that change what co
 </div>
 
 <figure class="article-figure">
-  <img src="/assets/images/agent-loop.svg" alt="A loop from task to model to tool call to result, returning to the model, with a note that writes need a confirmation." width="900" height="344">
+  <img src="/assets/images/agent-loop.svg" alt="A loop from task to model to tool call to result, returning to the model, with a note that writes need a confirmation." width="900" height="374">
   <figcaption>The loop is the difference between a chat and an agent. The exit is not a decision you make — it is the model stopping, or a limit you set.</figcaption>
 </figure>
 
