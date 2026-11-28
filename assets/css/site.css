@@ -480,6 +480,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   color: var(--text-faint);
 }
 
+/* 术语表：目录行与紧凑条目 */
+.prose .term-toc { margin: 26px 0 4px; font-size: 15px; line-height: 2; color: var(--text-soft); }
+.prose .term-lead { margin: 0 0 10px; font-size: 17px; color: var(--text-soft); }
+.prose h3.term { margin: 30px 0 6px; font-size: 18.5px; font-weight: 600; letter-spacing: .01em; }
+.prose h3.term + p { margin-bottom: 0; }
+
 /* 9. 关于页 --------------------------------------------------------------- */
 .about-hero { display: block; max-width: 760px; padding-block: 72px 48px; }
 .about-hero h1 { font-size: clamp(36px, 4.4vw, 51px); margin: 12px 0 0; }
