@@ -21,7 +21,7 @@ layout: single
     <div><dt>Now</dt><dd>ERP implementation consultant<span class="fact-zh" lang="zh-Hans">ERP 实施顾问</span></dd></div>
     <div><dt>Based</dt><dd>Hong Kong, China<span class="fact-zh" lang="zh-Hans">中国香港</span></dd></div>
     <div><dt>Education</dt><dd>Master’s degree, Applied Statistics<span class="fact-zh" lang="zh-Hans">应用统计硕士</span></dd></div>
-    <div><dt>Writing</dt><dd><a href="/notes/#erp">ERP</a> · <a href="/notes/#ai">AI</a> · <a href="/notes/#other">Other</a><span class="fact-zh" lang="zh-Hans">写作分三类：ERP、AI、其他</span></dd></div>
+    <div><dt>Writing</dt><dd><a href="/notes/">ERP · AI · Other</a><span class="fact-zh" lang="zh-Hans">写作分三类：ERP、AI、其他</span></dd></div>
     <div><dt>Projects</dt><dd><a href="/projects/">Working tools and case studies</a><span class="fact-zh" lang="zh-Hans">只放项目本身</span></dd></div>
   </dl>
 

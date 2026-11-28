@@ -16,7 +16,7 @@ permalink: /notes/
   <nav class="topic-jump" aria-label="Jump to a topic">
     <a href="#erp">ERP<span class="topic-count">{{ erp_posts.size }}</span></a>
     <a href="#ai">AI<span class="topic-count">{{ ai_posts.size }}</span></a>
-    <a href="#other">Other<span class="topic-count">{{ other_posts.size }}</span></a>
+    {% if other_posts.size > 0 %}<a href="#other">Other<span class="topic-count">{{ other_posts.size }}</span></a>{% endif %}
   </nav>
 </section>
 
@@ -40,6 +40,7 @@ permalink: /notes/
   </div>
 </section>
 
+{% if other_posts.size > 0 %}
 <section class="archive-group wrap" id="other" aria-labelledby="group-other">
   <div class="group-head">
     <h2 id="group-other">Other <span class="group-zh" lang="zh-Hans">其他</span></h2>
@@ -49,3 +50,4 @@ permalink: /notes/
   {% for post in other_posts %}<article><div><span>{{ post.date | date: "%Y.%m.%d" }}</span></div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.title_zh %}<span class="list-zh" lang="zh-Hans">{{ post.title_zh }}</span>{% endif %}</h3><p>{{ post.summary | strip_html | truncate: 150 }}</p></article>{% endfor %}
   </div>
 </section>
+{% endif %}
